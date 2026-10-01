@@ -158,8 +158,8 @@
 
   /* ---- proyectos ---- */
   .proj-intro{color:var(--slate);font-size:1.02rem;max-width:520px;margin-top:22px;}
-  .proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:60px;}
-  @media(max-width:1000px){.proj-grid{grid-template-columns:1fr;}}
+  .proj-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:60px;}
+  @media(max-width:800px){.proj-grid{grid-template-columns:1fr;}}
   .proj-card{display:flex;flex-direction:column;background:var(--white);border:1px solid var(--line-light);padding:34px 30px;transition:transform .35s ease,border-color .35s ease,box-shadow .35s ease;}
   .proj-card:hover{transform:translateY(-6px);border-color:var(--electric);box-shadow:0 18px 40px rgba(13,20,36,0.08);}
   .proj-card .tag{font-size:0.78rem;color:var(--electric);font-weight:500;margin-bottom:14px;}
@@ -168,7 +168,7 @@
   .proj-card p{color:var(--slate);font-size:0.95rem;flex:1;}
   .proj-card .go{margin-top:26px;font-size:0.9rem;font-weight:500;color:var(--void);}
   .proj-card:hover .go{color:var(--electric);}
-  .proj-note{margin-top:30px;font-size:0.82rem;color:var(--slate);}
+  .proj-note{margin-top:18px;font-size:0.82rem;color:var(--slate);}
 
   /* ---- filosofía ---- */
   .philosophy{text-align:center;padding:220px 0;}
@@ -468,15 +468,9 @@
         <p>Un sitio cálido para dar el primer paso: terapias explicadas con claridad y reserva de la primera entrevista, presencial u online, sin pedir datos sensibles.</p>
         <span class="go">Ver demo →</span>
       </a>
-      <a class="proj-card" href="demo-juridico.html">
-        <span class="tag">Demo · Agenda de consultas</span>
-        <h3>Ferrari &amp; Asociados</h3>
-        <span class="rubro">Estudio jurídico</span>
-        <p>Áreas de práctica explicadas sin tecnicismos y agenda online de consultas, presenciales o por videollamada.</p>
-        <span class="go">Ver demo →</span>
-      </a>
     </div>
     <p class="proj-note">¿Tenés un consultorio? Te mostramos cómo quedaría el tuyo antes de empezar.</p>
+    <p class="proj-note">¿Trabajás con turnos pero no en salud, como un estudio jurídico o contable? La misma tecnología se adapta: <a href="demo-juridico.html" style="color:var(--electric);text-decoration:underline;">mirá un ejemplo</a>.</p>
   </div>
 </section>
 
