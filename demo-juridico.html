@@ -5,327 +5,400 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Ferrari & Asociados — Estudio Jurídico (demo)</title>
 <meta name="robots" content="noindex" />
-<meta name="description" content="Estudio jurídico en Rosario. Derecho civil, laboral, de familia, inmobiliario y sucesiones. Agendá tu consulta online." />
+<meta name="description" content="Estudio jurídico en Rosario: civil y comercial, laboral, familia, inmobiliario y sucesiones. Agendá tu consulta online." />
+<meta property="og:title" content="Ferrari & Asociados — Estudio Jurídico (demo)" />
+<meta property="og:description" content="Estudio jurídico en Rosario: civil y comercial, laboral, familia, inmobiliario y sucesiones. Agendá tu consulta online." />
+<meta property="og:image" content="https://web-neoatlantis.vercel.app/assets/img/jur-biblioteca.webp" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='6' fill='%231E3A5F'/%3E%3Cpath d='M20 9v22M13 31h14M11 14h18M11 14l-4 8h8zM29 14l-4 8h8z' stroke='%23D9B97A' stroke-width='1.6' fill='none'/%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
+  /* Tokens de la profesión (ver DESIGN.md de la plantilla de consultorio) */
   :root{
-    --white:#FFFFFF;
-    --tint:#F6F3EC;
-    --accent:#1E3A5F;
-    --accent-dark:#12253D;
-    --highlight:#8A6A33;
-    --ink:#151A22;
-    --ink-soft:#5A6070;
-    --line:rgba(0,0,0,0.10);
-    --font:'Plus Jakarta Sans', sans-serif;
-    --font-head:'Playfair Display', Georgia, serif;
-    --radius:6px;
+    --accent:#C9A55C; --accent-strong:#1E3A5F; --accent-soft:#F6F3EC; --accent-tint:#ECE3CF; --eyebrow:#8A6A33; --ink:#151A22; --body:#4E5563; --muted:#5F6673; --surface-2:#F8F7F4; --line:#E6E1D6; --font-head:'Playfair Display', Georgia, serif; --head-weight:700; --r-md:6px; --r-lg:10px; --r-xl:14px; --btn-r:6px; --glow:0 10px 24px rgba(30,58,95,0.25);
+    --surface:#FFFFFF; --danger:#B42318;
+    --font: 'Plus Jakarta Sans', 'Segoe UI', system-ui, sans-serif;
+    --fs-display: clamp(2rem, 4.6vw, 3.1rem); --fs-h2: clamp(1.6rem, 3vw, 2.1rem); --fs-small: 0.875rem;
+    --s-2:8px; --s-3:16px; --s-4:24px; --s-5:32px; --s-6:48px; --s-7:64px; --s-8:96px;
+    --shadow-sm:0 2px 6px rgba(27,37,48,0.06); --shadow-md:0 8px 24px rgba(27,37,48,0.08); --shadow-lg:0 16px 40px rgba(27,37,48,0.10);
+    --ease:cubic-bezier(0.22, 0.61, 0.36, 1);
   }
   *{box-sizing:border-box; margin:0; padding:0;}
   html{scroll-behavior:smooth;}
-  body{font-family:var(--font); color:var(--ink); background:var(--white); line-height:1.6; -webkit-font-smoothing:antialiased;}
+  body{font-family:var(--font); color:var(--body); background:var(--surface); line-height:1.7; -webkit-font-smoothing:antialiased;}
+  img{max-width:100%; display:block;}
   a{color:inherit; text-decoration:none;}
   ul{list-style:none;}
-  .container{max-width:1220px; margin:0 auto; padding:0 24px;}
-  h1,h2,h3,h4{font-family:var(--font-head); font-weight:700; line-height:1.15; letter-spacing:-0.01em;}
-  :focus-visible{outline:3px solid var(--accent); outline-offset:2px;}
-  .btn{display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:14px 26px; border-radius:6px; font-weight:700; font-size:15px; cursor:pointer; border:1.5px solid transparent; transition:transform .18s ease, box-shadow .18s ease, background .18s ease; font-family:var(--font);}
-  .btn:hover{transform:translateY(-2px);}
-  .btn:active{transform:scale(0.98);}
-  .btn-primary{background:var(--accent); color:#fff; box-shadow:0 8px 20px rgba(0,0,0,0.12);}
-  .btn-primary:hover{background:var(--accent-dark);}
-  .btn-outline{background:transparent; border-color:var(--ink); color:var(--ink);}
-  .btn-outline:hover{background:var(--ink); color:#fff;}
-  .btn-ghost{background:var(--white); color:var(--accent-dark); border-color:var(--accent);}
-  .btn-ghost:hover{background:var(--accent); color:#fff;}
-  .eyebrow{color:var(--highlight); font-weight:700; font-size:13px; letter-spacing:0.08em; text-transform:uppercase; display:block; margin-bottom:14px;}
-  .section{padding:110px 0;}
-  .section-head{max-width:640px; margin:0 auto 56px; text-align:center;}
-  .section-head h2{font-size:clamp(30px,4.2vw,46px); margin-bottom:16px;}
-  .section-head p{color:var(--ink-soft); font-size:17px;}
+  h1,h2,h3,h4{font-family:var(--font-head); font-weight:var(--head-weight); color:var(--ink); line-height:1.2; letter-spacing:-0.01em; text-wrap:balance;}
+  p{text-wrap:pretty;}
+  :focus-visible{outline:2px solid var(--accent-strong); outline-offset:3px; border-radius:4px;}
+  .container{max-width:1200px; margin:0 auto; padding-inline:24px;}
+  .skip{position:absolute; left:-9999px; top:8px; background:var(--ink); color:#fff; padding:8px 16px; border-radius:var(--r-md); z-index:200;}
+  .skip:focus{left:8px;}
+  main{overflow-x:clip;}
 
-  .reveal{opacity:0; transform:translateY(24px); transition:opacity .7s ease-out, transform .7s ease-out;}
-  .reveal.visible{opacity:1; transform:translateY(0);}
-  .stagger-group > *{opacity:0; transform:translateY(20px); transition:opacity .6s ease-out, transform .6s ease-out;}
-  .stagger-group.visible > *{opacity:1; transform:translateY(0);}
-  @keyframes fadeUp{ from{opacity:0; transform:translateY(22px);} to{opacity:1; transform:translateY(0);} }
-  @keyframes imgReveal{ from{opacity:0; transform:scale(.97);} to{opacity:1; transform:scale(1);} }
-  .hero-fade{opacity:0; animation:fadeUp .7s ease-out forwards;}
-  .hero-fade.d2{animation-delay:100ms;}
-  .hero-fade.d3{animation-delay:200ms;}
-  .hero-image-reveal{animation:imgReveal .8s ease-out forwards; animation-delay:150ms; opacity:0;}
+  .eyebrow{display:inline-flex; align-items:center; gap:10px; color:var(--eyebrow); font-size:0.78rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; margin-bottom:var(--s-2);}
+  .eyebrow::before{content:''; width:24px; height:2px; background:var(--accent); border-radius:2px;}
+  .section{padding-block:var(--s-8);}
+  .section.tint{background:var(--accent-soft);}
+  .section-head{max-width:600px; margin-bottom:var(--s-6);}
+  .section-head.center{margin-inline:auto; text-align:center;}
+  .section-head.center .eyebrow::before{display:none;}
+  .section-head h2, .h2{font-size:var(--fs-h2); margin-bottom:var(--s-3);}
+  .lead{max-width:480px;}
+  @media (max-width:640px){ .section{padding-block:var(--s-7);} }
+
+  .btn{display:inline-flex; align-items:center; justify-content:center; gap:10px; min-height:48px; padding:12px 26px; border-radius:var(--btn-r); font-family:var(--font); font-weight:700; font-size:0.95rem; border:1.5px solid transparent; cursor:pointer; transition:background .2s var(--ease), box-shadow .2s var(--ease), transform .2s var(--ease);}
+  .btn:active{transform:scale(0.98);}
+  .btn-primary{background:var(--accent-strong); color:#fff;}
+  .btn-primary:hover{box-shadow:var(--glow); filter:brightness(0.92);}
+  .btn-outline{background:transparent; border-color:var(--accent-strong); color:var(--accent-strong);}
+  .btn-outline:hover{background:var(--accent-soft);}
+  .btn-white{background:#fff; color:var(--accent-strong);}
+  .link-arrow{display:inline-flex; align-items:center; gap:8px; font-weight:700; color:var(--accent-strong); min-height:48px;}
+  .link-arrow svg{transition:transform .2s var(--ease);}
+  .link-arrow:hover svg{transform:translateX(4px);}
+
+  .js .reveal{opacity:0; transform:translateY(16px); transition:opacity .6s var(--ease), transform .6s var(--ease);}
+  .js .reveal.visible{opacity:1; transform:none;}
   @media (prefers-reduced-motion: reduce){
-    .reveal, .hero-fade, .hero-image-reveal, .stagger-group > *{animation:none !important; opacity:1 !important; transform:none !important; transition:none !important;}
     html{scroll-behavior:auto;}
+    .js .reveal{opacity:1; transform:none; transition:none;}
+    *{transition-duration:0.01ms !important; animation-duration:0.01ms !important;}
   }
 
-  .demo-banner{background:var(--ink); color:#fff; font-size:13px; text-align:center; padding:9px 16px; line-height:1.4;}
+  .demo-banner{background:var(--ink); color:#fff; font-size:0.8rem; text-align:center; padding:8px 16px; line-height:1.4;}
   .demo-banner a{color:#D9B97A; text-decoration:underline;}
 
-  .nav-wrap{position:sticky; top:0; z-index:100; background:rgba(255,255,255,0.92); backdrop-filter:blur(10px); border-bottom:1px solid var(--line); transition:box-shadow .3s ease;}
-  .nav-wrap.scrolled{box-shadow:0 4px 20px rgba(0,0,0,0.06);}
-  .nav{display:flex; align-items:center; justify-content:space-between; padding:18px 24px;}
-  .brand{display:flex; align-items:center; gap:10px; font-family:var(--font-head); font-weight:700; font-size:20px;}
-  .brand svg{width:34px; height:34px; flex:none;}
-  .nav-links{display:flex; gap:34px; align-items:center;}
-  .nav-links a{font-weight:600; font-size:14.5px;}
-  .nav-links a:hover{color:var(--accent);}
-  .menu-toggle{display:none; background:none; border:none; font-size:26px; cursor:pointer; color:var(--ink);}
-  .mobile-menu{display:none; flex-direction:column; gap:18px; padding:10px 24px 26px;}
+  .nav-wrap{position:sticky; top:0; z-index:100; background:rgba(255,255,255,0.94); backdrop-filter:blur(8px); transition:box-shadow .3s var(--ease);}
+  .nav-wrap.scrolled{box-shadow:var(--shadow-sm);}
+  .nav{height:72px; display:flex; align-items:center; justify-content:space-between; gap:var(--s-4);}
+  .brand{display:flex; align-items:center; gap:10px; font-family:var(--font-head); font-weight:var(--head-weight); font-size:1.2rem; color:var(--ink);}
+  .brand svg{width:36px; height:36px; flex:none;}
+  .nav-links{display:flex; gap:32px; align-items:center;}
+  .nav-links a:not(.btn){font-weight:500; font-size:0.92rem; color:var(--ink); opacity:0.85;}
+  .nav-links a:not(.btn):hover{color:var(--accent-strong); opacity:1;}
+  .nav-links .btn{min-height:44px; padding:10px 20px;}
+  .menu-toggle{display:none; width:48px; height:48px; border-radius:var(--r-md); background:var(--accent-soft); border:none; cursor:pointer; color:var(--ink); align-items:center; justify-content:center;}
+  .mobile-menu{display:none; flex-direction:column; gap:4px; padding:8px 24px 20px; background:#fff; box-shadow:var(--shadow-md);}
+  .mobile-menu a{padding:12px 4px; font-weight:600; color:var(--ink); border-bottom:1px solid var(--line);}
+  .mobile-menu a.btn{border:none; margin-top:12px; color:#fff;}
   .mobile-menu.open{display:flex;}
-  @media (max-width:900px){ .nav-links{display:none;} .menu-toggle{display:block;} }
+  @media (max-width:900px){ .nav-links{display:none;} .menu-toggle{display:inline-flex;} }
 
-  .hero{padding:80px 0 60px; background:linear-gradient(180deg, var(--tint) 0%, var(--white) 100%);}
-  .hero .container{display:flex; gap:56px; align-items:center; flex-wrap:wrap;}
-  .hero-text{flex:1 1 min(460px,100%);}
-  .hero-text h1{font-size:clamp(36px,5.4vw,58px); margin-bottom:20px;}
-  .hero-text p{color:var(--ink-soft); font-size:18px; max-width:480px; margin-bottom:30px;}
-  .hero-ctas{display:flex; gap:14px; flex-wrap:wrap; margin-bottom:26px;}
-  .hero-checks{display:flex; flex-direction:column; gap:10px; font-size:14.5px; color:var(--ink-soft); font-weight:600;}
-  .hero-checks span{color:var(--accent); margin-right:6px;}
-  .hero-image{flex:1 1 min(420px,100%); min-height:380px; border-radius:8px; background:var(--white); border:1px solid var(--line); display:flex; align-items:center; justify-content:center;}
-  .hero-image svg{width:62%; max-width:300px; height:auto;}
+  .hero{position:relative; overflow-x:clip; padding-block:var(--s-7) 0; background:linear-gradient(90deg, #fff 0%, #fff 58%, var(--accent-soft) 58%, var(--accent-soft) 100%);}
+  .hero-grid{display:grid; grid-template-columns:1fr 1fr; gap:var(--s-6); align-items:center; padding-bottom:120px;}
+  .hero-text h1{font-size:var(--fs-display); line-height:1.12; margin-bottom:var(--s-3);}
+  .hero-text > p{font-size:1.06rem; max-width:470px; margin-bottom:var(--s-5);}
+  .hero-ctas{display:flex; gap:var(--s-4); flex-wrap:wrap; align-items:center;}
+  .hero-visual{position:relative; isolation:isolate;}
+  .hero-visual::before{content:''; position:absolute; z-index:-1;}
+  .hero-photo{overflow:hidden; box-shadow:var(--shadow-lg); aspect-ratio:4/3;}
+  .hero-photo img{width:100%; height:100%; object-fit:cover;}
+  .float-card{position:absolute; background:#fff; border-radius:var(--r-md); box-shadow:var(--shadow-lg); padding:14px 18px; display:flex; gap:12px; align-items:center; max-width:280px;}
+  .float-card .ico{flex:none; width:40px; height:40px; border-radius:var(--r-md); background:var(--accent-soft); color:var(--accent-strong); display:flex; align-items:center; justify-content:center;}
+  .float-card b{display:block; color:var(--ink); font-size:0.9rem; line-height:1.3;}
+  .float-card span{font-size:0.8rem; color:var(--muted); line-height:1.4;}
+  .hero-visual .float-card{left:-28px; bottom:28px;}
 
-  .trust{background:var(--ink); padding:34px 0;}
-  .trust .container{display:flex; justify-content:space-between; flex-wrap:wrap; gap:24px; text-align:center;}
-  .trust-item{flex:1 1 180px; color:#fff;}
-  .trust-item strong{display:block; font-size:20px; margin-bottom:4px; color:#D9B97A; font-family:var(--font-head);}
-  .trust-item span{font-size:13px; color:rgba(255,255,255,0.72);}
+  /* Variante suave (psicología): forma orgánica y bordes muy redondeados */
+  .v-soft .hero-visual::before{inset:-6% -8% 10% 12%; background:var(--accent-tint); border-radius:58% 42% 46% 54% / 52% 48% 52% 48%;}
+  .v-soft .hero-photo{border-radius:var(--r-xl) var(--r-xl) var(--r-xl) 120px;}
+  /* Variante clásica (jurídico): marco dorado desplazado y esquinas rectas */
+  .v-classic .hero-visual::before{inset:22px -22px -22px 22px; border:2px solid var(--accent); border-radius:var(--r-md);}
+  .v-classic .hero-photo{border-radius:var(--r-md);}
+  .v-classic .eyebrow::before{height:1px; width:32px;}
 
-  .tabs{display:flex; gap:10px; flex-wrap:wrap; justify-content:center; margin-bottom:44px;}
-  .tab-btn{padding:10px 20px; border-radius:6px; border:1.5px solid var(--line); background:var(--white); font-weight:700; font-size:14px; cursor:pointer; color:var(--ink-soft); transition:all .2s ease; font-family:var(--font);}
-  .tab-btn.active{background:var(--accent); color:#fff; border-color:var(--accent);}
-  .serv-grid{display:grid; grid-template-columns:minmax(280px,560px); justify-content:center;}
-  .serv-card{background:var(--tint); border-radius:var(--radius); padding:32px; display:none; flex-direction:column; gap:14px; opacity:0; transition:opacity .35s ease;}
-  .serv-card.active{display:flex;}
-  .serv-card.active.faded-in{opacity:1;}
-  .serv-icon{height:120px; border-radius:10px; background:var(--white); border:1px solid var(--line); display:flex; align-items:center; justify-content:center; font-size:48px;}
-  .serv-card h3{font-size:22px;}
-  .serv-card p{color:var(--ink-soft); font-size:15px;}
-  .serv-card ul{display:flex; flex-direction:column; gap:6px; font-size:14.5px; color:var(--ink-soft);}
-  .serv-card li::before{content:'— '; color:var(--accent);}
+  .service-row{position:relative; margin-top:-80px; z-index:2;}
+  .service-grid{display:grid; grid-template-columns:repeat(4, 1fr); gap:var(--s-4);}
+  .service-card{background:#fff; border-radius:var(--r-lg); box-shadow:var(--shadow-md); padding:var(--s-4); display:flex; flex-direction:column; gap:10px; transition:transform .25s var(--ease), box-shadow .25s var(--ease);}
+  .service-card:hover{transform:translateY(-4px); box-shadow:var(--shadow-lg);}
+  .service-card .ico{width:48px; height:48px; border-radius:var(--r-md); background:var(--accent-soft); color:var(--accent-strong); display:flex; align-items:center; justify-content:center;}
+  .service-card h3{font-size:1.1rem;}
+  .service-card p{font-size:var(--fs-small); line-height:1.6;}
+  .service-card .more{margin-top:auto; font-size:var(--fs-small); font-weight:700; color:var(--accent-strong);}
+  .service-card.active{background:var(--accent-strong); box-shadow:var(--glow);}
+  .service-card.active h3, .service-card.active p, .service-card.active .more{color:#fff;}
+  .service-card.active .ico{background:rgba(255,255,255,0.16); color:#fff;}
 
-  .nosotros{background:var(--tint);}
-  .nosotros .container{display:flex; gap:56px; align-items:center; flex-wrap:wrap;}
-  .nosotros-img{flex:1 1 min(380px,100%); min-height:340px; border-radius:8px; background:var(--white); border:1px solid var(--line); display:flex; align-items:center; justify-content:center;}
-  .nosotros-img svg{width:55%; max-width:240px; height:auto;}
-  .nosotros-text{flex:1 1 min(420px,100%);}
-  .nosotros-text h2{font-size:clamp(28px,4vw,40px); margin-bottom:22px;}
-  .nosotros-list{display:flex; flex-direction:column; gap:16px; margin-top:22px;}
-  .nosotros-list li{display:flex; gap:12px; font-size:15px; color:var(--ink-soft);}
-  .nosotros-list b{color:var(--ink);}
+  .facts{padding-block:var(--s-6); background:var(--accent-soft); margin-top:var(--s-7);}
+  .facts-grid{display:grid; grid-template-columns:repeat(4, 1fr); gap:var(--s-4); text-align:center;}
+  .fact b{display:block; font-family:var(--font-head); font-size:1.9rem; font-weight:var(--head-weight); color:var(--accent-strong); line-height:1.15;}
+  .fact span{font-size:var(--fs-small);}
 
-  .timeline{display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:28px;}
-  .tl-item{background:var(--white); border:1px solid var(--line); border-radius:var(--radius); padding:28px; transition:transform .25s ease, box-shadow .25s ease;}
-  .tl-item:hover{transform:translateY(-4px); box-shadow:0 14px 26px rgba(0,0,0,0.06);}
-  .tl-num{font-size:34px; font-weight:800; color:var(--highlight); margin-bottom:10px; font-family:var(--font-head);}
-  .tl-item h3{font-size:18px; margin-bottom:8px;}
-  .tl-item p{color:var(--ink-soft); font-size:14px;}
+  .split{display:grid; grid-template-columns:1fr 1fr; gap:var(--s-7); align-items:center;}
+  .split.reverse .split-media{order:-1;}
+  .split-media{position:relative;}
+  .media-frame{border-radius:var(--r-xl); overflow:hidden; box-shadow:var(--shadow-md);}
+  .media-frame img{width:100%; height:100%; object-fit:cover;}
+  .split-media .float-card{right:-24px; bottom:-28px;}
+  .tall{aspect-ratio:4/5; max-height:520px; margin-inline:auto;}
+  .wide{aspect-ratio:3/2;}
+  .checklist{display:grid; gap:14px; margin-block:var(--s-4) var(--s-5);}
+  .checklist li{display:flex; gap:12px; align-items:flex-start; color:var(--ink); font-weight:500; line-height:1.5;}
+  .checklist li::before{content:''; flex:none; width:22px; height:22px; margin-top:1px; border-radius:50%; background:var(--accent-strong) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4 8-9'/%3E%3C/svg%3E") center/14px no-repeat;}
+  .checklist li small{display:block; font-weight:400; color:var(--body); font-size:var(--fs-small);}
 
-  .value-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(240px,1fr)); gap:22px;}
-  .value-card{background:var(--tint); border-radius:var(--radius); padding:28px; border-top:3px solid var(--accent);}
-  .value-card .tag{font-size:12px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; color:var(--highlight); margin-bottom:10px; display:block;}
-  .value-card h3{font-size:18px; margin-bottom:10px;}
-  .value-card p{color:var(--ink-soft); font-size:14.5px;}
+  .chips{display:flex; gap:10px; flex-wrap:wrap; margin-bottom:var(--s-5);}
+  .chip-btn{min-height:44px; padding:10px 18px; border-radius:var(--btn-r); border:none; background:var(--surface-2); color:var(--ink); font-family:var(--font); font-weight:600; font-size:0.9rem; cursor:pointer; transition:background .2s, color .2s;}
+  .chip-btn:hover{background:var(--accent-tint);}
+  .chip-btn.active{background:var(--accent-strong); color:#fff;}
+  .treat-panel{display:none;}
+  .treat-panel.active{display:block; animation:fade .35s var(--ease);}
+  .treat-panel h3{font-size:1.5rem; margin-bottom:var(--s-2);}
+  @keyframes fade{from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:none;}}
 
-  .booking-section{background:var(--tint);}
-  .booking-wrap{background:var(--white); border-radius:8px; padding:44px; max-width:720px; margin:0 auto; border:1px solid var(--line);}
-  @media (max-width:600px){ .booking-wrap{padding:28px 20px;} }
-  .steps-indicator{display:flex; justify-content:space-between; margin-bottom:36px; gap:6px;}
-  .step-dot{flex:1; text-align:center; font-size:12px; font-weight:700; color:var(--ink-soft); position:relative; padding-top:22px;}
-  .step-dot::before{content:''; position:absolute; top:0; left:50%; transform:translateX(-50%); width:14px; height:14px; border-radius:50%; background:var(--white); border:2px solid var(--line);}
-  .step-dot.active::before{background:var(--accent); border-color:var(--accent);}
-  .step-dot.done::before{background:var(--accent-dark); border-color:var(--accent-dark);}
-  @media (max-width:520px){ .step-dot{font-size:0;} }
-  .booking-step{display:none; flex-direction:column; gap:18px; opacity:0; transform:translateX(16px); transition:opacity .35s ease, transform .35s ease;}
-  .booking-step.active{display:flex;}
-  .booking-step.active.shown{opacity:1; transform:translateX(0);}
-  .opt-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:12px;}
-  .opt{padding:16px; border-radius:10px; border:1.5px solid var(--line); background:var(--white); font-weight:600; font-size:14px; text-align:center; cursor:pointer; transition:all .2s ease; font-family:var(--font); color:var(--ink);}
-  .opt:hover{border-color:var(--accent);}
-  .opt.selected{border-color:var(--accent); background:var(--accent); color:#fff;}
-  label{display:block; font-size:14px; font-weight:700; margin-bottom:6px;}
-  input, select{width:100%; padding:13px 14px; border:1.5px solid var(--line); border-radius:10px; font-family:var(--font); font-size:15px; background:var(--white); color:var(--ink);}
-  input:focus, select:focus{border-color:var(--accent); outline:none;}
-  .field-error{color:#C4453A; font-size:13px; display:none;}
+  .steps{display:grid; grid-template-columns:repeat(4, 1fr); gap:var(--s-4); counter-reset:paso;}
+  .step{counter-increment:paso; position:relative; padding-top:var(--s-6);}
+  .step::before{content:counter(paso, decimal-leading-zero); position:absolute; top:0; left:0; font-family:var(--font-head); font-size:1.9rem; font-weight:var(--head-weight); color:var(--accent);}
+  .step::after{content:''; position:absolute; top:22px; left:64px; right:12px; height:2px; background:repeating-linear-gradient(90deg, var(--accent-tint) 0 8px, transparent 8px 14px);}
+  .step:last-child::after{display:none;}
+  .step h3{font-size:1.1rem; margin-bottom:6px;}
+  .step p{font-size:var(--fs-small);}
+
+  .values{display:grid; grid-template-columns:repeat(4, 1fr); gap:var(--s-4);}
+  .value{background:#fff; border-radius:var(--r-lg); box-shadow:var(--shadow-md); padding:var(--s-4); border-top:3px solid var(--accent);}
+  .value .tag{display:block; font-size:0.75rem; font-weight:800; letter-spacing:0.06em; text-transform:uppercase; color:var(--eyebrow); margin-bottom:10px;}
+  .value h3{font-size:1.1rem; margin-bottom:8px;}
+  .value p{font-size:var(--fs-small);}
+
+  .booking{display:grid; grid-template-columns:0.9fr 1.1fr; gap:var(--s-6); align-items:start;}
+  .booking-aside .checklist{margin-bottom:0;}
+  .booking-card{background:#fff; border-radius:var(--r-lg); box-shadow:var(--shadow-lg); padding:var(--s-5); scroll-margin-top:90px;}
+  @media (max-width:600px){ .booking-card{padding:var(--s-4) 18px;} }
+  .steps-indicator{display:grid; grid-template-columns:repeat(5, 1fr); gap:6px; margin-bottom:var(--s-5);}
+  .step-dot{font-size:0.72rem; font-weight:600; color:var(--muted); padding-top:12px; border-top:4px solid var(--line); transition:border-color .3s, color .3s;}
+  .step-dot.active{border-color:var(--accent-strong); color:var(--ink);}
+  .step-dot.done{border-color:var(--accent);}
+  .booking-step{display:none; flex-direction:column; gap:14px;}
+  .booking-step.active{display:flex; animation:fade .3s var(--ease);}
+  .step-title{font-size:1.15rem; color:var(--ink); font-weight:700;}
+  .opt-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(140px, 1fr)); gap:10px;}
+  .opt, .time-chip{min-height:48px; padding:12px; border-radius:var(--r-md); border:1.5px solid var(--line); background:#fff; font-family:var(--font); font-weight:600; font-size:0.92rem; color:var(--ink); text-align:center; cursor:pointer; transition:border-color .2s, background .2s, color .2s;}
+  .opt:hover, .time-chip:hover{border-color:var(--accent-strong);}
+  .opt.selected, .time-chip.selected{background:var(--accent-strong); border-color:var(--accent-strong); color:#fff;}
+  .time-grid{display:grid; grid-template-columns:repeat(auto-fill, minmax(84px, 1fr)); gap:8px;}
+  .time-empty{grid-column:1 / -1; font-size:var(--fs-small); background:var(--surface-2); border-radius:var(--r-md); padding:14px;}
+  label{display:block; font-size:var(--fs-small); font-weight:700; color:var(--ink); margin-bottom:-6px;}
+  input[type=text], input[type=tel], input[type=email], input[type=date]{width:100%; min-height:48px; padding:12px 14px; border:1.5px solid var(--line); border-radius:var(--r-md); font-family:var(--font); font-size:1rem; background:#fff; color:var(--ink);}
+  input:focus{border-color:var(--accent-strong); outline:none; box-shadow:0 0 0 4px var(--accent-soft);}
+  .field-error{color:var(--danger); font-size:0.85rem; display:none; margin-top:-6px;}
   .field-error.show{display:block;}
-  .booking-nav{display:flex; justify-content:space-between; gap:12px; margin-top:8px;}
-  .summary-box{background:var(--tint); border-radius:10px; padding:18px; font-size:14.5px; display:flex; flex-direction:column; gap:6px;}
-  .summary-box b{color:var(--accent-dark);}
-  .privacy-note{font-size:12.5px; color:var(--ink-soft); line-height:1.5;}
-  .form-status{margin-top:16px; padding:16px; border-radius:10px; font-size:14.5px; display:none; background:var(--tint); color:var(--accent-dark); border:1px solid var(--accent);}
+  .booking-nav{display:flex; justify-content:space-between; gap:12px; margin-top:6px;}
+  .summary-box{background:var(--accent-soft); border-radius:var(--r-md); padding:var(--s-3) var(--s-4); display:grid; gap:6px; font-size:0.95rem; color:var(--ink);}
+  .summary-box b{color:var(--accent-strong);}
+  .privacy-note{font-size:0.82rem; line-height:1.55; background:var(--surface-2); border-radius:var(--r-md); padding:12px 14px;}
+  .form-status{margin-top:var(--s-3); padding:var(--s-3); border-radius:var(--r-md); font-size:0.95rem; display:none; background:var(--accent-soft); color:var(--accent-strong); border:1px solid var(--accent);}
   .form-status.show{display:block;}
 
-  .location-grid{display:flex; gap:40px; flex-wrap:wrap; align-items:flex-start;}
-  .location-info{flex:1 1 min(280px,100%); display:flex; flex-direction:column; gap:14px;}
-  .location-info li{display:flex; gap:10px; font-size:14.5px; color:var(--ink-soft);}
-  .location-map{flex:2 1 min(420px,100%);}
-  .location-map iframe{width:100%; height:360px; border:0; border-radius:var(--radius);}
+  .location{display:grid; grid-template-columns:0.85fr 1.15fr; gap:var(--s-4); align-items:stretch;}
+  .location-panel{background:var(--accent-strong); color:#fff; border-radius:var(--r-lg) 72px var(--r-lg) var(--r-lg); padding:var(--s-6) var(--s-5);}
+  .v-classic .location-panel{border-radius:var(--r-lg);}
+  .location-panel h2{color:#fff; font-size:var(--fs-h2); margin-bottom:var(--s-4);}
+  .location-panel .eyebrow{color:#fff; opacity:0.85;}
+  .location-panel .eyebrow::before{background:#fff;}
+  .loc-list{display:grid; gap:var(--s-3);}
+  .loc-list li{display:flex; gap:12px; color:rgba(255,255,255,0.92); line-height:1.5;}
+  .loc-list svg{flex:none; margin-top:2px;}
+  .map{border-radius:var(--r-lg); overflow:hidden; box-shadow:var(--shadow-md); min-height:360px;}
+  .map iframe{width:100%; height:100%; min-height:360px; border:0; display:block; filter:saturate(0.6);}
 
-  .faq-item{border-bottom:1px solid var(--line);}
-  .faq-q{width:100%; text-align:left; background:none; border:none; padding:20px 0; font-weight:700; font-size:15.5px; cursor:pointer; display:flex; justify-content:space-between; align-items:center; color:var(--ink); font-family:var(--font);}
-  .faq-a{max-height:0; overflow:hidden; opacity:0; transition:max-height .3s ease, opacity .3s ease; color:var(--ink-soft); font-size:14.5px;}
-  .faq-a p{padding-bottom:20px;}
-  .faq-item.open .faq-a{max-height:240px; opacity:1;}
-  .faq-q .icon{transition:transform .3s ease; color:var(--accent); font-size:20px;}
-  .faq-item.open .faq-q .icon{transform:rotate(180deg);}
+  .faq{max-width:780px; margin:0 auto; display:grid; gap:12px;}
+  .faq-item{background:#fff; border-radius:var(--r-md); box-shadow:var(--shadow-sm);}
+  .faq-q{width:100%; min-height:56px; text-align:left; background:none; border:none; padding:16px 20px; font-family:var(--font); font-weight:700; font-size:1rem; color:var(--ink); cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:16px;}
+  .faq-q .icon{flex:none; width:28px; height:28px; border-radius:50%; background:var(--accent-soft); color:var(--accent-strong); display:flex; align-items:center; justify-content:center; font-weight:700; transition:transform .3s var(--ease);}
+  .faq-item.open .faq-q .icon{transform:rotate(45deg);}
+  .faq-a{display:none; padding:0 20px 18px; font-size:0.95rem;}
+  .faq-item.open .faq-a{display:block;}
 
-  .cta-final{background:linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%); color:#fff; text-align:center; padding:90px 0;}
-  .cta-final h2{color:#fff; margin-bottom:16px; font-size:clamp(28px,4vw,42px);}
-  .cta-final p{color:rgba(255,255,255,0.9); margin-bottom:30px; font-size:17px;}
-  .cta-final .btns{display:flex; gap:14px; justify-content:center; flex-wrap:wrap;}
-  .cta-final .btn-outline{border-color:#fff; color:#fff;}
-  .cta-final .btn-outline:hover{background:#fff; color:var(--accent-dark);}
-  .cta-final .btn-white{background:#fff; color:var(--accent-dark);}
+  .notice{background:var(--accent-tint); padding:18px 0; font-size:0.9rem; color:var(--ink); text-align:center;}
+  .cta-band{background:var(--accent-tint); border-radius:var(--r-xl); padding:var(--s-6); display:flex; justify-content:space-between; align-items:center; gap:var(--s-4); flex-wrap:wrap;}
+  .cta-band h2{font-size:var(--fs-h2); max-width:560px;}
+  .cta-band p{color:var(--ink); margin-top:6px;}
 
-  .notice{background:var(--tint); border-top:1px solid var(--line); padding:22px 0; font-size:13.5px; color:var(--ink-soft); text-align:center;}
-  .notice b{color:var(--ink);}
-
-  footer{background:var(--ink); color:rgba(255,255,255,0.7); padding:56px 0 24px; font-size:14px;}
-  .footer-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(200px,1fr)); gap:32px; margin-bottom:36px;}
-  .footer-grid h4{color:#fff; font-size:16px; margin-bottom:14px;}
-  .footer-grid a{display:block; margin-bottom:8px; color:rgba(255,255,255,0.65);}
-  .footer-grid a:hover{color:#fff;}
-  .footer-bottom{border-top:1px solid rgba(255,255,255,0.12); padding-top:20px; text-align:center; font-size:13px;}
-  .footer-bottom a{text-decoration:underline;}
+  footer{background:var(--surface-2); padding-block:var(--s-7) var(--s-4); font-size:var(--fs-small);}
+  .footer-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:var(--s-5); margin-bottom:var(--s-6);}
+  .footer-grid h4{font-family:var(--font); font-size:0.9rem; font-weight:700; margin-bottom:var(--s-3);}
+  .footer-grid a{display:block; padding-block:10px; color:var(--body);}
+  .footer-grid a:hover{color:var(--accent-strong);}
+  .footer-grid a.brand{display:flex; padding-block:0; margin-bottom:12px; color:var(--ink);}
+  .footer-bottom{border-top:1px solid var(--line); padding-top:var(--s-4); display:flex; justify-content:space-between; gap:var(--s-3); flex-wrap:wrap; color:var(--muted);}
+  .footer-bottom a{color:var(--accent-strong); font-weight:600;}
 
   .sticky-cta{display:none;}
   @media (max-width:760px){
-    .sticky-cta{display:block; position:fixed; bottom:0; left:0; right:0; z-index:90; background:#fff; padding:12px 16px; box-shadow:0 -6px 20px rgba(0,0,0,0.1);}
-    .sticky-cta a{display:flex; width:100%;}
-    body{padding-bottom:70px;}
+    .sticky-cta{display:block; position:fixed; left:0; right:0; bottom:0; z-index:90; background:rgba(255,255,255,0.96); padding:10px 16px calc(10px + env(safe-area-inset-bottom, 0px)); box-shadow:0 -6px 20px rgba(27,37,48,0.08); transition:transform .3s var(--ease);}
+    .sticky-cta.hide{transform:translateY(110%);}
+    .sticky-cta .btn{width:100%;}
+    body{padding-bottom:76px;}
+  }
+
+  @media (max-width:1023px){
+    .hero{background:#fff;}
+    .hero-grid, .split, .booking, .location{grid-template-columns:1fr;}
+    .hero-grid{padding-bottom:100px;}
+    .hero-visual{max-width:620px;}
+    .service-grid, .facts-grid, .values{grid-template-columns:repeat(2, 1fr);}
+    .steps{grid-template-columns:repeat(2, 1fr); row-gap:var(--s-5);}
+    .step::after{display:none;}
+    .footer-grid{grid-template-columns:1fr 1fr;}
+    .split.reverse .split-media{order:0;}
+  }
+  @media (max-width:639px){
+    .hero{padding-top:var(--s-5);}
+    .hero-visual .float-card{left:12px; bottom:-20px;}
+    .split-media .float-card{right:12px; bottom:-20px;}
+    .v-classic .hero-visual::before{inset:14px -10px -14px 14px;}
+    .service-grid{grid-template-columns:1fr 1fr; gap:12px;}
+    .service-card{padding:var(--s-3);}
+    .service-card p{display:none;}
+    .fact b{font-size:1.5rem;}
+    .steps, .values{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr;}
+    .cta-band{padding:var(--s-5) var(--s-4);}
+    .location-panel{padding:var(--s-5) var(--s-4);}
+    .step-dot{font-size:0.66rem;}
   }
 </style>
-<!-- Vercel Web Analytics: visitas anónimas, sin cookies -->
 <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
 <script defer src="/_vercel/insights/script.js"></script>
 </head>
-<body>
+<body class="v-classic">
+<a class="skip" href="#contenido">Saltar al contenido</a>
 
-<div class="demo-banner">⚖️ Proyecto demo de <strong>NeoAtlantis</strong>: el estudio y los profesionales son de ejemplo. ¿Querés una web así? <a href="index.html">Conocé NeoAtlantis</a></div>
+<div class="demo-banner">⚖️ Proyecto demo de <strong>NeoAtlantis</strong>: el negocio y los profesionales son de ejemplo. ¿Querés una web así? <a href="/">Conocé NeoAtlantis</a></div>
 
-<div class="nav-wrap">
+<header class="nav-wrap">
   <div class="nav container">
-    <a href="#inicio" class="brand"><svg viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="6" fill="#1E3A5F"/><path d="M20 9v22M13 31h14M11 14h18M11 14l-4 8h8zM29 14l-4 8h8z" stroke="#D9B97A" stroke-width="1.6" fill="none" stroke-linejoin="round"/></svg>Ferrari &amp; Asociados</a>
-    <nav class="nav-links">
+    <a href="#inicio" class="brand" aria-label="Ferrari &amp; Asociados, inicio"><svg viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="6" fill="#1E3A5F"/><path d="M20 9v22M13 31h14M11 14h18M11 14l-4 8h8zM29 14l-4 8h8z" stroke="#D9B97A" stroke-width="1.6" fill="none" stroke-linejoin="round"/></svg>Ferrari &amp; Asociados</a>
+    <nav class="nav-links" aria-label="Principal">
       <a href="#servicios">Áreas de práctica</a>
       <a href="#nosotros">El estudio</a>
       <a href="#preguntas">Preguntas</a>
-      <a href="#reserva" class="btn btn-primary" style="padding:10px 22px;">Agendar consulta</a>
+      <a href="#ubicacion">Ubicación</a>
+      <a href="#reserva" class="btn btn-primary">Agendar consulta</a>
     </nav>
-    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h10"/></svg>
+    </button>
   </div>
   <div class="mobile-menu" id="mobileMenu">
     <a href="#servicios">Áreas de práctica</a>
     <a href="#nosotros">El estudio</a>
     <a href="#preguntas">Preguntas</a>
+    <a href="#ubicacion">Ubicación</a>
     <a href="#reserva" class="btn btn-primary">Agendar consulta</a>
   </div>
-</div>
+</header>
+
+<main id="contenido">
 
 <section class="hero" id="inicio">
-  <div class="container">
+  <div class="container hero-grid">
     <div class="hero-text">
-      <span class="eyebrow hero-fade">Estudio jurídico · Rosario</span>
-      <h1 class="hero-fade">Asesoramiento legal claro, sin vueltas ni tecnicismos.</h1>
-      <p class="hero-fade d2">Te explicamos tu situación en lenguaje simple, con opciones concretas y honorarios claros desde la primera reunión.</p>
-      <div class="hero-ctas hero-fade d3">
-        <a href="#reserva" class="btn btn-primary">Agendar una consulta</a>
-        <a href="#servicios" class="btn btn-outline">Ver áreas de práctica</a>
+      <span class="eyebrow">Estudio jurídico · Rosario</span>
+      <h1>Asesoramiento legal claro, sin vueltas ni tecnicismos.</h1>
+      <p>Te explicamos tu situación en lenguaje simple, con opciones concretas y honorarios por escrito desde la primera reunión.</p>
+      <div class="hero-ctas">
+        <a href="#reserva" class="btn btn-primary">Agendar consulta</a>
+        <a href="#servicios" class="link-arrow">Ver áreas de práctica <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
-      <div class="hero-checks hero-fade d3"><div><span>✓</span>Consultas presenciales y por videollamada</div><div><span>✓</span>Honorarios claros desde el inicio</div><div><span>✓</span>Seguimiento de tu caso</div></div>
     </div>
-    <div class="hero-image hero-image-reveal"><svg viewBox="0 0 200 200" aria-hidden="true"><rect x="20" y="20" width="160" height="160" rx="8" fill="#F6F3EC"/><path d="M100 50v100M70 150h60M55 72h90M55 72l-18 36h36zM145 72l-18 36h36z" stroke="#1E3A5F" stroke-width="3" fill="none" stroke-linejoin="round"/><circle cx="100" cy="50" r="6" fill="#8A6A33"/></svg></div>
+    <div class="hero-visual">
+      <div class="hero-photo"><img src="assets/img/jur-biblioteca.webp" width="1100" height="733" alt="Biblioteca de madera con libros jurídicos antiguos encuadernados" fetchpriority="high"></div>
+      <div class="float-card"><span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M8 3v4M16 3v4M3 10h18M9 15l2 2 4-4"/></svg></span><div><b>Respuesta en 24 h hábiles</b><span>Consultas presenciales o por videollamada</span></div></div>
+    </div>
   </div>
 </section>
 
-<section class="trust reveal">
-  <div class="container"><div class="trust-item"><strong>24 hs</strong><span>respuesta en días hábiles</span></div><div class="trust-item"><strong>Por escrito</strong><span>presupuesto de honorarios</span></div><div class="trust-item"><strong>Online</strong><span>consultas por videollamada</span></div><div class="trust-item"><strong>Confidencial</strong><span>secreto profesional</span></div></div>
-</section>
+<div class="service-row"><div class="container service-grid"><a href="#servicios" class="service-card reveal active" data-goto="civil"><span class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5M10 13h6M10 17h6"/></svg></span><h3>Civil y comercial</h3><p>Contratos, reclamos y cobros.</p><span class="more">Conocer más →</span></a><a href="#servicios" class="service-card reveal" data-goto="laboral"><span class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5h6v2M3 13h18"/></svg></span><h3>Laboral</h3><p>Despidos, accidentes y reclamos.</p><span class="more">Conocer más →</span></a><a href="#servicios" class="service-card reveal" data-goto="familia"><span class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="7" r="2.5"/><circle cx="16" cy="7" r="2.5"/><circle cx="12" cy="13" r="2"/><path d="M4 20c0-3 1.8-5 4-5M20 20c0-3-1.8-5-4-5M9 20c0-2 1.3-3 3-3s3 1 3 3"/></svg></span><h3>Familia</h3><p>Divorcios, alimentos y comunicación.</p><span class="more">Conocer más →</span></a><a href="#servicios" class="service-card reveal" data-goto="sucesiones"><span class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4h11a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2z"/><path d="M6 4a2 2 0 0 0-2 2v2h2M10 9h6M10 13h6"/></svg></span><h3>Sucesiones</h3><p>Trámites sucesorios de principio a fin.</p><span class="more">Conocer más →</span></a></div></div>
+
+<section class="facts" aria-label="Datos del servicio"><div class="container facts-grid"><div class="fact reveal"><b>24 h hábiles</b><span>para responderte</span></div><div class="fact reveal"><b>Por escrito</b><span>presupuesto de honorarios</span></div><div class="fact reveal"><b>Online</b><span>consultas por videollamada</span></div><div class="fact reveal"><b>Confidencial</b><span>secreto profesional</span></div></div></section>
 
 <section class="section" id="servicios">
-  <div class="container">
-    <div class="section-head reveal">
+  <div class="container split">
+    <div class="reveal">
       <span class="eyebrow">Áreas de práctica</span>
-      <h2>En qué podemos ayudarte</h2>
-      <p>Elegí el área de tu consulta. Si no sabés cuál es, no hay problema: lo vemos en la primera reunión.</p>
+      <h2 class="h2" style="margin-bottom:var(--s-4);">En qué podemos ayudarte</h2>
+      <div class="chips" role="tablist" aria-label="Áreas de práctica"><button class="chip-btn tab-btn active" role="tab" aria-selected="true" data-tab="civil">Civil y comercial</button><button class="chip-btn tab-btn" role="tab" aria-selected="false" data-tab="laboral">Laboral</button><button class="chip-btn tab-btn" role="tab" aria-selected="false" data-tab="familia">Familia</button><button class="chip-btn tab-btn" role="tab" aria-selected="false" data-tab="inmobiliario">Inmobiliario</button><button class="chip-btn tab-btn" role="tab" aria-selected="false" data-tab="sucesiones">Sucesiones</button></div>
+      <div class="treat-panel active" data-panel="civil" role="tabpanel"><h3>Civil y comercial</h3><p>Contratos, reclamos, cobros y conflictos entre particulares o empresas.</p><ul class="checklist"><li>Redacción y revisión de contratos</li><li>Reclamos por daños</li><li>Cobro de deudas</li></ul></div><div class="treat-panel" data-panel="laboral" role="tabpanel"><h3>Laboral</h3><p>Asesoramiento a trabajadores y empleadores en cada etapa de la relación laboral.</p><ul class="checklist"><li>Despidos e indemnizaciones</li><li>Accidentes de trabajo</li><li>Registración y reclamos</li></ul></div><div class="treat-panel" data-panel="familia" role="tabpanel"><h3>Familia</h3><p>Acompañamiento cuidadoso en temas que afectan a toda la familia.</p><ul class="checklist"><li>Divorcios</li><li>Cuota alimentaria</li><li>Régimen de comunicación</li></ul></div><div class="treat-panel" data-panel="inmobiliario" role="tabpanel"><h3>Inmobiliario</h3><p>Seguridad jurídica al comprar, vender o alquilar una propiedad.</p><ul class="checklist"><li>Boletos y escrituras</li><li>Contratos de alquiler</li><li>Desalojos</li></ul></div><div class="treat-panel" data-panel="sucesiones" role="tabpanel"><h3>Sucesiones</h3><p>Trámites sucesorios de principio a fin, con información clara en cada paso.</p><ul class="checklist"><li>Declaratoria de herederos</li><li>Inventario y partición</li><li>Testamentos</li></ul></div>
+      <a href="#reserva" class="btn btn-primary">Agendar consulta</a>
     </div>
-    <div class="tabs reveal"><button class="tab-btn active" data-tab="civil">Civil y comercial</button><button class="tab-btn" data-tab="laboral">Laboral</button><button class="tab-btn" data-tab="familia">Familia</button><button class="tab-btn" data-tab="inmobiliario">Inmobiliario</button><button class="tab-btn" data-tab="sucesiones">Sucesiones</button></div>
-    <div class="serv-grid reveal"><div class="serv-card active faded-in" data-panel="civil"><div class="serv-icon">📑</div><h3>Civil y comercial</h3><p>Contratos, reclamos, cobros y conflictos entre particulares o empresas.</p><ul><li>Redacción y revisión de contratos</li><li>Reclamos por daños</li><li>Cobro de deudas</li></ul><a href="#reserva" class="btn btn-ghost" style="align-self:flex-start;">Agendar consulta</a></div><div class="serv-card" data-panel="laboral"><div class="serv-icon">💼</div><h3>Laboral</h3><p>Asesoramiento a trabajadores y empleadores en cada etapa de la relación laboral.</p><ul><li>Despidos e indemnizaciones</li><li>Accidentes de trabajo</li><li>Registración y reclamos</li></ul><a href="#reserva" class="btn btn-ghost" style="align-self:flex-start;">Agendar consulta</a></div><div class="serv-card" data-panel="familia"><div class="serv-icon">🏡</div><h3>Familia</h3><p>Acompañamiento cuidadoso en temas que afectan a toda la familia.</p><ul><li>Divorcios</li><li>Cuota alimentaria</li><li>Régimen de comunicación</li></ul><a href="#reserva" class="btn btn-ghost" style="align-self:flex-start;">Agendar consulta</a></div><div class="serv-card" data-panel="inmobiliario"><div class="serv-icon">🏢</div><h3>Inmobiliario</h3><p>Seguridad jurídica al comprar, vender o alquilar una propiedad.</p><ul><li>Boletos y escrituras</li><li>Contratos de alquiler</li><li>Desalojos</li></ul><a href="#reserva" class="btn btn-ghost" style="align-self:flex-start;">Agendar consulta</a></div><div class="serv-card" data-panel="sucesiones"><div class="serv-icon">📜</div><h3>Sucesiones</h3><p>Trámites sucesorios de principio a fin, con información clara en cada paso.</p><ul><li>Declaratoria de herederos</li><li>Inventario y partición</li><li>Testamentos</li></ul><a href="#reserva" class="btn btn-ghost" style="align-self:flex-start;">Agendar consulta</a></div></div>
+    <div class="split-media reveal">
+      <div class="media-frame tall"><img src="assets/img/jur-justicia.webp" width="1000" height="667" loading="lazy" alt="Estatua de la justicia junto a un libro abierto y un martillo de madera"></div>
+    </div>
   </div>
 </section>
 
-<section class="section nosotros" id="nosotros">
-  <div class="container">
-    <div class="nosotros-img reveal"><svg viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="6" fill="#1E3A5F"/><path d="M20 9v22M13 31h14M11 14h18M11 14l-4 8h8zM29 14l-4 8h8z" stroke="#D9B97A" stroke-width="1.6" fill="none" stroke-linejoin="round"/></svg></div>
-    <div class="nosotros-text reveal">
+<section class="section tint" id="nosotros">
+  <div class="container split reverse">
+    <div class="split-media reveal">
+      <div class="media-frame wide"><img src="assets/img/jur-sala.webp" width="800" height="601" loading="lazy" alt="Sala de reuniones con una mesa larga de madera y sillas azules"></div>
+      <div class="float-card"><span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg></span><div><b>Dr. Tomás Ferrari</b><span>Abogado · profesional ficticio (demo)</span></div></div>
+    </div>
+    <div class="reveal">
       <span class="eyebrow">El estudio</span>
-      <h2>Cercanía, sin perder rigor profesional.</h2>
-      <p style="color:var(--ink-soft); font-size:15px;">Dr. Tomás Ferrari (abogado ficticio de ejemplo) — Abogado, matrícula 0000. Acá va la presentación real del estudio: trayectoria, equipo y forma de trabajo.</p>
-      <ul class="nosotros-list stagger-group"><li>⚖️ <div><b>Trayectoria</b><br>Experiencia en tribunales de Rosario y la provincia.</div></li><li>🗣️ <div><b>Lenguaje claro</b><br>Te explicamos cada paso sin tecnicismos.</div></li><li>📋 <div><b>Seguimiento</b><br>Te informamos los avances de tu expediente.</div></li><li>🔒 <div><b>Secreto profesional</b><br>Tu consulta es estrictamente confidencial.</div></li></ul>
+      <h2 class="h2">Cercanía, sin perder rigor profesional</h2>
+      <p class="lead">Acá va la presentación real del estudio: trayectoria, equipo y forma de trabajo.</p>
+      <ul class="checklist"><li><span>Trayectoria<small>Experiencia en tribunales de Rosario y la provincia.</small></span></li><li><span>Lenguaje claro<small>Te explicamos cada paso sin tecnicismos.</small></span></li><li><span>Seguimiento<small>Te informamos los avances de tu expediente.</small></span></li><li><span>Secreto profesional<small>Tu consulta es estrictamente confidencial.</small></span></li></ul>
     </div>
   </div>
 </section>
 
 <section class="section">
   <div class="container">
-    <div class="section-head reveal">
-      <span class="eyebrow">Cómo funciona</span>
-      <h2>Cómo trabajamos tu caso</h2>
-    </div>
-    <div class="timeline reveal stagger-group"><div class="tl-item"><div class="tl-num">01</div><h3>Agendás tu consulta</h3><p>Elegís área, día y horario online.</p></div><div class="tl-item"><div class="tl-num">02</div><h3>Escuchamos tu caso</h3><p>En la reunión nos contás la situación y revisamos la documentación.</p></div><div class="tl-item"><div class="tl-num">03</div><h3>Te explicamos opciones</h3><p>Salís con un panorama claro, los pasos a seguir y los honorarios por escrito.</p></div><div class="tl-item"><div class="tl-num">04</div><h3>Te acompañamos</h3><p>Llevamos adelante el caso y te mantenemos informado.</p></div></div>
+    <div class="section-head reveal"><span class="eyebrow">Cómo funciona</span><h2>Cómo trabajamos tu caso</h2></div>
+    <div class="steps"><div class="step reveal"><h3>Agendás tu consulta</h3><p>Elegís área, día y horario online.</p></div><div class="step reveal"><h3>Escuchamos tu caso</h3><p>Nos contás la situación y revisamos la documentación.</p></div><div class="step reveal"><h3>Te explicamos opciones</h3><p>Salís con un panorama claro y los honorarios por escrito.</p></div><div class="step reveal"><h3>Te acompañamos</h3><p>Llevamos adelante el caso y te mantenemos informado.</p></div></div>
   </div>
 </section>
 
-<section class="section" style="padding-top:0;">
+<section class="section tint">
   <div class="container">
-    <div class="section-head reveal">
-      <span class="eyebrow">Compromisos</span>
-      <h2>Lo que podés esperar del estudio</h2>
-    </div>
-    <div class="value-grid reveal stagger-group"><div class="value-card"><span class="tag">01</span><h3>Honorarios por escrito</h3><p>Antes de empezar sabés cuánto cuesta y qué incluye. Sin sorpresas.</p></div><div class="value-card"><span class="tag">02</span><h3>Respuestas en 24 hs hábiles</h3><p>Tus consultas no quedan sin contestar.</p></div><div class="value-card"><span class="tag">03</span><h3>Explicaciones simples</h3><p>Entendés tu situación y cada decisión que se toma.</p></div><div class="value-card"><span class="tag">04</span><h3>Confidencialidad</h3><p>Todo lo que nos contás está protegido por el secreto profesional.</p></div></div>
+    <div class="section-head center reveal"><span class="eyebrow">Compromisos</span><h2>Lo que podés esperar del estudio</h2></div>
+    <div class="values"><article class="value reveal"><span class="tag">01</span><h3>Honorarios por escrito</h3><p>Antes de empezar sabés cuánto cuesta y qué incluye. Sin sorpresas.</p></article><article class="value reveal"><span class="tag">02</span><h3>Respuesta en 24 h hábiles</h3><p>Tus consultas no quedan sin contestar.</p></article><article class="value reveal"><span class="tag">03</span><h3>Explicaciones simples</h3><p>Entendés tu situación y cada decisión que se toma.</p></article><article class="value reveal"><span class="tag">04</span><h3>Confidencialidad</h3><p>Todo lo que nos contás está protegido por el secreto profesional.</p></article></div>
   </div>
 </section>
 
-<section class="section booking-section" id="reserva">
-  <div class="container">
-    <div class="section-head reveal">
+<section class="section" id="reserva">
+  <div class="container booking">
+    <div class="booking-aside reveal">
       <span class="eyebrow">Consulta</span>
-      <h2>Agendá tu consulta</h2>
-      <p>Elegí el área, el día y el horario. La consulta puede ser presencial o por videollamada.</p>
+      <h2 class="h2">Agendá tu consulta</h2>
+      <p class="lead">Elegí el área, el día, el horario y si preferís reunirte en el estudio o por videollamada.</p>
+      <ul class="checklist"><li>Presencial o por videollamada</li><li>Honorarios por escrito</li><li>Aviso por email cuando se confirma</li></ul>
     </div>
-    <div class="booking-wrap reveal">
-      <div class="steps-indicator">
+    <div class="booking-card">
+      <div class="steps-indicator" aria-hidden="true">
         <div class="step-dot active" data-step="1">Área</div>
-        <div class="step-dot" data-step="2">Fecha</div>
+        <div class="step-dot" data-step="2">Día</div>
         <div class="step-dot" data-step="3">Horario</div>
-        <div class="step-dot" data-step="4">Tus datos</div>
+        <div class="step-dot" data-step="4">Datos</div>
         <div class="step-dot" data-step="5">Confirmar</div>
       </div>
       <form id="bookForm" novalidate>
-        <div class="booking-step active shown" data-step="1">
-          <label>¿Sobre qué área es tu consulta?</label>
+        <div class="booking-step active" data-step="1">
+          <p class="step-title">¿Sobre qué área es tu consulta?</p>
           <div class="opt-grid" data-group="service"><button type="button" class="opt" data-value="Civil y comercial">Civil y comercial</button><button type="button" class="opt" data-value="Laboral">Laboral</button><button type="button" class="opt" data-value="Familia">Familia</button><button type="button" class="opt" data-value="Inmobiliario">Inmobiliario</button><button type="button" class="opt" data-value="Sucesiones">Sucesiones</button><button type="button" class="opt" data-value="No estoy seguro">No estoy seguro</button></div>
           <input type="hidden" name="service" id="serviceInput">
           <div class="field-error" id="err-service">Elegí una opción para continuar.</div>
           <div class="booking-nav"><span></span><button type="button" class="btn btn-primary" data-next="1">Siguiente</button></div>
         </div>
         <div class="booking-step" data-step="2">
-          <label for="date">Elegí el día</label>
+          <label for="date" class="step-title" style="margin:0;">¿Qué día te queda bien?</label>
           <input type="date" id="date" name="date">
           <div class="field-error" id="err-date">Elegí una fecha.</div>
           <div class="booking-nav"><button type="button" class="btn btn-outline" data-prev="2">Atrás</button><button type="button" class="btn btn-primary" data-next="2">Siguiente</button></div>
         </div>
         <div class="booking-step" data-step="3">
-          <label for="time">Horarios disponibles</label>
-          <select id="time" name="time" disabled><option value="">Elegí primero una fecha</option></select>
+          <p class="step-title" id="timeTitle">Horarios disponibles</p>
+          <div class="time-grid" id="timeChips" role="radiogroup" aria-labelledby="timeTitle"><p class="time-empty">Elegí primero una fecha.</p></div>
+          <input type="hidden" name="time" id="time">
           <div class="field-error" id="err-time">Elegí un horario disponible.</div>
           <div class="booking-nav"><button type="button" class="btn btn-outline" data-prev="3">Atrás</button><button type="button" class="btn btn-primary" data-next="3">Siguiente</button></div>
         </div>
         <div class="booking-step" data-step="4">
-          <label>Modalidad</label>
+          <p class="step-title">Modalidad y datos de contacto</p>
           <div class="opt-grid" data-group="mode"><button type="button" class="opt" data-value="Presencial">Presencial</button><button type="button" class="opt" data-value="Videollamada">Videollamada</button></div>
           <input type="hidden" name="mode" id="modeInput">
           <div class="field-error" id="err-mode">Elegí la modalidad.</div>
@@ -333,7 +406,7 @@
           <input type="text" id="name" name="name" autocomplete="name">
           <div class="field-error" id="err-name">Ingresá tu nombre completo.</div>
           <label for="phone">Teléfono</label>
-          <input type="tel" id="phone" name="phone" autocomplete="tel">
+          <input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel">
           <div class="field-error" id="err-phone">Ingresá un teléfono válido (mínimo 8 dígitos).</div>
           <label for="email">Email</label>
           <input type="email" id="email" name="email" autocomplete="email">
@@ -342,130 +415,102 @@
           <div class="booking-nav"><button type="button" class="btn btn-outline" data-prev="4">Atrás</button><button type="button" class="btn btn-primary" data-next="4">Siguiente</button></div>
         </div>
         <div class="booking-step" data-step="5">
+          <p class="step-title">Revisá y confirmá</p>
           <div class="summary-box" id="summaryBox"></div>
           <div class="booking-nav"><button type="button" class="btn btn-outline" data-prev="5">Atrás</button><button type="submit" class="btn btn-primary">Confirmar consulta</button></div>
         </div>
       </form>
-      <div class="form-status" id="formStatus" role="status"></div>
+      <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
     </div>
   </div>
 </section>
 
-<section class="section" id="ubicacion">
-  <div class="container">
-    <div class="section-head reveal">
+<section class="section tint" id="ubicacion">
+  <div class="container location">
+    <div class="location-panel reveal">
       <span class="eyebrow">Ubicación</span>
       <h2>Dónde encontrarnos</h2>
+      <ul class="loc-list"><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span>Rosario, Santa Fe (dirección de ejemplo)</span></li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="M16 10l5-3v10l-5-3"/></svg><span>Consultas por videollamada</span></li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>Lunes a viernes 9 a 13 hs y 16 a 19 hs</span></li><li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><span>Respuesta dentro de las 24 h hábiles</span></li></ul>
     </div>
-    <div class="location-grid reveal">
-      <ul class="location-info"><li>📍 Rosario, Santa Fe (dirección de ejemplo)</li><li>💻 Consultas por videollamada</li><li>🕒 Lunes a viernes 9 a 13 hs y 16 a 19 hs</li><li>📧 Respuesta en 24 hs hábiles</li></ul>
-      <div class="location-map">
-        <iframe src="https://www.google.com/maps?q=Rosario,+Santa+Fe,+Argentina&amp;output=embed" loading="lazy" title="Mapa" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-      </div>
-    </div>
+    <div class="map reveal"><iframe src="https://www.google.com/maps?q=Rosario,+Santa+Fe,+Argentina&amp;output=embed" loading="lazy" title="Mapa de la zona" referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
   </div>
 </section>
 
-<section class="section" id="preguntas" style="background:var(--tint);">
-  <div class="container" style="max-width:760px;">
-    <div class="section-head reveal">
-      <span class="eyebrow">Preguntas frecuentes</span>
-      <h2>Consultas frecuentes</h2>
-    </div>
-    <div class="reveal"><div class="faq-item"><button class="faq-q">¿La primera consulta tiene costo? <span class="icon">⌄</span></button><div class="faq-a"><p>La primera consulta tiene un valor fijo que se informa al reservar y se descuenta si después avanzamos con el caso.</p></div></div><div class="faq-item"><button class="faq-q">¿Puedo hacer la consulta por videollamada? <span class="icon">⌄</span></button><div class="faq-a"><p>Sí. Podés elegir la modalidad al reservar y te enviamos el link por email.</p></div></div><div class="faq-item"><button class="faq-q">¿Qué documentación tengo que llevar? <span class="icon">⌄</span></button><div class="faq-a"><p>Tu DNI y toda la documentación relacionada con el tema: contratos, recibos, notificaciones o intercambios de mensajes.</p></div></div><div class="faq-item"><button class="faq-q">¿Cómo se calculan los honorarios? <span class="icon">⌄</span></button><div class="faq-a"><p>Dependen del tipo de caso. Siempre te los informamos por escrito antes de empezar.</p></div></div><div class="faq-item"><button class="faq-q">¿Cuánto tiempo lleva un juicio? <span class="icon">⌄</span></button><div class="faq-a"><p>Depende del tipo de proceso y del juzgado. En la consulta te damos una estimación realista para tu caso.</p></div></div><div class="faq-item"><button class="faq-q">¿Atienden casos fuera de Rosario? <span class="icon">⌄</span></button><div class="faq-a"><p>Sí, en toda la provincia de Santa Fe. Para otras jurisdicciones trabajamos con estudios colegas.</p></div></div></div>
-  </div>
-</section>
-
-<section class="cta-final">
+<section class="section" id="preguntas">
   <div class="container">
-    <h2>¿Tenés una consulta legal? Hablemos.</h2>
-    <p>Agendá una reunión y salí con un panorama claro de tus opciones.</p>
-    <div class="btns">
-      <a href="#reserva" class="btn btn-white">Agendar una consulta</a>
-      <a href="#preguntas" class="btn btn-outline">Ver preguntas frecuentes</a>
+    <div class="section-head center reveal"><span class="eyebrow">Preguntas frecuentes</span><h2>Consultas frecuentes</h2></div>
+    <div class="faq reveal"><div class="faq-item"><button class="faq-q" aria-expanded="false">¿La primera consulta tiene costo? <span class="icon" aria-hidden="true">+</span></button><div class="faq-a"><p>Tiene un valor fijo que se informa al reservar y se descuenta si después avanzamos con el caso.</p></div></div><div class="faq-item"><button class="faq-q" aria-expanded="false">¿Puedo hacer la consulta por videollamada? <span class="icon" aria-hidden="true">+</span></button><div class="faq-a"><p>Sí. Elegís la modalidad al reservar y te enviamos el link por email.</p></div></div><div class="faq-item"><button class="faq-q" aria-expanded="false">¿Qué documentación tengo que llevar? <span class="icon" aria-hidden="true">+</span></button><div class="faq-a"><p>Tu DNI y todo lo relacionado con el tema: contratos, recibos, notificaciones o intercambios de mensajes.</p></div></div><div class="faq-item"><button class="faq-q" aria-expanded="false">¿Cómo se calculan los honorarios? <span class="icon" aria-hidden="true">+</span></button><div class="faq-a"><p>Dependen del tipo de caso. Siempre te los informamos por escrito antes de empezar.</p></div></div><div class="faq-item"><button class="faq-q" aria-expanded="false">¿Cuánto tiempo lleva un juicio? <span class="icon" aria-hidden="true">+</span></button><div class="faq-a"><p>Depende del tipo de proceso y del juzgado. En la consulta te damos una estimación realista para tu caso.</p></div></div><div class="faq-item"><button class="faq-q" aria-expanded="false">¿Atienden casos fuera de Rosario? <span class="icon" aria-hidden="true">+</span></button><div class="faq-a"><p>Sí, en toda la provincia de Santa Fe. Para otras jurisdicciones trabajamos con estudios colegas.</p></div></div></div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;">
+  <div class="container">
+    <div class="cta-band reveal">
+      <div><h2>¿Tenés una consulta legal? Hablemos</h2><p>Agendá una reunión y salí con un panorama claro de tus opciones.</p></div>
+      <a href="#reserva" class="btn btn-primary">Agendar consulta</a>
     </div>
   </div>
 </section>
+
+</main>
+
+
 
 <footer>
   <div class="container">
     <div class="footer-grid">
-      <div>
-        <h4>Ferrari &amp; Asociados</h4>
-        <p style="color:rgba(255,255,255,0.6);">Estudio jurídico. Asesoramiento claro y cercano.</p>
-      </div>
-      <div>
-        <h4>Navegación</h4>
-        <a href="#servicios">Áreas de práctica</a>
-        <a href="#nosotros">El estudio</a>
-        <a href="#reserva">Agendar consulta</a>
-      </div>
-      <div>
-        <h4>Horarios</h4>
-        <p style="color:rgba(255,255,255,0.6);">Lunes a viernes<br>9 a 13 hs y 16 a 19 hs</p>
-      </div>
+      <div><a href="#inicio" class="brand"><svg viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="6" fill="#1E3A5F"/><path d="M20 9v22M13 31h14M11 14h18M11 14l-4 8h8zM29 14l-4 8h8z" stroke="#D9B97A" stroke-width="1.6" fill="none" stroke-linejoin="round"/></svg>Ferrari &amp; Asociados</a><p style="max-width:280px;">Estudio jurídico. Asesoramiento claro y cercano.</p></div>
+      <div><h4>Navegación</h4><a href="#servicios">Áreas de práctica</a><a href="#nosotros">El estudio</a><a href="#preguntas">Preguntas frecuentes</a></div>
+      <div><h4>Horarios</h4><p style="padding-block:10px;">Lunes a viernes<br>9 a 13 hs y 16 a 19 hs</p></div>
+      <div><h4>Legal</h4><a href="/privacidad.html">Privacidad</a><a href="/terminos.html">Términos</a></div>
     </div>
-    <div class="footer-bottom">© 2026 Ferrari &amp; Asociados (estudio ficticio, proyecto demo) · Creado por <a href="index.html"><strong>NEOATLANTIS</strong></a></div>
+    <div class="footer-bottom">
+      <span>© 2026 Ferrari &amp; Asociados (estudio ficticio, proyecto demo)</span>
+      <span>Creado por <a href="/">NeoAtlantis</a></span>
+    </div>
   </div>
 </footer>
 
-<div class="sticky-cta"><a href="#reserva" class="btn btn-primary">Agendar consulta</a></div>
+<div class="sticky-cta" id="stickyCta"><a href="#reserva" class="btn btn-primary">Agendar consulta</a></div>
 
 <script>
-  const CONFIG = {"schedule": {"1": ["09:00", "09:30", "10:00", "10:30", "11:00", "11:30", "12:00", "12:30", "16:00", "16:30", "17:00", "17:30", "18:00", "18:30"], "2": ["09:00", "09:30", "10:00", "10:30", "11:00", "11:30", "12:00", "12:30", "16:00", "16:30", "17:00", "17:30", "18:00", "18:30"], "3": ["09:00", "09:30", "10:00", "10:30", "11:00", "11:30", "12:00", "12:30", "16:00", "16:30", "17:00", "17:30", "18:00", "18:30"], "4": ["09:00", "09:30", "10:00", "10:30", "11:00", "11:30", "12:00", "12:30", "16:00", "16:30", "17:00", "17:30", "18:00", "18:30"], "5": ["09:00", "09:30", "10:00", "10:30", "11:00", "11:30", "12:00", "12:30", "16:00", "16:30", "17:00", "17:30", "18:00", "18:30"]}, "summaryLabel": "Área", "successText": "¡Listo! Esta es una demo, así que tu consulta no se envió. En la versión real, la reunión se agenda y te llega la confirmación por email."};
+  document.documentElement.classList.add('js');
+  const CONFIG = {"schedule": {"1": ["09:00", "09:30", "10:00", "10:30", "11:00", "11:30", "12:00", "12:30", "16:00", "16:30", "17:00", "17:30", "18:00", "18:30"], "2": ["09:00", "09:30", "10:00", "10:30", "11:00", "11:30", "12:00", "12:30", "16:00", "16:30", "17:00", "17:30", "18:00", "18:30"], "3": ["09:00", "09:30", "10:00", "10:30", "11:00", "11:30", "12:00", "12:30", "16:00", "16:30", "17:00", "17:30", "18:00", "18:30"], "4": ["09:00", "09:30", "10:00", "10:30", "11:00", "11:30", "12:00", "12:30", "16:00", "16:30", "17:00", "17:30", "18:00", "18:30"], "5": ["09:00", "09:30", "10:00", "10:30", "11:00", "11:30", "12:00", "12:30", "16:00", "16:30", "17:00", "17:30", "18:00", "18:30"]}, "label": "Área", "success": "Listo. Esta es una demo, así que tu consulta no se envió. En la versión real, la reunión queda pedida y te avisamos por email cuando se confirma."};
 
   const menuToggle = document.getElementById('menuToggle');
   const mobileMenu = document.getElementById('mobileMenu');
-  menuToggle.addEventListener('click', () => mobileMenu.classList.toggle('open'));
-  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
+  menuToggle.addEventListener('click', () => menuToggle.setAttribute('aria-expanded', mobileMenu.classList.toggle('open')));
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { mobileMenu.classList.remove('open'); menuToggle.setAttribute('aria-expanded', 'false'); }));
 
   const navWrap = document.querySelector('.nav-wrap');
-  window.addEventListener('scroll', () => navWrap.classList.toggle('scrolled', window.scrollY > 20), { passive: true });
+  window.addEventListener('scroll', () => navWrap.classList.toggle('scrolled', window.scrollY > 10), { passive: true });
 
   const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (!e.isIntersecting) return;
-      e.target.classList.add('visible');
-      if (e.target.classList.contains('stagger-group')) {
-        Array.from(e.target.children).forEach((child, i) => { child.style.transitionDelay = `${i * 100}ms`; });
-      }
-      io.unobserve(e.target);
-    });
-  }, { threshold: 0.15 });
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-  // Pestañas de servicios
-  document.querySelectorAll('.tab-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const current = document.querySelector('.serv-card.active');
-      const next = document.querySelector(`.serv-card[data-panel="${btn.dataset.tab}"]`);
-      if (current === next) return;
-      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      current.classList.remove('faded-in');
-      setTimeout(() => {
-        current.classList.remove('active');
-        next.classList.add('active');
-        void next.offsetWidth;
-        next.classList.add('faded-in');
-      }, 300);
-    });
-  });
+  const stickyCta = document.getElementById('stickyCta');
+  new IntersectionObserver(([e]) => stickyCta.classList.toggle('hide', e.isIntersecting), { threshold: 0.05 }).observe(document.getElementById('reserva'));
 
-  // Preguntas frecuentes
-  document.querySelectorAll('.faq-q').forEach(q => {
-    q.addEventListener('click', () => {
-      const item = q.closest('.faq-item');
-      const wasOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-      if (!wasOpen) item.classList.add('open');
-    });
-  });
+  function abrirServicio(tab) {
+    document.querySelectorAll('.tab-btn').forEach(b => { const on = b.dataset.tab === tab; b.classList.toggle('active', on); b.setAttribute('aria-selected', on); });
+    document.querySelectorAll('.treat-panel').forEach(p => p.classList.toggle('active', p.dataset.panel === tab));
+  }
+  document.querySelectorAll('.tab-btn').forEach(b => b.addEventListener('click', () => abrirServicio(b.dataset.tab)));
+  document.querySelectorAll('.service-card').forEach(c => c.addEventListener('click', () => abrirServicio(c.dataset.goto)));
+
+  document.querySelectorAll('.faq-q').forEach(q => q.addEventListener('click', () => {
+    const item = q.closest('.faq-item'); const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => { i.classList.remove('open'); i.querySelector('.faq-q').setAttribute('aria-expanded', 'false'); });
+    if (!wasOpen) { item.classList.add('open'); q.setAttribute('aria-expanded', 'true'); }
+  }));
 
   // ===== Reserva (demo: no envía datos a ningún lado) =====
   const form = document.getElementById('bookForm');
   const dateInput = document.getElementById('date');
-  const timeSelect = document.getElementById('time');
+  const timeInput = document.getElementById('time');
+  const timeChips = document.getElementById('timeChips');
   const statusBox = document.getElementById('formStatus');
   const pad = n => String(n).padStart(2, '0');
   const hoy = new Date();
@@ -473,17 +518,16 @@
 
   document.querySelectorAll('.opt-grid').forEach(grid => {
     const input = document.getElementById(grid.dataset.group + 'Input');
-    grid.querySelectorAll('.opt').forEach(opt => {
-      opt.addEventListener('click', () => {
-        grid.querySelectorAll('.opt').forEach(o => o.classList.remove('selected'));
-        opt.classList.add('selected');
-        input.value = opt.dataset.value;
-      });
-    });
+    grid.querySelectorAll('.opt').forEach(opt => opt.addEventListener('click', () => {
+      grid.querySelectorAll('.opt').forEach(o => o.classList.remove('selected'));
+      opt.classList.add('selected');
+      input.value = opt.dataset.value;
+      setError(grid.dataset.group, false);
+    }));
   });
 
   // Horarios de la demo: grilla del profesional, sin los que ya pasaron y con
-  // algunos marcados como ocupados (siempre los mismos para cada fecha).
+  // algunos ocupados (siempre los mismos para cada fecha).
   function horariosDemo(fechaStr) {
     const fecha = new Date(`${fechaStr}T12:00:00`);
     if (isNaN(fecha)) return [];
@@ -491,42 +535,44 @@
     let semilla = fechaStr.split('-').reduce((a, n) => a * 31 + Number(n), 7);
     return grilla.filter(h => {
       semilla = (semilla * 9301 + 49297) % 233280;
-      const ocupado = semilla / 233280 < 0.3;
-      return !ocupado && new Date(`${fechaStr}T${h}:00`) > new Date();
+      return semilla / 233280 >= 0.3 && new Date(`${fechaStr}T${h}:00`) > new Date();
     });
+  }
+
+  function mostrarHorarios(mensaje, horarios) {
+    timeInput.value = '';
+    if (!horarios || !horarios.length) {
+      const p = document.createElement('p'); p.className = 'time-empty'; p.textContent = mensaje;
+      timeChips.replaceChildren(p); return;
+    }
+    timeChips.replaceChildren(...horarios.map(h => {
+      const b = document.createElement('button');
+      b.type = 'button'; b.className = 'time-chip'; b.textContent = h;
+      b.setAttribute('role', 'radio'); b.setAttribute('aria-checked', 'false');
+      b.addEventListener('click', () => {
+        timeChips.querySelectorAll('.time-chip').forEach(c => { c.classList.remove('selected'); c.setAttribute('aria-checked', 'false'); });
+        b.classList.add('selected'); b.setAttribute('aria-checked', 'true');
+        timeInput.value = h; setError('time', false);
+      });
+      return b;
+    }));
   }
 
   dateInput.addEventListener('change', () => {
-    const libres = horariosDemo(dateInput.value);
-    if (!libres.length) {
-      timeSelect.innerHTML = '<option value="">No hay horarios disponibles ese día</option>';
-      timeSelect.disabled = true;
-      return;
-    }
-    timeSelect.innerHTML = '<option value="">Elegí un horario</option>' + libres.map(h => `<option value="${h}">${h} hs</option>`).join('');
-    timeSelect.disabled = false;
+    if (!dateInput.value) return mostrarHorarios('Elegí primero una fecha.');
+    const fecha = new Date(`${dateInput.value}T12:00:00`);
+    const cerrado = !(CONFIG.schedule[fecha.getDay()] || []).length;
+    mostrarHorarios(cerrado ? 'Ese día no hay atención. Probá con otra fecha.' : 'No quedan horarios libres ese día. Probá con otra fecha.', horariosDemo(dateInput.value));
   });
 
-  function setError(field, show) {
-    const el = document.getElementById('err-' + field);
-    if (el) el.classList.toggle('show', show);
-  }
+  function setError(field, show) { const el = document.getElementById('err-' + field); if (el) el.classList.toggle('show', show); }
 
   function showStep(n) {
-    const prevEl = document.querySelector('.booking-step.active');
-    const nextEl = document.querySelector(`.booking-step[data-step="${n}"]`);
-    prevEl.classList.remove('shown');
-    setTimeout(() => {
-      prevEl.classList.remove('active');
-      nextEl.classList.add('active');
-      void nextEl.offsetWidth;
-      nextEl.classList.add('shown');
-    }, 250);
-    document.querySelectorAll('.step-dot').forEach(d => {
-      d.classList.toggle('active', +d.dataset.step === n);
-      d.classList.toggle('done', +d.dataset.step < n);
-    });
+    document.querySelectorAll('.booking-step').forEach(s => s.classList.toggle('active', +s.dataset.step === n));
+    document.querySelectorAll('.step-dot').forEach(d => { d.classList.toggle('active', +d.dataset.step === n); d.classList.toggle('done', +d.dataset.step < n); });
     if (n === 5) buildSummary();
+    const card = document.querySelector('.booking-card');
+    if (card.getBoundingClientRect().top < 0) card.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
   function valid(step) {
@@ -535,52 +581,32 @@
     if (step === 2) { setError('date', !d.date); return !!d.date; }
     if (step === 3) { setError('time', !d.time); return !!d.time; }
     if (step === 4) {
-      const checks = {
-        mode: !!d.mode,
-        name: (d.name || '').trim().length >= 2,
-        phone: (d.phone || '').replace(/\D/g, '').length >= 8,
-        email: /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(d.email || ''),
-      };
+      const checks = { mode: !!d.mode, name: (d.name || '').trim().length >= 2, phone: (d.phone || '').replace(/\D/g, '').length >= 8, email: /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(d.email || '') };
       Object.entries(checks).forEach(([k, ok]) => setError(k, !ok));
       return Object.values(checks).every(Boolean);
     }
     return true;
   }
 
-  document.querySelectorAll('[data-next]').forEach(b => b.addEventListener('click', () => {
-    const s = +b.dataset.next;
-    if (valid(s)) showStep(s + 1);
-  }));
+  document.querySelectorAll('[data-next]').forEach(b => b.addEventListener('click', () => { const s = +b.dataset.next; if (valid(s)) showStep(s + 1); }));
   document.querySelectorAll('[data-prev]').forEach(b => b.addEventListener('click', () => showStep(+b.dataset.prev - 1)));
 
   function buildSummary() {
     const d = Object.fromEntries(new FormData(form).entries());
     const [a, m, dd] = (d.date || '').split('-');
-    const filas = [
-      [CONFIG.summaryLabel, d.service], ['Fecha', `${dd}/${m}/${a}`], ['Horario', `${d.time} hs`],
-      ['Modalidad', d.mode], ['Nombre', d.name], ['Teléfono', d.phone], ['Email', d.email],
-    ];
-    const box = document.getElementById('summaryBox');
-    box.replaceChildren(...filas.map(([k, v]) => {
-      const row = document.createElement('div');
-      const b = document.createElement('b');
-      b.textContent = k + ': ';
-      row.append(b, v || '');
-      return row;
-    }));
+    const filas = [[CONFIG.label, d.service], ['Fecha', `${dd}/${m}/${a}`], ['Horario', `${d.time} hs`], ['Modalidad', d.mode], ['Nombre', d.name], ['Teléfono', d.phone], ['Email', d.email]];
+    document.getElementById('summaryBox').replaceChildren(...filas.map(([k, v]) => { const row = document.createElement('div'); const b = document.createElement('b'); b.textContent = k + ': '; row.append(b, v || ''); return row; }));
   }
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    statusBox.textContent = CONFIG.successText;
+    statusBox.textContent = CONFIG.success;
     statusBox.classList.add('show');
     form.reset();
     document.querySelectorAll('.opt').forEach(o => o.classList.remove('selected'));
-    timeSelect.innerHTML = '<option value="">Elegí primero una fecha</option>';
-    timeSelect.disabled = true;
+    mostrarHorarios('Elegí primero una fecha.');
     showStep(1);
   });
 </script>
-
 </body>
 </html>
