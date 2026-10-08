@@ -405,12 +405,12 @@
       <form class="lead-form r" id="leadForm">
         <div class="form-row two">
           <div class="field">
-            <label>Nombre</label>
-            <input type="text" name="nombre" placeholder="Tu nombre" required>
+            <label for="lf-nombre">Nombre</label>
+            <input type="text" id="lf-nombre" name="nombre" placeholder="Tu nombre" required>
           </div>
           <div class="field">
-            <label>Email</label>
-            <input type="email" name="email" placeholder="tu@email.com" required>
+            <label for="lf-email">Email</label>
+            <input type="email" id="lf-email" name="email" placeholder="tu@email.com" required>
           </div>
         </div>
         <div class="field">
@@ -421,8 +421,8 @@
           <label>Empresa</label><input type="text" name="empresa" tabindex="-1" autocomplete="off">
         </div>
         <div class="field">
-          <label>¿Qué necesitás?</label>
-          <select name="necesidad">
+          <label for="lf-necesidad">¿Qué necesitás?</label>
+          <select id="lf-necesidad" name="necesidad">
             <option>Una web para mi consultorio</option>
             <option>Turnos online y recordatorios</option>
             <option>Mejorar mi web actual</option>
@@ -431,11 +431,11 @@
           </select>
         </div>
         <div class="field">
-          <label>Contanos un poco más</label>
-          <textarea name="mensaje" rows="4" placeholder="¿Cómo das los turnos hoy? ¿Qué te gustaría resolver?"></textarea>
+          <label for="lf-mensaje">Contanos un poco más</label>
+          <textarea id="lf-mensaje" name="mensaje" rows="4" placeholder="¿Cómo das los turnos hoy? ¿Qué te gustaría resolver?"></textarea>
         </div>
         <button type="submit" class="btn btn-primary" style="background:var(--void);color:var(--white);width:100%;justify-content:center;">Enviar mensaje</button>
-        <p class="form-note" id="lf-nota" role="status">Te respondemos dentro de las 24 horas hábiles. Tus datos se usan solo para responderte.</p>
+        <p class="form-note" id="lf-nota" role="status">Te respondemos dentro de las 24 horas hábiles. Tus datos se usan solo para responderte (<a href="privacidad.html" style="color:inherit;text-decoration:underline;">política de privacidad</a>).</p>
       </form>
     </div>
   </div>
