@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://web-neoatlantis.vercel.app/sitemap.xml
+Sitemap: https://www.neoatlantis.com.ar/sitemap.xml
