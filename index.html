@@ -414,6 +414,13 @@
           </div>
         </div>
         <div class="field">
+          <label for="lf-wa">WhatsApp <span style="opacity:.7;font-weight:400">(opcional)</span></label>
+          <input type="tel" id="lf-wa" name="whatsapp" placeholder="341 555-0000" autocomplete="tel">
+        </div>
+        <div class="field" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden" aria-hidden="true">
+          <label>Empresa</label><input type="text" name="empresa" tabindex="-1" autocomplete="off">
+        </div>
+        <div class="field">
           <label>¿Qué necesitás?</label>
           <select name="necesidad">
             <option>Una web para mi consultorio</option>
@@ -428,7 +435,7 @@
           <textarea name="mensaje" rows="4" placeholder="¿Cómo das los turnos hoy? ¿Qué te gustaría resolver?"></textarea>
         </div>
         <button type="submit" class="btn btn-primary" style="background:var(--void);color:var(--white);width:100%;justify-content:center;">Enviar mensaje</button>
-        <p class="form-note">Al enviar se abre tu app de email con el mensaje listo para mandar.</p>
+        <p class="form-note" id="lf-nota" role="status">Te respondemos dentro de las 24 horas hábiles. Tus datos se usan solo para responderte.</p>
       </form>
     </div>
   </div>
@@ -555,12 +562,25 @@
 
 <script>
 document.getElementById('y').textContent = new Date().getFullYear();
-document.getElementById('leadForm').addEventListener('submit', (e)=>{
+// Formulario de contacto: se guarda en el CRM y Leandro recibe un aviso al instante.
+const leadForm = document.getElementById('leadForm');
+const leadT0 = Date.now();
+leadForm.addEventListener('submit', async (e)=>{
   e.preventDefault();
-  const f = new FormData(e.target);
-  const asunto = `Consulta web: ${f.get('necesidad')}`;
-  const cuerpo = `Nombre: ${f.get('nombre')}\nEmail: ${f.get('email')}\nNecesito: ${f.get('necesidad')}\n\n${f.get('mensaje') || ''}`;
-  window.location.href = `mailto:neoatlantisia@gmail.com?subject=${encodeURIComponent(asunto)}&body=${encodeURIComponent(cuerpo)}`;
+  const nota = document.getElementById('lf-nota');
+  const btn = leadForm.querySelector('button[type=submit]');
+  const datos = Object.fromEntries(new FormData(leadForm).entries());
+  datos.t0 = leadT0;
+  btn.disabled = true; btn.textContent = 'Enviando…';
+  try {
+    const r = await fetch('/api/contacto', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(datos) });
+    const res = await r.json().catch(()=>({}));
+    if (!r.ok) throw new Error(res.error || 'No pudimos enviar tu mensaje.');
+    leadForm.innerHTML = '<h3 style="font-size:1.4rem;margin-bottom:10px;">¡Gracias! Recibimos tu consulta.</h3><p class="form-note" style="font-size:0.95rem;">Te respondemos dentro de las 24 horas hábiles' + (datos.whatsapp ? ' por WhatsApp o' : ' por') + ' email. Mientras tanto, podés mirar las demos de abajo.</p>';
+  } catch (err) {
+    nota.textContent = err.message + ' También podés escribirnos a neoatlantisia@gmail.com.';
+    btn.disabled = false; btn.textContent = 'Enviar mensaje';
+  }
 });
 const hd = document.getElementById('hd');
 window.addEventListener('scroll', ()=>hd.classList.toggle('scrolled', window.scrollY>30), {passive:true});
