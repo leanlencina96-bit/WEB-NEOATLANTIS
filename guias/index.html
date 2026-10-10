@@ -102,12 +102,17 @@ header nav{display:flex;align-items:center;justify-content:space-between;padding
 .otras a:hover{border-color:var(--electric-ink)}
 /* artículo (guías) */
 .articulo{background:var(--off);color:#1F2937;padding:70px 0 90px}
-.articulo .cuerpo{max-width:740px;margin:0 auto}
+.articulo .cuerpo{max-width:784px;margin:0 auto;padding:0 22px}
 .articulo h2{font-size:1.75rem;color:var(--void);margin:46px 0 14px;line-height:1.2}
 .articulo h3{font-size:1.2rem;color:var(--void);margin:28px 0 8px}
 .articulo p{margin-bottom:16px;font-size:1.06rem}
 .articulo ul,.articulo ol{margin:0 0 18px 22px;font-size:1.06rem}
 .articulo li{margin-bottom:8px}
+.articulo .tabla{overflow-x:auto;margin:0 0 22px}
+.articulo table{width:100%;border-collapse:collapse;font-size:.98rem;background:#fff;border-radius:12px;overflow:hidden}
+.articulo th,.articulo td{padding:12px 14px;text-align:left;border-bottom:1px solid #E5E7EB;vertical-align:top}
+.articulo th{background:var(--void);color:#fff;font-weight:600}
+@media(max-width:600px){.articulo table{font-size:.86rem}.articulo th,.articulo td{padding:10px 8px;-webkit-hyphens:auto;hyphens:auto}.articulo td:first-child{width:28%}}
 .articulo a{color:var(--electric-ink)}
 .articulo a.btn-claro{color:var(--void)}
 .articulo a.btn-wa{color:#9BE8C3}
@@ -183,7 +188,7 @@ footer{border-top:1px solid var(--line-dark);padding:50px 0 34px}
   <p class="sub">Ideas concretas para organizar los turnos, que falten menos pacientes y que te encuentren en Google. Gratis y sin vueltas.</p>
 </div></section>
 <section class="articulo"><div class="cuerpo"><div class="lista-guias">
-<a href="/guias/reducir-ausentismo-pacientes/"><h2>Cómo reducir el ausentismo de pacientes en tu consultorio</h2><p>Por qué faltan los pacientes y 7 medidas concretas para que falten menos: recordatorios, cancelación fácil, lista de espera y cómo medirlo.</p></a>
+<a href="/guias/turnos-whatsapp-vs-turnos-online/"><h2>Turnos por WhatsApp o turnos online: qué le conviene a tu consultorio</h2><p>Ventajas y límites de dar turnos por WhatsApp, qué resuelve un sistema de turnos online y cómo combinar los dos en tu consultorio sin perder pacientes.</p></a><a href="/guias/reducir-ausentismo-pacientes/"><h2>Cómo reducir el ausentismo de pacientes en tu consultorio</h2><p>Por qué faltan los pacientes y 7 medidas concretas para que falten menos: recordatorios, cancelación fácil, lista de espera y cómo medirlo.</p></a>
 </div></div></section>
 </main>
 <footer><div class="wrap">

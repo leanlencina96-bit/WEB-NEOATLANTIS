@@ -193,6 +193,88 @@ ESPECIALIDADES = [
 
 GUIAS = [
     {
+        "slug": "turnos-whatsapp-vs-turnos-online",
+        "corto": "WhatsApp vs. turnos online",
+        "corto_largo": "Turnos por WhatsApp o turnos online: qué le conviene a tu consultorio",
+        "titulo": "Turnos por WhatsApp o turnos online: qué conviene | NeoAtlantis",
+        "descripcion": "Ventajas y límites de dar turnos por WhatsApp, qué resuelve un sistema de turnos online y cómo combinar los dos en tu consultorio sin perder pacientes.",
+        "h1": "Turnos por WhatsApp o turnos online: qué le conviene a tu consultorio",
+        "bajada": "WhatsApp es cercano y todos lo usan, pero dar turnos por chat tiene un costo que no siempre se ve. Qué gana y qué pierde cada opción, y cómo combinarlas.",
+        "fecha": "2026-10-11", "fecha_txt": "11 de octubre de 2026", "minutos": 6,
+        "wa": "Hola NeoAtlantis, leí la guía de WhatsApp vs. turnos online y quiero consultar por mi consultorio.",
+        "cta_titulo": "¿Querés sumar turnos online sin dejar WhatsApp?",
+        "cta_texto": "Tu web con reserva las 24 horas, recordatorios automáticos y el link para mandar por WhatsApp. En un diagnóstico gratis de 15 minutos vemos cómo das los turnos hoy y qué te conviene.",
+        "fuentes": [
+            ("Medical Economics (2019). Survey: Patients want timely care, digital communication. Encuesta de DocASAP y OnePoll a 1.000 adultos de EE. UU.", "https://www.medicaleconomics.com/view/survey-patients-want-timely-care-digital-communication"),
+            ("Ley 25.326 de Protección de los Datos Personales (Argentina). InfoLEG.", "https://servicios.infoleg.gob.ar/infolegInternet/anexos/60000-64999/64790/texact.htm"),
+            ("Ley 26.529 de Derechos del Paciente (Argentina). InfoLEG.", "https://servicios.infoleg.gob.ar/infolegInternet/anexos/160000-164999/160432/texact.htm"),
+        ],
+        "cuerpo": """
+<div class="indice"><b>En esta guía</b><ol>
+<li><a href="#whatsapp">Lo bueno de dar turnos por WhatsApp</a></li>
+<li><a href="#limites">Dónde se complica</a></li>
+<li><a href="#online">Qué resuelve un sistema de turnos online</a></li>
+<li><a href="#comparacion">Comparación rápida</a></li>
+<li><a href="#combinar">La mejor opción: combinarlos</a></li>
+</ol></div>
+
+<p>En la mayoría de los consultorios, los turnos se dan por WhatsApp. Tiene sentido: es lo que todos usan y se siente cercano. La pregunta no es si WhatsApp sirve, sino <strong>cuánto te está costando usarlo para todo</strong>, y si hay una forma mejor de repartir el trabajo.</p>
+
+<h2 id="whatsapp">1. Lo bueno de dar turnos por WhatsApp</h2>
+<ul>
+<li><strong>Todos lo tienen.</strong> El paciente no tiene que aprender nada nuevo.</li>
+<li><strong>Es cercano.</strong> Se pueden resolver dudas, explicar una preparación o calmar a alguien que está nervioso.</li>
+<li><strong>Es gratis</strong> y se empieza hoy, sin configurar nada.</li>
+</ul>
+<p>Para conversar con el paciente, WhatsApp es difícil de reemplazar. El problema aparece cuando además se usa como agenda.</p>
+
+<h2 id="limites">2. Dónde se complica</h2>
+<h3>Cada turno es una conversación</h3>
+<p>«¿Tenés algo el martes?» «A la tarde.» «Tengo 17 o 18:30.» «¿Y el miércoles?»… Un turno que en una agenda se reserva en un minuto, por chat puede llevar varios mensajes de ida y vuelta, y alguien tiene que estar atento para responderlos.</p>
+<h3>Los pacientes escriben cuando pueden, no cuando atendés</h3>
+<p>Muchos pacientes piden turno a la noche o el fin de semana. En una encuesta de DocASAP a 1.000 adultos de EE. UU., el <strong>84 % dijo que poder reservar fuera del horario de atención le resulta algo o muy importante</strong>. No encontramos un dato equivalente para Argentina, pero cualquier consultorio que use WhatsApp conoce los mensajes de las 23 h. Si el paciente no tiene respuesta, a veces le escribe a otro profesional.</p>
+<h3>La agenda queda en dos lugares</h3>
+<p>El turno se acuerda en el chat y después hay que pasarlo a mano a la agenda. Ahí aparecen los errores: un horario dado dos veces, un turno que nunca se anotó, un cambio que quedó en el chat y no en la agenda.</p>
+<h3>Los recordatorios dependen de que alguien se acuerde</h3>
+<p>Mandar el recordatorio de cada turno, uno por uno, es justo la tarea que se saltea los días con mucho trabajo. Y son los recordatorios los que más ayudan a que los pacientes no falten (lo vimos en la <a href="/guias/reducir-ausentismo-pacientes/">guía de ausentismo</a>).</p>
+<h3>Datos de salud en el celular</h3>
+<p>Por chat, los pacientes suelen contar el motivo de la consulta, mandar estudios o fotos. Para la ley argentina, la información sobre la salud es un <strong>dato sensible</strong> (Ley 25.326), y el paciente tiene derecho a la <strong>confidencialidad</strong> de su documentación clínica (Ley 26.529). Si el WhatsApp del consultorio está en el celular personal, o lo comparten varias personas, conviene pensar quién puede ver esas conversaciones.</p>
+
+<h2 id="online">3. Qué resuelve un sistema de turnos online</h2>
+<ul>
+<li><strong>El paciente reserva solo, a cualquier hora</strong>, viendo únicamente los horarios libres. Sin ida y vuelta.</li>
+<li><strong>Una sola agenda.</strong> Lo que se reserva ya está anotado: no hay que pasar nada a mano ni hay doble reserva.</li>
+<li><strong>Confirmación por escrito</strong> con día, hora y dirección.</li>
+<li><strong>Recordatorios automáticos</strong>, con un botón para cancelar que libera el horario.</li>
+<li><strong>Solo los datos del turno</strong>: nombre, contacto, día y hora. Lo clínico queda dentro del consultorio.</li>
+</ul>
+<p>Lo que no reemplaza: la conversación. Si el paciente tiene una duda o una urgencia, tiene que seguir pudiendo hablar con vos.</p>
+
+<h2 id="comparacion">4. Comparación rápida</h2>
+<div class="tabla"><table>
+<thead><tr><th></th><th>Turnos por WhatsApp</th><th>Turnos online</th></tr></thead>
+<tbody>
+<tr><td><strong>Reservar a la noche</strong></td><td>El paciente escribe y espera respuesta</td><td>Reserva en el momento</td></tr>
+<tr><td><strong>Tiempo por turno</strong></td><td>Varios mensajes de ida y vuelta</td><td>Ninguno: llega anotado</td></tr>
+<tr><td><strong>Doble reserva</strong></td><td>Posible, si se anota a mano</td><td>No: solo se ven los horarios libres</td></tr>
+<tr><td><strong>Recordatorios</strong></td><td>A mano, uno por uno</td><td>Automáticos</td></tr>
+<tr><td><strong>Cancelaciones</strong></td><td>Hay que leerlas y reacomodar</td><td>El horario se libera solo</td></tr>
+<tr><td><strong>Dudas y urgencias</strong></td><td>Ideal para conversar</td><td>Necesita un canal de contacto al lado</td></tr>
+<tr><td><strong>Costo</strong></td><td>Gratis, pero se paga en tiempo</td><td>Tiene un costo de armado y mantenimiento</td></tr>
+</tbody></table></div>
+
+<h2 id="combinar">5. La mejor opción: combinarlos</h2>
+<p>No hace falta elegir. Lo que mejor funciona es que <strong>cada herramienta haga lo suyo</strong>:</p>
+<ul>
+<li><strong>Los turnos, por la web.</strong> Cuando alguien pide turno por WhatsApp, respondé con el link de reserva. Con WhatsApp Business podés dejarlo en la <strong>respuesta automática</strong> y en el perfil, así también le llega a quien escribe de noche.</li>
+<li><strong>Las conversaciones, por WhatsApp.</strong> Dudas, preparación para un estudio, algo que no se resuelve con un formulario.</li>
+<li><strong>Las urgencias, por teléfono.</strong> Que estén claras en la web y en la respuesta automática, para que nadie espere un mensaje.</li>
+<li><strong>Nada clínico por chat</strong> si se puede evitar: pedile al paciente que lo traiga a la consulta.</li>
+</ul>
+<div class="nota"><strong>Para decidir:</strong> si respondés pocos turnos por semana y nunca se te mezclan, WhatsApp solo puede alcanzar. Si pasás más de un rato por día respondiendo turnos, tenés pacientes que faltan sin avisar o te escriben fuera de horario, los turnos online te devuelven ese tiempo.</div>
+""",
+    },
+    {
         "slug": "reducir-ausentismo-pacientes",
         "corto": "Cómo reducir el ausentismo",
         "corto_largo": "Cómo reducir el ausentismo de pacientes en tu consultorio",

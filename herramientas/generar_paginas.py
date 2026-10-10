@@ -90,12 +90,17 @@ header nav{display:flex;align-items:center;justify-content:space-between;padding
 .otras a:hover{border-color:var(--electric-ink)}
 /* artículo (guías) */
 .articulo{background:var(--off);color:#1F2937;padding:70px 0 90px}
-.articulo .cuerpo{max-width:740px;margin:0 auto}
+.articulo .cuerpo{max-width:784px;margin:0 auto;padding:0 22px}
 .articulo h2{font-size:1.75rem;color:var(--void);margin:46px 0 14px;line-height:1.2}
 .articulo h3{font-size:1.2rem;color:var(--void);margin:28px 0 8px}
 .articulo p{margin-bottom:16px;font-size:1.06rem}
 .articulo ul,.articulo ol{margin:0 0 18px 22px;font-size:1.06rem}
 .articulo li{margin-bottom:8px}
+.articulo .tabla{overflow-x:auto;margin:0 0 22px}
+.articulo table{width:100%;border-collapse:collapse;font-size:.98rem;background:#fff;border-radius:12px;overflow:hidden}
+.articulo th,.articulo td{padding:12px 14px;text-align:left;border-bottom:1px solid #E5E7EB;vertical-align:top}
+.articulo th{background:var(--void);color:#fff;font-weight:600}
+@media(max-width:600px){.articulo table{font-size:.86rem}.articulo th,.articulo td{padding:10px 8px;-webkit-hyphens:auto;hyphens:auto}.articulo td:first-child{width:28%}}
 .articulo a{color:var(--electric-ink)}
 .articulo a.btn-claro{color:var(--void)}
 .articulo a.btn-wa{color:#9BE8C3}
