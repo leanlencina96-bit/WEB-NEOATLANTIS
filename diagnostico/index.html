@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Autodiagnóstico gratis para tu consultorio | NeoAtlantis</title>
+<meta name="description" content="En 3 minutos: cuánto te cuestan los turnos que se pierden, cuánto tiempo se va en la agenda y qué mejorar primero. Gratis, para profesionales de la salud de Rosario y VGG.">
+<link rel="canonical" href="https://www.neoatlantis.com.ar/diagnostico/">
+<meta property="og:title" content="¿Cuánto te cuestan los turnos que se pierden? · Autodiagnóstico gratis">
+<meta property="og:description" content="9 preguntas, 3 minutos y tu resultado con tus números.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.neoatlantis.com.ar/diagnostico/">
+<meta property="og:image" content="https://www.neoatlantis.com.ar/assets/og-image.jpg">
+<meta property="og:locale" content="es_AR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#05070A">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+/* Fuentes servidas desde la propia web (licencia SIL OFL): Space Grotesk e Inter, subconjuntos latin y latin-ext. */
+@font-face{font-family:'Inter';font-style:normal;font-weight:300 600;font-display:swap;src:url(/assets/fonts/inter-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+@font-face{font-family:'Inter';font-style:normal;font-weight:300 600;font-display:swap;src:url(/assets/fonts/inter-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face{font-family:'Space Grotesk';font-style:normal;font-weight:400 700;font-display:swap;src:url(/assets/fonts/space-grotesk-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+@font-face{font-family:'Space Grotesk';font-style:normal;font-weight:400 700;font-display:swap;src:url(/assets/fonts/space-grotesk-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+
+:root{--void:#05070A;--navy:#0D1424;--navy-2:#111B30;--off:#EDEEF1;--slate:#4B5563;--white:#fff;--electric:#4C6FFF;--electric-ink:#3554E0;--violet:#7B5CFA;--line-dark:rgba(255,255,255,.10);--line-light:rgba(11,20,36,.10)}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;line-height:1.65;background:var(--void);color:var(--white);overflow-x:hidden}
+h1,h2,h3{font-family:'Space Grotesk',sans-serif;font-weight:600;letter-spacing:-.01em}
+a{color:inherit}
+img,svg{display:block;max-width:100%}
+.wrap{max-width:1180px;margin:0 auto;padding:0 40px}
+@media(max-width:700px){.wrap{padding:0 22px}}
+header{position:sticky;top:0;z-index:50;background:rgba(5,7,10,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line-dark)}
+header nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:'Space Grotesk',sans-serif;font-weight:600}
+.brand img{width:28px;height:28px}
+.navlinks{display:flex;gap:34px}
+.navlinks a{font-size:.88rem;color:rgba(255,255,255,.68);text-decoration:none}
+.navlinks a:hover{color:#fff}
+@media(max-width:880px){.navlinks{display:none}}
+.navcta{border:1px solid rgba(255,255,255,.25);padding:9px 20px;font-size:.82rem;border-radius:100px;text-decoration:none}
+.navcta:hover{background:#fff;color:var(--void)}
+.migas{font-size:.82rem;color:rgba(255,255,255,.55);margin-bottom:26px}
+.migas a{color:rgba(255,255,255,.7);text-decoration:none}
+.migas a:hover{text-decoration:underline}
+.hero{padding:90px 0 100px;background:radial-gradient(ellipse 55% 60% at 82% 30%,rgba(76,111,255,.16),transparent 65%),var(--void)}
+.eyebrow{font-size:.9rem;color:rgba(255,255,255,.55);margin-bottom:18px}
+.hero h1{font-size:clamp(2.4rem,5.4vw,4.4rem);line-height:1.02;max-width:900px}
+.hero p.sub{margin-top:24px;font-size:1.12rem;color:rgba(255,255,255,.66);max-width:620px;font-weight:300}
+.ctas{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:15px 28px;border-radius:100px;font-size:.92rem;font-weight:500;text-decoration:none;border:1px solid transparent}
+.btn-claro{background:#fff;color:var(--void)}
+.btn-claro:hover{background:var(--electric);color:#fff}
+.btn-wa{background:#173A2A;color:#9BE8C3;border-color:#23573E}
+.btn-wa:hover{border-color:#3FCF8E}
+.sec{padding:100px 0}
+@media(max-width:800px){.sec{padding:70px 0}.hero{padding:60px 0 70px}}
+.claro{background:var(--off);color:#0D1424}
+.claro h2,.claro h3{color:var(--void)}
+.claro .muted{color:var(--slate)}
+.oscuro{background:var(--navy)}
+.sec h2{font-size:clamp(1.9rem,3.6vw,2.7rem);line-height:1.1;margin-bottom:16px;max-width:760px}
+.sec .intro{font-size:1.04rem;max-width:640px;margin-bottom:46px}
+.oscuro .intro{color:rgba(255,255,255,.66)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:820px){.grid2{grid-template-columns:1fr}}
+.tarjeta{background:#fff;border:1px solid var(--line-light);border-radius:14px;padding:26px}
+.tarjeta h3{font-size:1.15rem;margin-bottom:8px}
+.tarjeta p{color:var(--slate);font-size:.96rem}
+.sol{display:grid;grid-template-columns:1fr auto;gap:18px;align-items:start;padding:24px 0;border-top:1px solid var(--line-dark)}
+.sol:last-child{border-bottom:1px solid var(--line-dark)}
+.sol h3{font-size:1.15rem;margin-bottom:6px}
+.sol p{color:rgba(255,255,255,.66);font-size:.96rem;max-width:640px}
+.chip{font-size:.75rem;padding:4px 11px;border-radius:999px;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.75);white-space:nowrap}
+.chip.inc{border-color:rgba(124,224,176,.5);color:#9BE8C3}
+.chip.plan{border-color:rgba(123,147,255,.55);color:#B3C1FF}
+.pasos{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;counter-reset:p}
+@media(max-width:820px){.pasos{grid-template-columns:1fr}}
+.paso{background:#fff;border:1px solid var(--line-light);border-radius:14px;padding:26px;counter-increment:p}
+.paso::before{content:counter(p,decimal-leading-zero);display:block;font-family:'Space Grotesk',sans-serif;color:var(--electric-ink);font-weight:600;margin-bottom:10px}
+.paso h3{font-size:1.1rem;margin-bottom:6px}
+.paso p{color:var(--slate);font-size:.95rem}
+.demo{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;background:var(--navy-2);border:1px solid var(--line-dark);border-radius:16px;padding:30px}
+.demo p{color:rgba(255,255,255,.7);max-width:620px}
+.faq{max-width:860px;border-top:1px solid var(--line-light)}
+.faq details{border-bottom:1px solid var(--line-light)}
+.faq summary{list-style:none;cursor:pointer;padding:22px 40px 22px 0;font-family:'Space Grotesk',sans-serif;font-size:1.1rem;position:relative;color:var(--void)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:'+';position:absolute;right:4px;top:50%;transform:translateY(-50%);font-size:1.5rem;color:var(--electric-ink)}
+.faq details[open] summary::after{content:'–'}
+.faq details p{padding:0 0 22px;color:var(--slate);max-width:720px}
+.cierre{text-align:center;padding:110px 0;background:radial-gradient(ellipse 60% 70% at 50% 100%,rgba(76,111,255,.14),transparent 65%),var(--void)}
+.cierre h2{font-size:clamp(2rem,4.6vw,3.2rem);max-width:820px;margin:0 auto}
+.cierre p{margin-top:16px;color:rgba(255,255,255,.62)}
+.cierre .ctas{justify-content:center}
+.otras{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.otras a{font-size:.88rem;padding:8px 16px;border-radius:999px;border:1px solid var(--line-light);text-decoration:none;color:#0D1424;background:#fff}
+.otras a:hover{border-color:var(--electric-ink)}
+/* artículo (guías) */
+.articulo{background:var(--off);color:#1F2937;padding:70px 0 90px}
+.articulo .cuerpo{max-width:784px;margin:0 auto;padding:0 22px}
+.articulo h2{font-size:1.75rem;color:var(--void);margin:46px 0 14px;line-height:1.2}
+.articulo h3{font-size:1.2rem;color:var(--void);margin:28px 0 8px}
+.articulo p{margin-bottom:16px;font-size:1.06rem}
+.articulo ul,.articulo ol{margin:0 0 18px 22px;font-size:1.06rem}
+.articulo li{margin-bottom:8px}
+.articulo .tabla{overflow-x:auto;margin:0 0 22px}
+.articulo table{width:100%;border-collapse:collapse;font-size:.98rem;background:#fff;border-radius:12px;overflow:hidden}
+.articulo th,.articulo td{padding:12px 14px;text-align:left;border-bottom:1px solid #E5E7EB;vertical-align:top}
+.articulo th{background:var(--void);color:#fff;font-weight:600}
+@media(max-width:600px){.articulo table{font-size:.86rem}.articulo th,.articulo td{padding:10px 8px;-webkit-hyphens:auto;hyphens:auto}.articulo td:first-child{width:28%}}
+.articulo a{color:var(--electric-ink)}
+.articulo a.btn-claro{color:var(--void)}
+.articulo a.btn-wa{color:#9BE8C3}
+.articulo .indice{background:#fff;border:1px solid var(--line-light);border-radius:14px;padding:20px 24px;margin:8px 0 30px}
+.articulo .indice b{display:block;margin-bottom:8px;color:var(--void)}
+.articulo .indice ol{margin-bottom:0}
+.nota{background:#fff;border-left:4px solid var(--electric-ink);border-radius:8px;padding:16px 20px;margin:20px 0;font-size:1rem}
+.caja-cta{background:var(--navy);color:#fff;border-radius:16px;padding:32px;margin-top:46px}
+.caja-cta h2{color:#fff;margin:0 0 10px;font-size:1.5rem}
+.caja-cta p{color:rgba(255,255,255,.72)}
+.fuentes{font-size:.92rem;color:var(--slate)}
+.meta-art{font-size:.88rem;color:rgba(255,255,255,.6);margin-top:18px}
+.lista-guias{display:grid;gap:18px}
+.lista-guias a{display:block;background:#fff;border:1px solid var(--line-light);border-radius:14px;padding:26px;text-decoration:none;color:#0D1424}
+.lista-guias a:hover{border-color:var(--electric-ink)}
+.lista-guias h2{font-size:1.3rem;margin:0 0 6px}
+.lista-guias p{color:var(--slate);margin:0}
+footer{border-top:1px solid var(--line-dark);padding:50px 0 34px}
+.pie{display:flex;justify-content:space-between;flex-wrap:wrap;gap:30px;margin-bottom:34px}
+.pie p{color:rgba(255,255,255,.55);font-size:.94rem;max-width:300px;margin-top:12px}
+.pie-links{display:flex;gap:48px;flex-wrap:wrap}
+.pie-links a{display:block;color:rgba(255,255,255,.6);font-size:.9rem;margin-bottom:10px;text-decoration:none}
+.pie-links a:hover{color:#fff}
+.pie-fin{border-top:1px solid var(--line-dark);padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;color:rgba(255,255,255,.6);font-size:.82rem}
+.wa-float{position:fixed;right:22px;bottom:22px;z-index:60;width:58px;height:58px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.35)}
+.wa-float svg{width:30px;height:30px;fill:#fff}
+:focus-visible{outline:2px solid var(--electric);outline-offset:3px}
+
+</style>
+</head>
+<body>
+<header><div class="wrap"><nav>
+  <a class="brand" href="/"><img src="/assets/isotipo.png" alt="">NEOATLANTIS</a>
+  <div class="navlinks"><a href="/#incluye">Qué incluye</a><a href="/#casos">Demos</a><a href="/guias/">Guías</a><a href="/#preguntas">Preguntas</a><a href="/#captacion">Contacto</a></div>
+  <a class="navcta" href="/#captacion">Diagnóstico gratis</a>
+</nav></div></header>
+<style>
+.dg{max-width:760px;margin:0 auto}
+.dg-card{background:var(--navy);border:1px solid var(--line-dark);border-radius:18px;padding:34px}
+@media(max-width:700px){.dg-card{padding:24px 20px}}
+.dg-barra{height:6px;background:rgba(255,255,255,.08);border-radius:3px;overflow:hidden;margin-bottom:26px}
+.dg-barra div{height:100%;background:linear-gradient(90deg,var(--electric),var(--violet));transition:width .3s}
+.dg-paso{display:none}.dg-paso.on{display:block}
+.dg-n{font-size:.8rem;color:rgba(255,255,255,.5);letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px}
+.dg h2{font-size:1.5rem;line-height:1.25;margin-bottom:8px}
+.dg .ayuda{color:rgba(255,255,255,.6);font-size:.95rem;margin-bottom:22px}
+.dg-ops{display:grid;gap:10px}
+.dg-op{display:block;width:100%;text-align:left;background:rgba(255,255,255,.04);border:1px solid var(--line-dark);border-radius:12px;padding:14px 16px;color:#fff;font:inherit;font-size:1rem;cursor:pointer}
+.dg-op:hover{border-color:var(--electric)}.dg-op.on{border-color:var(--electric);background:rgba(76,111,255,.16)}
+.dg input[type=number],.dg input[type=text],.dg input[type=tel],.dg input[type=email]{width:100%;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.18);border-radius:12px;color:#fff;font:inherit;font-size:1.05rem;padding:14px 16px}
+.dg input:focus{outline:2px solid var(--electric);border-color:transparent}
+.dg-rango{display:flex;align-items:center;gap:14px}.dg-rango input[type=range]{flex:1;accent-color:var(--electric)}.dg-rango b{font-family:'Space Grotesk',sans-serif;font-size:1.6rem;min-width:70px;text-align:right}
+.dg-nav{display:flex;justify-content:space-between;align-items:center;margin-top:28px;gap:12px}
+.dg-volver{background:none;border:0;color:rgba(255,255,255,.6);font:inherit;cursor:pointer;padding:8px 0}
+.dg-volver:hover{color:#fff}
+.dg-sig{border:0;cursor:pointer}
+.dg-sig:disabled{opacity:.4;cursor:default}
+.dg-res{text-align:left}
+.dg-grande{font-family:'Space Grotesk',sans-serif;font-size:clamp(2.2rem,6vw,3.2rem);font-weight:700;line-height:1.05;margin:6px 0 4px;color:#fff}
+.dg-kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:24px 0}
+@media(max-width:640px){.dg-kpis{grid-template-columns:1fr}}
+.dg-kpi{background:rgba(255,255,255,.04);border:1px solid var(--line-dark);border-radius:12px;padding:14px}
+.dg-kpi span{display:block;font-size:.8rem;color:rgba(255,255,255,.55)}
+.dg-kpi b{display:block;font-family:'Space Grotesk',sans-serif;font-size:1.35rem;margin-top:4px}
+.dg-lista{list-style:none;display:grid;gap:10px;margin:8px 0 24px}
+.dg-lista li{padding-left:28px;position:relative;color:rgba(255,255,255,.8)}
+.dg-lista li::before{content:"→";position:absolute;left:4px;color:var(--electric)}
+.dg-sug{border:1px solid rgba(123,147,255,.45);background:rgba(76,111,255,.10);border-radius:14px;padding:18px;margin-bottom:24px}
+.dg-sug b{font-family:'Space Grotesk',sans-serif;font-size:1.15rem}
+.dg-form{display:grid;gap:12px;margin-top:6px}
+.dg-err{color:#FFB4AE;font-size:.92rem;min-height:1.2em}
+.dg-nota{font-size:.8rem;color:rgba(255,255,255,.45);margin-top:14px}
+.dg-ok{text-align:center}
+.dg-ok .ctas{justify-content:center}
+.hp{position:absolute;left:-9999px}
+</style>
+<main>
+<section class="hero" style="padding-bottom:40px"><div class="wrap">
+  <nav class="migas" aria-label="Estás en"><a href="/">Inicio</a> › Autodiagnóstico</nav>
+  <div class="eyebrow">Para consultorios y profesionales de la salud · gratis · 3 minutos</div>
+  <h1>¿Cuánto te cuestan los turnos que se pierden?</h1>
+  <p class="sub">Respondé 9 preguntas cortas y te mostramos cuánto se escapa por mes en turnos vacíos, cuánto tiempo se te va en organizar la agenda y qué te conviene mejorar primero.</p>
+</div></section>
+<section class="sec" style="padding-top:20px"><div class="wrap"><div class="dg">
+  <div class="dg-card" id="dg">
+    <div class="dg-barra" aria-hidden="true"><div id="dgBarra" style="width:0"></div></div>
+    <div id="dgPasos"></div>
+  </div>
+</div></div></section>
+</main>
+<script>
+'use strict';
+(function () {
+  var AGENDA = '';   // link de la agenda del diagnóstico (Google Calendar); vacío = se ofrece WhatsApp
+  var WA = '5493412269841';
+  var t0 = Date.now();
+  var R = { profesion: '', turnosHoy: '', turnosSemana: 40, faltasSemana: 3, valor: 25000, recordatorios: '', horasSemana: 3, web: '', maps: '', ciudad: '' };
+  var PASOS = [
+    { k: 'profesion', t: '¿Cuál es tu profesión?', op: ['Odontología', 'Psicología', 'Medicina', 'Kinesiología o nutrición', 'Otra'] },
+    { k: 'turnosHoy', t: '¿Cómo te piden turno hoy tus pacientes?', a: 'Elegí la forma principal.', op: ['WhatsApp o teléfono', 'Una secretaria', 'Una app (Doctoralia u otra)', 'Mi propia web'] },
+    { k: 'turnosSemana', t: '¿Cuántos turnos atendés por semana, más o menos?', rango: [5, 150, 5] },
+    { k: 'faltasSemana', t: '¿Cuántos pacientes faltan o cancelan a último momento por semana?', a: 'Turnos que quedan vacíos y no llegás a llenar.', rango: [0, 20, 1] },
+    { k: 'valor', t: '¿Cuánto vale una consulta, en promedio?', a: 'En pesos. Es solo para hacer la cuenta: no se publica.', num: true },
+    { k: 'recordatorios', t: '¿Les mandás recordatorios a tus pacientes?', op: ['No mando', 'A mano por WhatsApp', 'Automáticos'] },
+    { k: 'horasSemana', t: '¿Cuántas horas por semana se te van en dar, mover y confirmar turnos?', a: 'Contando lo que hacés vos o tu secretaria.', rango: [0, 20, 1] },
+    { k: 'web', t: '¿Tenés página web?', op: ['No tengo', 'Sí, pero sin turnos', 'Sí, con turnos online'] },
+    { k: 'maps', t: 'Si un paciente te busca en Google Maps, ¿aparecés?', op: ['Sí', 'No', 'No sé'] },
+  ];
+  var i = 0;
+  var el = function (tag, attrs, hijos) {
+    var n = document.createElement(tag);
+    for (var k in (attrs || {})) { if (k === 'text') n.textContent = attrs[k]; else if (k === 'class') n.className = attrs[k]; else n.setAttribute(k, attrs[k]); }
+    [].concat(hijos || []).forEach(function (h) { if (h) n.append(h); });
+    return n;
+  };
+  var pesos = function (n) { return '$ ' + Math.round(n).toLocaleString('es-AR'); };
+  function barra() { document.getElementById('dgBarra').style.width = Math.round((i / (PASOS.length + 1)) * 100) + '%'; }
+  function paso() {
+    barra();
+    var cont = document.getElementById('dgPasos');
+    if (i >= PASOS.length) return resultado();
+    var p = PASOS[i];
+    var sig = el('button', { class: 'btn btn-claro dg-sig', type: 'button', text: i === PASOS.length - 1 ? 'Ver mi resultado' : 'Siguiente' });
+    var cuerpo;
+    if (p.op) {
+      cuerpo = el('div', { class: 'dg-ops', role: 'radiogroup', 'aria-label': p.t }, p.op.map(function (o) {
+        var b = el('button', { class: 'dg-op' + (R[p.k] === o ? ' on' : ''), type: 'button', role: 'radio', 'aria-checked': String(R[p.k] === o), text: o });
+        b.addEventListener('click', function () { R[p.k] = o; i++; paso(); });
+        return b;
+      }));
+      sig.disabled = !R[p.k];
+    } else if (p.rango) {
+      var v = el('b', { text: String(R[p.k]) + (p.rango[1] === 150 || p.rango[1] === 20 ? (R[p.k] >= p.rango[1] ? '+' : '') : '') });
+      var r = el('input', { type: 'range', min: p.rango[0], max: p.rango[1], step: p.rango[2], value: R[p.k], 'aria-label': p.t });
+      r.addEventListener('input', function () { R[p.k] = Number(r.value); v.textContent = r.value + (Number(r.value) >= p.rango[1] ? '+' : ''); });
+      cuerpo = el('div', { class: 'dg-rango' }, [r, v]);
+    } else {
+      var inp = el('input', { type: 'number', min: '0', step: '500', inputmode: 'numeric', value: R[p.k], 'aria-label': p.t });
+      inp.addEventListener('input', function () { R[p.k] = Number(inp.value) || 0; sig.disabled = !R[p.k]; });
+      cuerpo = inp;
+    }
+    sig.addEventListener('click', function () { i++; paso(); });
+    var volver = el('button', { class: 'dg-volver', type: 'button', text: i ? '← Volver' : '' });
+    volver.addEventListener('click', function () { if (i) { i--; paso(); } });
+    cont.replaceChildren(el('div', { class: 'dg-paso on' }, [
+      el('div', { class: 'dg-n', text: 'Pregunta ' + (i + 1) + ' de ' + PASOS.length }), el('h2', { text: p.t }), p.a ? el('p', { class: 'ayuda', text: p.a }) : null,
+      cuerpo, el('div', { class: 'dg-nav' }, [volver, p.op ? (R[p.k] ? sig : el('span')) : sig])]));
+    var f = cont.querySelector('input, .dg-op'); if (f) f.focus({ preventScroll: true });
+  }
+  function calcular() {
+    var perdidaMes = R.faltasSemana * 4.3 * R.valor;
+    // Estimación prudente: los recordatorios automáticos recuperan 1 de cada 3 turnos vacíos (si ya los mandás, menos).
+    var factor = R.recordatorios === 'Automáticos' ? 0.1 : (R.recordatorios === 'A mano por WhatsApp' ? 0.25 : 0.33);
+    var recuperable = perdidaMes * factor;
+    var horasAhorro = Math.round(R.horasSemana * 4.3 * 0.6);
+    var cosas = [];
+    if (R.recordatorios !== 'Automáticos') cosas.push('Recordatorios automáticos 24 y 2 horas antes, con un botón para cancelar que libera el horario.');
+    if (R.turnosHoy !== 'Mi propia web' && R.web !== 'Sí, con turnos online') cosas.push('Turnos online las 24 horas: el paciente ve solo los horarios libres y reserva solo.');
+    if (R.horasSemana >= 3) cosas.push('Aprobar cada turno con un toque desde el celular, sin ida y vuelta por WhatsApp.');
+    if (R.web === 'No tengo') cosas.push('Una web profesional pensada para el celular, para que quien te busque llegue directo a vos.');
+    if (R.maps !== 'Sí') cosas.push('Aparecer en Google Maps con tu ficha completa, horarios y botón para reservar.');
+    if (!cosas.length) cosas.push('Tenés lo principal resuelto: en la charla vemos si hay algo para afinar.');
+    var sug = R.turnosHoy === 'Mi propia web' && R.web === 'Sí, con turnos online' ? 'Revisión de lo que ya tenés'
+      : (R.turnosSemana >= 60 || R.faltasSemana >= 6 ? 'Paquete Integral (turnos + confirmación en tres tiempos + lista de espera)'
+      : (R.web === 'No tengo' && R.turnosHoy === 'Una app (Doctoralia u otra)' ? 'Paquete Presencia o Turnos' : 'Paquete Turnos'));
+    var salud = 100 - (R.recordatorios === 'No mando' ? 25 : R.recordatorios === 'A mano por WhatsApp' ? 12 : 0) - (R.web === 'No tengo' ? 20 : R.web === 'Sí, pero sin turnos' ? 10 : 0)
+      - (R.maps === 'Sí' ? 0 : 15) - (R.turnosHoy === 'WhatsApp o teléfono' ? 15 : R.turnosHoy === 'Una secretaria' ? 8 : 0) - Math.min(15, R.faltasSemana * 2);
+    return { perdidaMes: perdidaMes, recuperable: recuperable, horasAhorro: horasAhorro, cosas: cosas, sug: sug, salud: Math.max(5, salud) };
+  }
+  function resultado() {
+    var c = calcular();
+    document.getElementById('dgBarra').style.width = '100%';
+    var err = el('p', { class: 'dg-err', role: 'alert' });
+    var nombre = el('input', { type: 'text', placeholder: 'Tu nombre', autocomplete: 'name', 'aria-label': 'Tu nombre' });
+    var wa = el('input', { type: 'tel', placeholder: 'Tu WhatsApp (ej. 341 555-1234)', autocomplete: 'tel', 'aria-label': 'Tu WhatsApp' });
+    var ciudad = el('input', { type: 'text', placeholder: 'Ciudad', 'aria-label': 'Ciudad' });
+    var mail = el('input', { type: 'email', placeholder: 'Email (opcional)', autocomplete: 'email', 'aria-label': 'Email' });
+    var hp = el('input', { type: 'text', class: 'hp', tabindex: '-1', autocomplete: 'off', 'aria-hidden': 'true' });
+    var enviar = el('button', { class: 'btn btn-claro', type: 'submit', text: 'Quiero que me contacten' });
+    var form = el('form', { class: 'dg-form' }, [nombre, wa, ciudad, mail, hp, err, enviar]);
+    form.addEventListener('submit', function (e) {
+      e.preventDefault(); err.textContent = '';
+      if (nombre.value.trim().length < 2) { err.textContent = 'Ingresá tu nombre.'; nombre.focus(); return; }
+      if (wa.value.replace(/\D/g, '').length < 8) { err.textContent = 'Ingresá tu WhatsApp para pasarte el resultado.'; wa.focus(); return; }
+      enviar.disabled = true; enviar.textContent = 'Enviando…';
+      R.ciudad = ciudad.value.trim();
+      fetch('/api/autodiagnostico', { method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ nombre: nombre.value.trim(), whatsapp: wa.value.trim(), email: mail.value.trim(), respuestas: R, sugerido: c.sug, empresa: hp.value, t0: t0 }) })
+        .then(function (r) { return r.json().then(function (j) { if (!r.ok) throw new Error(j.error || 'No se pudo enviar.'); }); })
+        .then(listo)
+        .catch(function (x) { err.textContent = x.message; enviar.disabled = false; enviar.textContent = 'Quiero que me contacten'; });
+    });
+    document.getElementById('dgPasos').replaceChildren(el('div', { class: 'dg-res' }, [
+      el('div', { class: 'dg-n', text: 'Tu resultado' }),
+      el('p', { class: 'ayuda', text: 'Por los turnos que quedan vacíos se te escapan, por mes, alrededor de' }),
+      el('div', { class: 'dg-grande', text: pesos(c.perdidaMes) }),
+      el('p', { class: 'ayuda', text: R.faltasSemana + ' turnos vacíos por semana × ' + pesos(R.valor) + ' × 4,3 semanas. Es una estimación con tus números.' }),
+      el('div', { class: 'dg-kpis' }, [
+        el('div', { class: 'dg-kpi' }, [el('span', { text: 'Recuperable con recordatorios' }), el('b', { text: '~' + pesos(c.recuperable) + '/mes' })]),
+        el('div', { class: 'dg-kpi' }, [el('span', { text: 'Horas que te podés ahorrar' }), el('b', { text: '~' + c.horasAhorro + ' h/mes' })]),
+        el('div', { class: 'dg-kpi' }, [el('span', { text: 'Salud digital del consultorio' }), el('b', { text: c.salud + '/100' })])]),
+      el('h2', { text: 'Lo que más te conviene mejorar', style: 'font-size:1.2rem' }),
+      el('ul', { class: 'dg-lista' }, c.cosas.map(function (x) { return el('li', { text: x }); })),
+      el('div', { class: 'dg-sug' }, [el('span', { class: 'dg-n', text: 'Lo que te sugerimos' }), el('b', { text: c.sug })]),
+      el('h2', { text: '¿Lo vemos en 15 minutos?', style: 'font-size:1.2rem' }),
+      el('p', { class: 'ayuda', text: 'Dejanos tu WhatsApp: te escribe Leandro, de NeoAtlantis (Villa Gobernador Gálvez), para una charla corta y sin compromiso con tus números.' }),
+      form,
+      el('p', { class: 'dg-nota', text: 'Usamos tus datos solo para contactarte por este diagnóstico. No guardamos información de pacientes. Ver la política de privacidad en /privacidad.html' })]));
+  }
+  function listo() {
+    var botones = [];
+    if (AGENDA) botones.push(el('a', { class: 'btn btn-claro', href: AGENDA, target: '_blank', rel: 'noopener', text: 'Elegir horario para la charla' }));
+    botones.push(el('a', { class: 'btn btn-wa', href: 'https://wa.me/' + WA + '?text=' + encodeURIComponent('Hola Leandro, completé el autodiagnóstico en la web y quiero coordinar la charla.'), target: '_blank', rel: 'noopener', text: 'Escribir por WhatsApp' }));
+    document.getElementById('dgPasos').replaceChildren(el('div', { class: 'dg-ok' }, [
+      el('div', { class: 'dg-grande', text: '¡Listo!' }),
+      el('p', { class: 'ayuda', text: AGENDA ? 'Ya tenemos tu resultado. Elegí el horario que te quede cómodo para la charla de 15 minutos, o escribinos.' : 'Ya tenemos tu resultado. Te escribimos por WhatsApp en el día para coordinar la charla de 15 minutos.' }),
+      el('div', { class: 'ctas' }, botones)]));
+  }
+  paso();
+})();
+</script>
+
+<footer><div class="wrap">
+  <div class="pie">
+    <div><a class="brand" href="/"><img src="/assets/isotipo.png" alt="">NEOATLANTIS</a><p>Web, turnos online y automatizaciones para profesionales de la salud.</p></div>
+    <div class="pie-links">
+      <div><a href="/odontologos/">Odontólogos</a><a href="/psicologos/">Psicólogos</a><a href="/medicos/">Médicos</a><a href="/kinesiologos-nutricionistas/">Kinesiólogos y nutricionistas</a></div>
+      <div><a href="/guias/">Guías</a><a href="/#casos">Demos</a><a href="/#captacion">Contacto</a><a href="https://www.instagram.com/neoatlantis.digital" target="_blank" rel="noopener">Instagram</a><a href="/privacidad.html">Privacidad</a><a href="/terminos.html">Términos</a></div>
+    </div>
+  </div>
+  <div class="pie-fin"><span>© 2026 NeoAtlantis</span><span>Villa Gobernador Gálvez · Rosario, Argentina</span></div>
+</div></footer>
+<a class="wa-float" href="https://wa.me/5493412269841?text=Hola%20NeoAtlantis,%20soy%20odontólogo/a%20y%20quiero%20consultar%20por%20los%20turnos%20online." target="_blank" rel="noopener" aria-label="Escribinos por WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16.04 3C9.4 3 4 8.36 4 14.96c0 2.1.56 4.16 1.62 5.97L4 29l8.3-1.6a12.1 12.1 0 0 0 3.74.6C22.68 28 28 22.64 28 16.04 28 9.4 22.68 3 16.04 3zm0 22.9c-1.18 0-2.34-.2-3.44-.6l-.5-.18-4.92.95.98-4.8-.2-.5a9.9 9.9 0 0 1-1.5-5.8c0-5.46 4.48-9.9 9.6-9.9 5.46 0 9.9 4.44 9.9 9.94S21.5 25.9 16.04 25.9zm5.44-7.4c-.3-.15-1.76-.86-2.03-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.44-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.5h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.21 3.08.15.2 2.1 3.2 5.08 4.48.71.31 1.27.5 1.7.63.72.23 1.37.2 1.88.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41-.08-.13-.27-.2-.57-.35z"/></svg></a>
+</body>
+</html>
