@@ -25,7 +25,8 @@ const OPC = {
   maps: ['Sí', 'No', 'No sé'],
 };
 const num = (v, min, max) => { const n = Number(v); return Number.isFinite(n) ? Math.min(max, Math.max(min, Math.round(n))) : null; };
-const opcion = (lista, v) => (lista.includes(v) ? v : '');
+const llano = (t) => String(t || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().trim();
+const opcion = (lista, v) => lista.find((o) => llano(o) === llano(v)) || '';
 const pesos = (n) => 'ARS ' + Math.round(n).toLocaleString('es-AR');
 
 export default async function handler(req, res) {
