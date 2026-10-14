@@ -165,7 +165,7 @@ def cabeza(titulo, desc, ruta, schema, og_tipo="website"):
 <header><div class="wrap"><nav>
   <a class="brand" href="/"><img src="/assets/isotipo.png" alt="">NEOATLANTIS</a>
   <div class="navlinks"><a href="/#incluye">Qué incluye</a><a href="/#casos">Demos</a><a href="/guias/">Guías</a><a href="/#preguntas">Preguntas</a><a href="/#captacion">Contacto</a></div>
-  <a class="navcta" href="/#captacion">Diagnóstico gratis</a>
+  <a class="navcta" href="/diagnostico/">Diagnóstico gratis</a>
 </nav></div></header>
 """
 
