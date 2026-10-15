@@ -15,6 +15,9 @@
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="es_AR">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Web y turnos online para consultorios en Rosario | NeoAtlantis">
+<meta name="twitter:description" content="Web, turnos online y recordatorios automáticos para profesionales de la salud en Gran Rosario. Pedí tu diagnóstico gratis.">
+<meta name="twitter:image" content="https://www.neoatlantis.com.ar/assets/og-image.jpg">
 <meta name="theme-color" content="#05070A">
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
@@ -411,7 +414,7 @@
   <div class="wrap">
     <nav>
       <div class="brand">
-        <img src="assets/isotipo.png" alt="NeoAtlantis" class="brand-icon">
+        <img src="assets/isotipo.png" alt="NeoAtlantis" class="brand-icon" width="30" height="30">
         <div class="word">NEOATLANTIS</div>
       </div>
       <div class="navlinks">
@@ -431,7 +434,7 @@
 <section class="hero">
   <div class="wrap">
     <div class="hero-eyebrow r">Para consultorios de salud — Gran Rosario</div>
-    <h1 class="r">Tu consultorio,<br>con turnos online<br>que se organizan<br>solos.</h1>
+    <h1 class="r">Web y turnos online<br>para tu consultorio en Rosario,<br>que se organizan solos.</h1>
     <p class="hero-sub r">Web, turnos online y recordatorios automáticos para profesionales de la salud. Vos atendés; el sistema se ocupa del resto.</p>
     <div class="hero-ctas r">
       <a href="#captacion" class="btn btn-primary">Quiero mi diagnóstico gratis</a>
@@ -741,7 +744,7 @@
     <div class="foot-top">
       <div>
         <div class="brand" style="margin-bottom:16px;">
-          <img src="assets/isotipo.png" alt="NeoAtlantis" class="brand-icon">
+          <img src="assets/isotipo.png" alt="NeoAtlantis" class="brand-icon" width="30" height="30">
           <div class="word">NEOATLANTIS</div>
         </div>
         <p class="foot-tag">Web, turnos online y automatizaciones para profesionales de la salud.</p>
@@ -803,7 +806,7 @@ const dv = document.getElementById('demoVideo');
 if (dv && dv.dataset.yt) {
   dv.hidden = false;
   const id = encodeURIComponent(dv.dataset.yt);
-  dv.insertAdjacentHTML('afterbegin', '<img src="https://i.ytimg.com/vi/' + id + '/hqdefault.jpg" alt="" loading="lazy">');
+  dv.insertAdjacentHTML('afterbegin', '<img src="https://i.ytimg.com/vi/' + id + '/hqdefault.jpg" alt="Video: demo de turnos online funcionando en un consultorio" loading="lazy">');
   const play = () => { dv.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0" title="Demo funcionando" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>'; };
   dv.addEventListener('click', play, { once: true });
   dv.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); play(); } }, { once: true });

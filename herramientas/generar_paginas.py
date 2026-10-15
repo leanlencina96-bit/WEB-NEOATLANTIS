@@ -148,7 +148,12 @@ def cabeza(titulo, desc, ruta, schema, og_tipo="website"):
 <meta property="og:url" content="{url}">
 <meta property="og:image" content="{SITIO}/assets/og-image.jpg">
 <meta property="og:locale" content="es_AR">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{e(titulo)}">
+<meta name="twitter:description" content="{e(desc)}">
+<meta name="twitter:image" content="{SITIO}/assets/og-image.jpg">
 <meta name="theme-color" content="#05070A">
 <link rel="icon" type="image/png" href="/assets/favicon.png">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
@@ -163,7 +168,7 @@ def cabeza(titulo, desc, ruta, schema, og_tipo="website"):
 </head>
 <body>
 <header><div class="wrap"><nav>
-  <a class="brand" href="/"><img src="/assets/isotipo.png" alt="">NEOATLANTIS</a>
+  <a class="brand" href="/"><img src="/assets/isotipo.png" alt="" width="128" height="128">NEOATLANTIS</a>
   <div class="navlinks"><a href="/#incluye">Qué incluye</a><a href="/#casos">Demos</a><a href="/guias/">Guías</a><a href="/#preguntas">Preguntas</a><a href="/#captacion">Contacto</a></div>
   <a class="navcta" href="/diagnostico/">Diagnóstico gratis</a>
 </nav></div></header>
@@ -175,7 +180,7 @@ def especialidades_pie():
 def pie(texto_wa):
     return f"""<footer><div class="wrap">
   <div class="pie">
-    <div><a class="brand" href="/"><img src="/assets/isotipo.png" alt="">NEOATLANTIS</a><p>Web, turnos online y automatizaciones para profesionales de la salud.</p></div>
+    <div><a class="brand" href="/"><img src="/assets/isotipo.png" alt="" width="128" height="128">NEOATLANTIS</a><p>Web, turnos online y automatizaciones para profesionales de la salud.</p></div>
     <div class="pie-links">
       <div>{especialidades_pie()}</div>
       <div><a href="/guias/">Guías</a><a href="/#casos">Demos</a><a href="/#captacion">Contacto</a><a href="https://www.instagram.com/neoatlantis.digital" target="_blank" rel="noopener">Instagram</a><a href="/privacidad.html">Privacidad</a><a href="/terminos.html">Términos</a></div>
@@ -257,7 +262,7 @@ def pagina_especialidad(p):
 <section class="cierre"><div class="wrap">
   <h2>{e(p['cierre'])}</h2>
   <p>Diagnóstico gratis de 15 minutos · Sin compromiso · Villa Gobernador Gálvez y Gran Rosario</p>
-  <div class="ctas"><a class="btn btn-claro" href="/#captacion">Pedir mi diagnóstico gratis</a><a class="btn btn-wa" href="{WA}{wa}" target="_blank" rel="noopener">Escribinos por WhatsApp</a></div>
+  <div class="ctas"><a class="btn btn-claro" href="/diagnostico/">Hacer el autodiagnóstico gratis</a><a class="btn btn-wa" href="{WA}{wa}" target="_blank" rel="noopener">Escribinos por WhatsApp</a></div>
 </div></section>
 </main>
 """
@@ -285,7 +290,7 @@ def pagina_guia(g):
 <article class="articulo"><div class="cuerpo">
 {g['cuerpo']}
 <div class="caja-cta"><h2>{e(g['cta_titulo'])}</h2><p>{e(g['cta_texto'])}</p>
-<div class="ctas"><a class="btn btn-claro" href="/#captacion">Pedir mi diagnóstico gratis</a><a class="btn btn-wa" href="{WA}{g['wa'].replace(' ', '%20')}" target="_blank" rel="noopener">Escribinos por WhatsApp</a></div></div>
+<div class="ctas"><a class="btn btn-claro" href="/diagnostico/">Hacer el autodiagnóstico gratis</a><a class="btn btn-wa" href="{WA}{g['wa'].replace(' ', '%20')}" target="_blank" rel="noopener">Escribinos por WhatsApp</a></div></div>
 <h2 style="font-size:1.2rem;margin-top:40px">Fuentes</h2>
 <ul class="fuentes">{''.join(f'<li><a href="{u}" target="_blank" rel="noopener">{e(t)}</a></li>' for t, u in g['fuentes'])}</ul>
 <p class="fuentes" style="margin-top:20px"><a href="/guias/">← Todas las guías</a></p>

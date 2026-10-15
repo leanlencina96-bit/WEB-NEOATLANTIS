@@ -347,4 +347,81 @@ GUIAS = [
 <p>Y un cuidado importante: <strong>en los mensajes automáticos nunca va información clínica</strong>. Día, hora, profesional y cómo cancelar alcanzan; el motivo de la consulta queda dentro del consultorio.</p>
 """,
     },
+    {
+        "slug": "aparecer-en-google-maps-consultorio",
+        "corto": "Aparecer en Google Maps",
+        "corto_largo": "Cómo aparecer en Google Maps siendo profesional de la salud en Rosario",
+        "titulo": "Cómo aparecer en Google Maps con tu consultorio en Rosario | NeoAtlantis",
+        "descripcion": "Paso a paso para crear y completar tu Perfil de Negocio de Google, aparecer en Maps cuando buscan tu especialidad en Rosario y conseguir reseñas sin romper reglas.",
+        "h1": "Cómo aparecer en Google Maps siendo profesional de la salud en Rosario",
+        "bajada": "Cuando alguien busca «psicólogo en Rosario» u «odontólogo cerca», lo primero que ve es el mapa. Cómo crear tu ficha gratis, qué completar para que Google te muestre y cómo pedir reseñas cuidando a tus pacientes.",
+        "fecha": "2026-10-14", "fecha_txt": "14 de octubre de 2026", "minutos": 7,
+        "wa": "Hola NeoAtlantis, leí la guía de Google Maps y quiero consultar por mi consultorio.",
+        "cta_titulo": "¿Querés saber cómo te ve hoy un paciente que te busca?",
+        "cta_texto": "En 3 minutos, el autodiagnóstico gratis te muestra qué te falta en Google, en tu web y en tus turnos, y cuánto se te escapa por mes.",
+        "fuentes": [
+            ("Google. Sugerencias para mejorar tu ranking local en Google (Ayuda de Perfil de Negocio de Google).", "https://support.google.com/business/answer/7091?hl=es-419"),
+            ("Google. Contenido prohibido y restringido (Política de contenido aportado por los usuarios de Maps).", "https://support.google.com/contributionpolicy/answer/7400114?hl=es-419"),
+        ],
+        "cuerpo": """
+<div class="indice"><b>En esta guía</b><ol>
+<li><a href="#por-que">Por qué Maps importa tanto</a></li>
+<li><a href="#crear">Crear y verificar tu ficha</a></li>
+<li><a href="#completar">Qué completar para que Google te muestre</a></li>
+<li><a href="#resenas">Reseñas: cómo pedirlas y cómo responderlas</a></li>
+<li><a href="#errores">Errores comunes</a></li>
+</ol></div>
+
+<p>Muchos pacientes ya no preguntan a un conocido: abren Google, escriben su especialidad y su barrio, y eligen entre los primeros tres consultorios que aparecen en el mapa. Si tu consultorio no está ahí, para esa persona no existe, aunque tengas años de trayectoria.</p>
+
+<h2 id="por-que">1. Por qué Maps importa tanto</h2>
+<p>En las búsquedas con intención local («kinesiólogo en Rosario», «dentista cerca de mí»), Google muestra un bloque con mapa y tres fichas <strong>antes</strong> que las páginas web. Esas fichas salen del <strong>Perfil de Negocio de Google</strong>, que es gratis.</p>
+<p>Según la ayuda oficial de Google, el orden depende de tres cosas:</p>
+<ul>
+<li><strong>Relevancia:</strong> qué tan bien coincide tu ficha con lo que se buscó. Por eso importa completarla bien.</li>
+<li><strong>Distancia:</strong> qué tan cerca estás de quien busca o del lugar que nombró.</li>
+<li><strong>Prominencia:</strong> qué tan conocido es tu consultorio, incluyendo la cantidad de reseñas, su puntuación y la presencia en la web.</li>
+</ul>
+<p>La distancia no la podés cambiar. Las otras dos, sí.</p>
+
+<h2 id="crear">2. Crear y verificar tu ficha</h2>
+<ol>
+<li>Entrá a <strong>business.google.com</strong> con la cuenta de Google que vas a usar para el consultorio.</li>
+<li>Escribí el nombre del consultorio tal como lo ven tus pacientes (sin agregar palabras de relleno como «el mejor» o «barato»: Google lo penaliza).</li>
+<li>Elegí la <strong>categoría principal</strong> más precisa posible: «Psicólogo», «Dentista», «Kinesiólogo», «Nutricionista»… No pongas una genérica como «Servicio de salud» si existe la tuya.</li>
+<li>Si atendés en un consultorio al que van los pacientes, cargá la dirección. Si atendés en tu casa y no querés mostrarla, o hacés solo consultas online, podés configurarlo para mostrar la <strong>zona de atención</strong> sin publicar la dirección.</li>
+<li><strong>Verificá</strong> la ficha. Google te va a pedir una forma de comprobar que el consultorio es tuyo (un video corto, un llamado o un código, según el caso). Hasta que no esté verificada, no aparece bien.</li>
+</ol>
+
+<h2 id="completar">3. Qué completar para que Google te muestre</h2>
+<p>Una ficha completa es la forma más directa de mejorar la relevancia. Revisá que tenga:</p>
+<ul>
+<li><strong>Horarios reales</strong>, incluidos los feriados. Una ficha con horarios desactualizados genera desconfianza.</li>
+<li><strong>Teléfono y WhatsApp</strong> que alguien conteste.</li>
+<li><strong>El link a tu web</strong> y, si tenés, <strong>el link para reservar turno</strong>. Así el paciente pasa de buscarte a reservar sin escribirte.</li>
+<li><strong>Servicios</strong> con nombres que la gente busca: «limpieza dental», «primera entrevista», «terapia online», «rehabilitación de rodilla».</li>
+<li><strong>Una descripción</strong> corta y clara: qué hacés, para quién y dónde. Sin promesas de resultados.</li>
+<li><strong>Fotos reales:</strong> la fachada (para que te encuentren), la sala de espera y el consultorio. Nunca fotos de pacientes.</li>
+</ul>
+<div class="nota"><strong>Coherencia:</strong> el nombre, la dirección y el teléfono tienen que ser iguales en tu ficha, tu web, Instagram y cualquier directorio en el que aparezcas. Si en un lado dice «Calle 9 de Julio 1234» y en otro «9 de julio 1234 PB», Google tiene menos certeza de que sos el mismo consultorio.</div>
+
+<h2 id="resenas">4. Reseñas: cómo pedirlas y cómo responderlas</h2>
+<p>Las reseñas pesan en la prominencia y, sobre todo, en la decisión del paciente. Algunas reglas:</p>
+<ul>
+<li><strong>Pedilas a todos por igual</strong>, después de la consulta, con el link directo a tu ficha. Google no permite ofrecer descuentos o regalos a cambio de reseñas, ni pedirlas solo a quienes sabés que están contentos.</li>
+<li><strong>No las escribas vos ni pidas que las inventen.</strong> Google las detecta y puede eliminarlas o sancionar la ficha.</li>
+<li><strong>Respondé todas</strong>, las buenas y las malas, con calma y en pocas líneas.</li>
+<li><strong>Al responder, no confirmes que la persona es tu paciente ni menciones nada de su atención.</strong> Ante una crítica: «Gracias por tu comentario. Nos gustaría conocer más; podés escribirnos al [teléfono]». El secreto profesional también corre en internet.</li>
+</ul>
+
+<h2 id="errores">5. Errores comunes</h2>
+<ul>
+<li><strong>Tener dos fichas</strong> del mismo consultorio (una vieja y una nueva). Reclamá la vieja y pedí unificarlas.</li>
+<li><strong>Elegir mal la categoría</strong> o no agregar categorías secundarias si hacés más de una cosa.</li>
+<li><strong>Crear la ficha y olvidarla.</strong> Publicar una novedad o una foto de vez en cuando muestra que el consultorio está activo.</li>
+<li><strong>Mandar todo al WhatsApp.</strong> Si la ficha solo tiene un número, cada paciente nuevo te cuesta un ida y vuelta. Con un link de reserva, el turno queda tomado aunque estés atendiendo.</li>
+</ul>
+<p>Crear y completar la ficha lleva una o dos horas, una sola vez. Es probablemente la hora mejor invertida para que te encuentren pacientes nuevos en Rosario y alrededores.</p>
+""",
+    },
 ]
