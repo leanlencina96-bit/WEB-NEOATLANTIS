@@ -169,7 +169,7 @@ def cabeza(titulo, desc, ruta, schema, og_tipo="website"):
 <body>
 <header><div class="wrap"><nav>
   <a class="brand" href="/"><img src="/assets/isotipo.png" alt="" width="128" height="128">NEOATLANTIS</a>
-  <div class="navlinks"><a href="/#incluye">Qué incluye</a><a href="/#casos">Demos</a><a href="/guias/">Guías</a><a href="/#preguntas">Preguntas</a><a href="/#captacion">Contacto</a></div>
+  <div class="navlinks"><a href="/como-funciona/">Cómo funciona</a><a href="/#incluye">Qué incluye</a><a href="/#casos">Demos</a><a href="/guias/">Guías</a><a href="/#preguntas">Preguntas</a><a href="/#captacion">Contacto</a></div>
   <a class="navcta" href="/diagnostico/">Diagnóstico gratis</a>
 </nav></div></header>
 """
@@ -183,7 +183,7 @@ def pie(texto_wa):
     <div><a class="brand" href="/"><img src="/assets/isotipo.png" alt="" width="128" height="128">NEOATLANTIS</a><p>Web, turnos online y automatizaciones para profesionales de la salud.</p></div>
     <div class="pie-links">
       <div>{especialidades_pie()}</div>
-      <div><a href="/guias/">Guías</a><a href="/#casos">Demos</a><a href="/#captacion">Contacto</a><a href="https://www.instagram.com/neoatlantis.digital" target="_blank" rel="noopener">Instagram</a><a href="/privacidad.html">Privacidad</a><a href="/terminos.html">Términos</a></div>
+      <div><a href="/como-funciona/">Cómo funciona</a><a href="/guias/">Guías</a><a href="/#casos">Demos</a><a href="/#captacion">Contacto</a><a href="https://www.instagram.com/neoatlantis.digital" target="_blank" rel="noopener">Instagram</a><a href="/privacidad.html">Privacidad</a><a href="/terminos.html">Términos</a></div>
     </div>
   </div>
   <div class="pie-fin"><span>© {2026} NeoAtlantis</span><span>Villa Gobernador Gálvez · Rosario, Argentina</span></div>
@@ -291,14 +291,135 @@ def pagina_guia(g):
 {g['cuerpo']}
 <div class="caja-cta"><h2>{e(g['cta_titulo'])}</h2><p>{e(g['cta_texto'])}</p>
 <div class="ctas"><a class="btn btn-claro" href="/diagnostico/">Hacer el autodiagnóstico gratis</a><a class="btn btn-wa" href="{WA}{g['wa'].replace(' ', '%20')}" target="_blank" rel="noopener">Escribinos por WhatsApp</a></div></div>
-<h2 style="font-size:1.2rem;margin-top:40px">Fuentes</h2>
-<ul class="fuentes">{''.join(f'<li><a href="{u}" target="_blank" rel="noopener">{e(t)}</a></li>' for t, u in g['fuentes'])}</ul>
+{('<h2 style="font-size:1.2rem;margin-top:40px">Fuentes</h2>' + '<ul class="fuentes">' + ''.join(f'<li><a href="{u}" target="_blank" rel="noopener">{e(t)}</a></li>' for t, u in g['fuentes']) + '</ul>') if g['fuentes'] else ''}
 <p class="fuentes" style="margin-top:20px"><a href="/guias/">← Todas las guías</a></p>
 </div></article>
 </main>
 """
     h += pie(g["wa"].replace(" ", "%20"))
     return ruta, h
+
+
+CSS_CF = """<style>
+.cf-paso{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;padding:56px 0;border-top:1px solid var(--line-dark)}
+.cf-paso:first-child{border-top:0}
+@media(max-width:820px){.cf-paso{grid-template-columns:1fr;gap:26px;padding:40px 0}}
+.cf-num{font-family:'Space Grotesk',sans-serif;color:#B3C1FF;font-weight:600;margin-bottom:10px}
+.cf-paso h2{font-size:clamp(1.5rem,3vw,2.1rem);line-height:1.15;margin-bottom:12px}
+.cf-paso p{color:rgba(255,255,255,.7);max-width:520px}
+.cf-paso .quien{display:inline-block;margin-top:14px;font-size:.8rem;padding:4px 11px;border-radius:999px;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.75)}
+.cel{max-width:320px;width:100%;margin:0 auto;background:#0B0F19;border:1px solid rgba(255,255,255,.14);border-radius:30px;padding:16px 14px 20px;box-shadow:0 20px 50px rgba(0,0,0,.4)}
+.cel .barra{display:flex;justify-content:space-between;font-size:.72rem;color:rgba(255,255,255,.5);padding:0 8px 12px}
+.cel .app{font-size:.78rem;color:rgba(255,255,255,.55);padding:0 8px 10px;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:12px}
+.burbuja{background:#182033;border-radius:14px;padding:12px 14px;font-size:.9rem;line-height:1.45;color:#E8EAF0}
+.burbuja b{color:#fff}
+.botones{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}
+.botones span{text-align:center;background:#22304D;border-radius:10px;padding:9px;font-size:.85rem;color:#DCE3FF}
+.horarios{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px}
+.horarios span{text-align:center;border:1px solid rgba(255,255,255,.16);border-radius:10px;padding:9px 4px;font-size:.85rem;color:#E8EAF0}
+.horarios span.on{background:var(--electric);border-color:var(--electric);color:#fff}
+.horarios span.no{opacity:.3;text-decoration:line-through}
+.mail{background:#fff;color:#1F2937;border-radius:14px;padding:16px;font-size:.88rem;line-height:1.5}
+.mail .de{font-size:.75rem;color:#6B7280;margin-bottom:6px}
+.mail b{color:#05070A}
+.mail .bt{display:inline-block;margin-top:10px;border:1px solid #D1D5DB;border-radius:8px;padding:6px 12px;font-size:.8rem;color:#374151}
+.ilus{font-size:.75rem;color:rgba(255,255,255,.4);text-align:center;margin-top:10px}
+.paquetes{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media(max-width:900px){.paquetes{grid-template-columns:1fr}}
+.paquete{background:#fff;border:1px solid var(--line-light);border-radius:14px;padding:26px}
+.paquete.dest{border:2px solid var(--electric-ink)}
+.paquete h3{font-size:1.25rem;margin-bottom:6px}
+.paquete .para{color:var(--slate);font-size:.95rem;margin-bottom:14px}
+.paquete ul{list-style:none;display:grid;gap:8px;font-size:.95rem;color:#1F2937}
+.paquete li{padding-left:22px;position:relative}
+.paquete li::before{content:"✓";position:absolute;left:0;color:var(--electric-ink);font-weight:600}
+</style>
+"""
+
+def cel(app, cuerpo):
+    return f'<div><div class="cel" aria-hidden="true"><div class="barra"><span>10:02</span><span>●●●</span></div><div class="app">{app}</div>{cuerpo}</div><p class="ilus">Ilustración</p></div>'
+
+def pagina_como_funciona():
+    ruta = "/como-funciona/"
+    titulo = "Cómo funcionan los turnos online para tu consultorio | NeoAtlantis"
+    desc = "Paso a paso: el paciente reserva en tu web, vos aprobás desde el celular y los recordatorios salen solos. Qué ves vos, qué recibe el paciente y qué necesitás."
+    faq = [
+        ("¿Tengo que instalar algo?", "Solo Telegram en tu celular, que es gratis. Por ahí te llega cada turno nuevo para aprobarlo. Todo lo demás lo configuramos nosotros."),
+        ("¿Y si no estoy atento al celular?", "El turno queda esperando tu aprobación y el paciente sabe que está pendiente. Lo aprobás cuando terminás de atender."),
+        ("¿Qué datos del paciente se guardan?", "Solo los del turno: nombre, contacto, día y hora. Nunca información clínica ni el motivo de la consulta."),
+        ("¿Puedo bloquear días o cambiar horarios?", "Sí. Vacaciones, feriados o un cambio de horario se ajustan y la agenda deja de ofrecer esos días."),
+        ("¿Puedo seguir dando turnos por WhatsApp?", "Sí. WhatsApp puede seguir para conversar con tus pacientes. La diferencia es que los turnos quedan todos en la misma agenda y no se superponen."),
+    ]
+    schema = [{"@context": "https://schema.org", "@type": "WebPage", "name": "Cómo funcionan los turnos online", "description": desc, "url": SITIO + ruta, "inLanguage": "es-AR"},
+              schema_faq(faq), schema_migas([("Cómo funciona", ruta)])]
+    h = cabeza(titulo, desc, ruta, schema).replace("</head>", CSS_CF + "</head>", 1)
+    p1 = cel("tuconsultorio.com.ar · Reservar turno", '<div class="burbuja"><b>Jueves 17</b> · Elegí un horario</div><div class="horarios"><span class="no">9:00</span><span>9:45</span><span class="on">10:30</span><span>11:15</span><span class="no">12:00</span><span>16:00</span></div>')
+    p2 = cel("Telegram · NeoAtlantis Turnos", '<div class="burbuja">📅 <b>Nuevo turno</b><br>Laura G.<br>Jueves 17 · 10:30<br>Primera consulta</div><div class="botones"><span>✅ Confirmar</span><span>❌ Rechazar</span></div>')
+    p3 = cel("Email del paciente", '<div class="mail"><div class="de">Consultorio Lic. Pérez</div><b>Tu turno está confirmado</b><br>Jueves 17 a las 10:30<br>Córdoba 1234, Rosario</div>')
+    p4 = cel("Email del paciente · 24 h antes", '<div class="mail"><div class="de">Consultorio Lic. Pérez</div><b>Te esperamos mañana a las 10:30</b><br>Si no podés venir, avisanos para que otro paciente use el horario.<br><span class="bt">Cancelar turno</span></div>')
+    p5 = cel("Agenda", '<div class="burbuja">↩️ <b>Laura G. canceló</b><br>Jueves 17 · 10:30 vuelve a estar libre</div><div class="horarios"><span class="no">9:00</span><span>9:45</span><span class="on">10:30</span></div>')
+    pasos = [
+        ("01", "El paciente reserva en tu web", "Entra a tu web, ve solo los horarios libres y elige el que le queda bien, a cualquier hora y sin escribirte. No hay doble reserva: un horario tomado deja de aparecer.", "Lo hace el paciente", p1),
+        ("02", "Te llega al celular y aprobás con un toque", "Cada turno nuevo te llega por Telegram con dos botones: Confirmar o Rechazar. Lo aprobás entre paciente y paciente, sin ida y vuelta de mensajes.", "Lo hacés vos: un toque", p2),
+        ("03", "El paciente recibe la confirmación", "Cuando confirmás (o rechazás), al paciente le llega el aviso por email, con el día, la hora y la dirección. Vos no escribís nada.", "Automático", p3),
+        ("04", "Los recordatorios salen solos", "24 horas antes y 2 horas antes, el paciente recibe un recordatorio. El de 24 horas trae un botón para cancelar con un clic, así te enterás a tiempo.", "Automático", p4),
+        ("05", "Si cancela, el horario se libera", "El horario vuelve a aparecer libre en tu web para otro paciente. En el paquete Integral, además, se avisa a la lista de espera para llenarlo.", "Automático", p5),
+    ]
+    bloques = "".join(f'<div class="cf-paso"><div><div class="cf-num">{n}</div><h2>{e(t)}</h2><p>{e(d)}</p><span class="quien">{e(q)}</span></div>{m}</div>' for n, t, d, q, m in pasos)
+    paquetes = [
+        ("Presencia", "Para que te encuentren.", ["Web profesional pensada para el celular", "Ficha de Google Maps completa", "Botón de WhatsApp"], False),
+        ("Turnos", "Lo de esta página. El más elegido.", ["Todo Presencia", "Turnos online sin doble reserva", "Aprobación desde Telegram", "Confirmación y recordatorios por email", "Botón para cancelar"], True),
+        ("Integral", "Para agendas llenas.", ["Todo Turnos", "Confirmación en tres tiempos (72, 24 y 2 h)", "Lista de espera", "Pedido de reseña y aviso de control", "Asistente de consultas y reporte semanal"], False),
+    ]
+    paq = "".join(f'<div class="paquete{" dest" if d else ""}"><h3>{e(n)}</h3><p class="para">{e(pa)}</p><ul>{"".join(f"<li>{e(x)}</li>" for x in it)}</ul></div>' for n, pa, it, d in paquetes)
+    h += f"""<main>
+<section class="hero"><div class="wrap">
+  {migas([('Cómo funciona', None)])}
+  <div class="eyebrow">Turnos online para consultorios · Paso a paso</div>
+  <h1>Tus turnos, organizados solos. Así funciona.</h1>
+  <p class="sub">Lo que ve el paciente, lo que te llega a vos y lo que pasa solo. Tu único trabajo: aprobar cada turno con un toque.</p>
+  <div class="ctas"><a class="btn btn-claro" href="/diagnostico/">Hacer el autodiagnóstico gratis</a><a class="btn btn-wa" href="{WA}Hola%20NeoAtlantis,%20vi%20c%C3%B3mo%20funcionan%20los%20turnos%20y%20quiero%20consultar." target="_blank" rel="noopener">Escribinos por WhatsApp</a></div>
+</div></section>
+
+<section class="sec oscuro"><div class="wrap">{bloques}</div></section>
+
+<section class="sec claro"><div class="wrap">
+  <h2>Qué necesitás vos</h2>
+  <p class="intro muted">Casi nada. Nosotros configuramos todo y te mostramos cómo usarlo.</p>
+  <div class="grid2">
+    <div class="tarjeta"><h3>Telegram en tu celular</h3><p>Es gratis. Por ahí te llega cada turno para aprobarlo.</p></div>
+    <div class="tarjeta"><h3>Tus horarios y tratamientos</h3><p>Días y horas de atención, y cuánto dura cada tipo de consulta. Con eso armamos la agenda.</p></div>
+    <div class="tarjeta"><h3>Unos minutos para aprender</h3><p>Te mostramos cómo funciona en una llamada corta y te acompañamos 30 días.</p></div>
+    <div class="tarjeta"><h3>Nada de datos clínicos</h3><p>El sistema solo guarda nombre, contacto, día y hora del turno. Lo clínico queda en tu consultorio.</p></div>
+  </div>
+</div></section>
+
+<section class="sec claro" style="padding-top:0"><div class="wrap">
+  <h2>Qué incluye cada paquete</h2>
+  <p class="intro muted">El precio depende de lo que necesites. Lo vemos con tus números en el diagnóstico gratis.</p>
+  <div class="paquetes">{paq}</div>
+</div></section>
+
+<section class="sec" style="background:var(--void)"><div class="wrap">
+  <div class="demo"><div><h2 style="font-size:1.6rem;margin-bottom:8px">Probalo como paciente</h2><p>Entrá a un consultorio de ejemplo y reservá un turno. Es ficticio, pero la tecnología es la misma.</p></div>
+  <a class="btn btn-claro" href="https://consultorio-dental-flax.vercel.app/" target="_blank" rel="noopener">Ver la demo</a></div>
+</div></section>
+
+<section class="sec claro"><div class="wrap">
+  <h2>Preguntas frecuentes</h2>
+  <div class="faq">{''.join(f'<details><summary>{e(q)}</summary><p>{e(a)}</p></details>' for q, a in faq)}</div>
+</div></section>
+
+<section class="cierre"><div class="wrap">
+  <h2>¿Cuánto te ahorraría a vos?</h2>
+  <p>Autodiagnóstico gratis · 3 minutos · Con tus números</p>
+  <div class="ctas"><a class="btn btn-claro" href="/diagnostico/">Hacer el autodiagnóstico gratis</a></div>
+</div></section>
+</main>
+"""
+    h += pie("Hola%20NeoAtlantis,%20vi%20c%C3%B3mo%20funcionan%20los%20turnos%20y%20quiero%20consultar.")
+    return ruta, h
+
 
 def indice_guias():
     ruta = "/guias/"
@@ -333,3 +454,4 @@ if __name__ == "__main__":
     for g in GUIAS:
         if not solo or g["slug"] in solo: escribir(*pagina_guia(g))
     escribir(*indice_guias())
+    escribir(*pagina_como_funciona())

@@ -424,4 +424,245 @@ GUIAS = [
 <p>Crear y completar la ficha lleva una o dos horas, una sola vez. Es probablemente la hora mejor invertida para que te encuentren pacientes nuevos en Rosario y alrededores.</p>
 """,
     },
+    {
+        "slug": "recordatorios-automaticos-de-turnos",
+        "corto": "Recordatorios automáticos",
+        "corto_largo": "Recordatorios automáticos de turnos: cuándo mandarlos y qué decir",
+        "titulo": "Recordatorios automáticos de turnos: cuándo y qué decir | NeoAtlantis",
+        "descripcion": "Cuándo mandar los recordatorios de turno, por qué canal (email, WhatsApp o SMS), qué tienen que decir y qué nunca poner. Con textos de ejemplo para copiar.",
+        "h1": "Recordatorios automáticos de turnos: cuándo mandarlos y qué decir",
+        "bajada": "El recordatorio es la medida más simple contra los turnos vacíos. Cuándo mandarlo, por qué canal, qué escribir y cómo dejar de hacerlo a mano.",
+        "fecha": "2026-10-16", "fecha_txt": "16 de octubre de 2026", "minutos": 6,
+        "wa": "Hola NeoAtlantis, leí la guía de recordatorios y quiero consultar por mi consultorio.",
+        "cta_titulo": "¿Cuántos turnos se te pierden hoy?",
+        "cta_texto": "En 3 minutos, el autodiagnóstico gratis calcula cuánto se te escapa por mes en turnos vacíos y cuánto podrías recuperar con recordatorios.",
+        "fuentes": [
+            ("Gurol-Urganci I. y otros (2013). Mobile phone messaging reminders for attendance at healthcare appointments. Cochrane Database of Systematic Reviews.", "https://www.cochrane.org/evidence/CD007458_mobile-phone-messaging-reminders-attendance-healthcare-appointments"),
+            ("Meta. Precios de la plataforma de WhatsApp Business.", "https://developers.facebook.com/docs/whatsapp/pricing"),
+        ],
+        "cuerpo": """
+<div class="indice"><b>En esta guía</b><ol>
+<li><a href="#cuando">Cuándo mandarlos</a></li>
+<li><a href="#canal">Por qué canal</a></li>
+<li><a href="#que-decir">Qué decir (con ejemplos)</a></li>
+<li><a href="#nunca">Lo que nunca va en un recordatorio</a></li>
+<li><a href="#automatico">Dejar de hacerlo a mano</a></li>
+</ol></div>
+
+<p>Muchos consultorios ya mandan recordatorios, pero a mano: alguien revisa la agenda del día siguiente y escribe uno por uno. Funciona mientras hay tiempo, y es lo primero que se deja de hacer en una semana cargada, justo cuando más falta hace.</p>
+
+<h2 id="cuando">1. Cuándo mandarlos</h2>
+<p>Una revisión de la Cochrane sobre ensayos clínicos encontró que <strong>los recordatorios por mensaje aumentan la asistencia</strong> frente a no mandar nada. Lo que mejor funciona en la práctica es combinar dos momentos:</p>
+<ul>
+<li><strong>Uno con tiempo, 24 horas antes</strong> (o hasta 72 si das turnos con mucha anticipación). Sirve para que quien no puede venir avise a tiempo y ese horario se pueda volver a ofrecer.</li>
+<li><strong>Uno cercano, 2 horas antes.</strong> Es para el olvido de último momento.</li>
+</ul>
+<p>Si das turnos a varias semanas, un tercer aviso al momento de reservar (la confirmación escrita) cierra el círculo.</p>
+
+<h2 id="canal">2. Por qué canal</h2>
+<div class="tabla"><table>
+<tr><th>Canal</th><th>A favor</th><th>A tener en cuenta</th></tr>
+<tr><td>Email</td><td>Gratis, queda guardado, permite un botón para cancelar.</td><td>Algunos pacientes no lo miran seguido. Conviene pedir el email al reservar.</td></tr>
+<tr><td>WhatsApp manual</td><td>Todos lo leen.</td><td>Alguien tiene que mandarlo uno por uno, todos los días.</td></tr>
+<tr><td>WhatsApp automático</td><td>Todos lo leen y no depende de nadie.</td><td>Requiere la plataforma oficial de WhatsApp Business, con plantillas aprobadas por Meta y un costo por mensaje.</td></tr>
+<tr><td>SMS</td><td>Llega a cualquier celular.</td><td>Tiene costo por mensaje y poco espacio para el texto.</td></tr>
+</table></div>
+<p>No hay un canal perfecto. Lo importante es que el recordatorio <strong>salga siempre</strong>, sin depender de que alguien se acuerde.</p>
+
+<h2 id="que-decir">3. Qué decir (con ejemplos)</h2>
+<p>Un buen recordatorio es corto y responde cuatro cosas: <strong>quién, cuándo, dónde y cómo cancelar</strong>.</p>
+<div class="nota"><strong>24 horas antes:</strong><br>Hola, Laura. Te recordamos tu turno de mañana jueves 17 a las 10:30 con la Lic. Pérez, en Córdoba 1234, Rosario. Si no podés venir, cancelá acá así el horario queda para otro paciente: [botón Cancelar].</div>
+<div class="nota"><strong>2 horas antes:</strong><br>Hola, Laura. Te esperamos hoy a las 10:30 en Córdoba 1234. ¡Hasta pronto!</div>
+<p>El botón de cancelar parece ir en contra, pero <strong>reduce las ausencias</strong>: el paciente que no puede venir avisa en vez de desaparecer, y ese horario se puede volver a ocupar.</p>
+
+<h2 id="nunca">4. Lo que nunca va en un recordatorio</h2>
+<ul>
+<li><strong>El motivo de la consulta</strong> ni ningún dato de salud. Un mensaje puede verlo otra persona en la pantalla del celular.</li>
+<li><strong>El tipo de tratamiento</strong> cuando revela información sensible.</li>
+<li><strong>Datos de pago</strong> o links a sitios que no sean los tuyos.</li>
+</ul>
+<p>Día, hora, profesional, dirección y cómo cancelar alcanzan.</p>
+
+<h2 id="automatico">5. Dejar de hacerlo a mano</h2>
+<p>Si tus turnos ya están en una agenda online, los recordatorios pueden salir solos: el sistema sabe quién tiene turno y a qué hora, y manda cada aviso en su momento. Si un paciente cancela, el horario vuelve a quedar libre en la agenda sin que tengas que tocar nada.</p>
+<p>Si hoy das los turnos por WhatsApp o por teléfono, el primer paso es que queden <strong>escritos en un solo lugar</strong>. Sin eso, no hay forma de automatizar nada.</p>
+""",
+    },
+    {
+        "slug": "psicologo-web-o-instagram",
+        "corto": "¿Web o Instagram?",
+        "corto_largo": "¿Necesita web un psicólogo si ya tiene Instagram?",
+        "titulo": "¿Necesita web un psicólogo si ya tiene Instagram? | NeoAtlantis",
+        "descripcion": "Qué te da Instagram, qué no, y qué resuelve una web propia en un consultorio de psicología: cómo te encuentran en Google, primera consulta y confidencialidad.",
+        "h1": "¿Necesita web un psicólogo si ya tiene Instagram?",
+        "bajada": "Instagram sirve para que te conozcan. La web sirve para que te encuentren y te consulten. Qué hace bien cada uno y cuándo conviene sumar la web.",
+        "fecha": "2026-10-16", "fecha_txt": "16 de octubre de 2026", "minutos": 5,
+        "wa": "Hola NeoAtlantis, leí la guía de web o Instagram y quiero consultar por mi consultorio.",
+        "cta_titulo": "¿Cómo te encuentra hoy un paciente?",
+        "cta_texto": "El autodiagnóstico gratis te muestra en 3 minutos qué te falta para que te encuentren y te consulten. Sin compromiso.",
+        "fuentes": [
+            ("Google. Sugerencias para mejorar tu ranking local en Google (Ayuda de Perfil de Negocio de Google).", "https://support.google.com/business/answer/7091?hl=es-419"),
+        ],
+        "cuerpo": """
+<div class="indice"><b>En esta guía</b><ol>
+<li><a href="#instagram">Lo que Instagram hace bien</a></li>
+<li><a href="#limites">Lo que Instagram no resuelve</a></li>
+<li><a href="#web">Qué agrega una web propia</a></li>
+<li><a href="#cuando">¿Cuándo conviene?</a></li>
+</ol></div>
+
+<p>Muchos psicólogos tienen una cuenta de Instagram cuidada, con contenido valioso y seguidores que los aprecian. La pregunta es razonable: si ya estoy ahí, ¿para qué una web?</p>
+
+<h2 id="instagram">1. Lo que Instagram hace bien</h2>
+<ul>
+<li><strong>Mostrar tu forma de pensar y de trabajar</strong>, algo clave en psicología, donde el vínculo importa tanto.</li>
+<li><strong>Mantenerte presente</strong> para quienes ya te siguen.</li>
+<li><strong>Generar confianza</strong> antes del primer contacto.</li>
+</ul>
+
+<h2 id="limites">2. Lo que Instagram no resuelve</h2>
+<ul>
+<li><strong>No te encuentra quien no te conoce.</strong> Una persona que busca «psicólogo en Rosario» o «terapia online ansiedad» lo busca en Google, no en Instagram.</li>
+<li><strong>La información importante se pierde.</strong> Modalidad, obras sociales, honorarios, horarios y cómo pedir la primera entrevista quedan dispersos entre historias destacadas y publicaciones.</li>
+<li><strong>Todo termina en un mensaje directo</strong>, que tenés que responder vos, a veces en medio de una sesión.</li>
+<li><strong>La cuenta no es tuya del todo.</strong> Depende de las reglas y los cambios de una plataforma.</li>
+</ul>
+
+<h2 id="web">3. Qué agrega una web propia</h2>
+<ul>
+<li><strong>Aparecer en Google.</strong> Una web, junto con tu ficha de Google Maps, es lo que permite que te encuentre alguien que hoy no sabe que existís. Google tiene en cuenta tu presencia en la web para ordenar los resultados locales.</li>
+<li><strong>Toda la información en un lugar:</strong> enfoque, modalidad presencial u online, obras sociales, cómo es la primera entrevista.</li>
+<li><strong>Pedir la primera entrevista sin escribirte:</strong> el paciente ve los horarios libres y reserva. Para alguien que duda en consultar, no tener que escribir un mensaje baja mucho la barrera.</li>
+<li><strong>Confidencialidad:</strong> en la reserva solo se piden nombre y contacto, nunca el motivo de consulta.</li>
+</ul>
+<div class="nota"><strong>No es una cosa o la otra.</strong> Lo que mejor funciona es que se conecten: el link de la web en tu biografía de Instagram y el de Instagram en tu web. Instagram genera confianza; la web convierte esa confianza en una primera entrevista.</div>
+
+<h2 id="cuando">4. ¿Cuándo conviene?</h2>
+<p>Te conviene sumar una web si te pasa alguna de estas cosas:</p>
+<ul>
+<li>Querés pacientes nuevos que no te conocen por recomendación.</li>
+<li>Respondés muchas veces por día las mismas preguntas por mensaje directo.</li>
+<li>Atendés online y querés llegar a personas de otras ciudades.</li>
+<li>Coordinar horarios te lleva más tiempo del que te gustaría.</li>
+</ul>
+<p>Si tu agenda está completa solo con derivaciones y te sobra el tiempo, quizás todavía no la necesites. Y está bien.</p>
+""",
+    },
+    {
+        "slug": "lista-de-espera-turnos-cancelados",
+        "corto": "Lista de espera",
+        "corto_largo": "Lista de espera: cómo llenar los turnos que se cancelan",
+        "titulo": "Lista de espera: cómo llenar los turnos cancelados | NeoAtlantis",
+        "descripcion": "Cómo armar una lista de espera en tu consultorio para que cada cancelación se convierta en un paciente atendido. Paso a paso, a mano y automática.",
+        "h1": "Lista de espera: cómo llenar los turnos que se cancelan",
+        "bajada": "Una cancelación con aviso no tiene por qué ser un horario vacío. Cómo armar una lista de espera simple, a mano o automática, para volver a ocupar ese lugar.",
+        "fecha": "2026-10-16", "fecha_txt": "16 de octubre de 2026", "minutos": 5,
+        "wa": "Hola NeoAtlantis, leí la guía de lista de espera y quiero consultar por mi consultorio.",
+        "cta_titulo": "¿Cuántos horarios quedan vacíos por semana?",
+        "cta_texto": "El autodiagnóstico gratis lo pasa a pesos en 3 minutos y te dice qué conviene mejorar primero.",
+        "fuentes": [],
+        "cuerpo": """
+<div class="indice"><b>En esta guía</b><ol>
+<li><a href="#idea">La idea</a></li>
+<li><a href="#mano">Cómo hacerla a mano</a></li>
+<li><a href="#reglas">Reglas para que funcione</a></li>
+<li><a href="#auto">Cómo funciona automática</a></li>
+</ol></div>
+
+<p>Todo consultorio tiene los dos problemas a la vez: días completos donde alguien se queda sin turno y, en esos mismos días, cancelaciones que dejan un horario libre. La lista de espera une las dos cosas.</p>
+
+<h2 id="idea">1. La idea</h2>
+<p>Cuando un paciente quiere un día que está completo, en vez de darle un turno lejano y listo, se anota en la lista de ese día. Si alguien cancela, se le avisa a la lista y el primero que confirma se queda con el horario.</p>
+<p>Funciona especialmente bien en especialidades con agenda llena y pacientes que preferirían venir antes: odontología, kinesiología, controles médicos.</p>
+
+<h2 id="mano">2. Cómo hacerla a mano</h2>
+<ol>
+<li>Armá una planilla con cuatro columnas: <strong>nombre, contacto, día o franja que prefiere y fecha en que se anotó</strong>.</li>
+<li>Cuando un día se llena, ofrecé anotar al paciente: «Te doy el turno del martes 28, y si se libera algo antes te aviso».</li>
+<li>Cuando alguien cancela, escribí a los anotados <strong>de a uno o a todos a la vez</strong>, según tu preferencia (abajo te contamos las ventajas de cada forma).</li>
+<li>Quien acepta, se queda con el horario y libera su turno original, que a su vez puede ocupar otro.</li>
+</ol>
+
+<h2 id="reglas">3. Reglas para que funcione</h2>
+<ul>
+<li><strong>Avisar a todos a la vez y que gane el primero</strong> es lo más rápido y lo más justo. Avisar de a uno respeta el orden, pero si el primero tarda en responder, el horario se pierde.</li>
+<li><strong>Poné un plazo:</strong> «el primero que confirma en la próxima hora se lo queda».</li>
+<li><strong>Limpiá la lista</strong> cada tanto: quien ya se atendió o consiguió turno, sale.</li>
+<li><strong>Que cancelar sea fácil.</strong> La lista solo sirve si te enterás de la cancelación con tiempo, y eso pasa cuando el paciente puede cancelar con un toque desde el recordatorio.</li>
+</ul>
+
+<h2 id="auto">4. Cómo funciona automática</h2>
+<p>A mano, la lista depende de que alguien esté atento justo cuando llega la cancelación. Automatizada, la secuencia es:</p>
+<ol>
+<li>El paciente cancela desde el recordatorio.</li>
+<li>El horario se libera en la agenda.</li>
+<li>El sistema avisa solo a los anotados para ese día.</li>
+<li>El primero que reserva se queda con el lugar, y el resto ve que ya se ocupó.</li>
+</ol>
+<p>Vos solo ves que el horario se volvió a llenar.</p>
+<div class="nota">Una cancelación con aviso no es el problema. El problema es no enterarse a tiempo o no tener a quién ofrecerle el lugar. Con recordatorios y lista de espera, se resuelven las dos cosas.</div>
+""",
+    },
+    {
+        "slug": "doctoralia-o-web-propia",
+        "corto": "Doctoralia o web propia",
+        "corto_largo": "Doctoralia o web propia: qué le conviene a tu consultorio",
+        "titulo": "Doctoralia o web propia: qué conviene a tu consultorio | NeoAtlantis",
+        "descripcion": "Diferencias entre estar en un directorio como Doctoralia y tener tu propia web con turnos online: a quién le habla cada uno, de quién son los datos y cómo combinarlos.",
+        "h1": "Doctoralia o web propia: qué le conviene a tu consultorio",
+        "bajada": "Un directorio te muestra entre muchos profesionales. Tu web te muestra solo a vos. No son lo mismo, y muchas veces conviene tener los dos.",
+        "fecha": "2026-10-16", "fecha_txt": "16 de octubre de 2026", "minutos": 5,
+        "wa": "Hola NeoAtlantis, leí la guía de Doctoralia y web propia y quiero consultar por mi consultorio.",
+        "cta_titulo": "¿Qué te conviene a vos?",
+        "cta_texto": "El autodiagnóstico gratis te muestra en 3 minutos dónde estás hoy y qué conviene sumar, con tus números.",
+        "fuentes": [],
+        "cuerpo": """
+<div class="indice"><b>En esta guía</b><ol>
+<li><a href="#directorio">Qué es un directorio</a></li>
+<li><a href="#web">Qué es una web propia</a></li>
+<li><a href="#comparacion">Comparación rápida</a></li>
+<li><a href="#combinar">Cómo combinarlos</a></li>
+</ol></div>
+
+<p>Doctoralia y otras plataformas similares son conocidas, y muchos profesionales de la salud ya tienen su perfil ahí. La duda aparece cuando alguien ofrece una web propia: ¿hace falta, si ya estoy en la plataforma?</p>
+<p>Esta guía no es contra ninguna plataforma. Es para que entiendas qué te da cada opción.</p>
+
+<h2 id="directorio">1. Qué es un directorio</h2>
+<p>Un directorio de profesionales es como una cartilla online: el paciente entra, busca una especialidad y una zona, y ve una lista de profesionales. Su gran ventaja es que <strong>la gente ya lo conoce</strong> y lo usa para buscar.</p>
+<p>Lo que tenés que saber:</p>
+<ul>
+<li><strong>Aparecés junto a otros profesionales</strong> de tu especialidad y tu zona.</li>
+<li><strong>Las reglas las pone la plataforma:</strong> cómo se ve tu perfil, en qué orden aparecés y cuánto cuesta cada plan.</li>
+<li>Los pacientes que llegan por ahí <strong>conocen primero a la plataforma</strong> y después a vos.</li>
+</ul>
+
+<h2 id="web">2. Qué es una web propia</h2>
+<p>Es tu espacio: tu nombre, tu enfoque, tus fotos, tus servicios y tu agenda de turnos. Cuando alguien entra, solo te ve a vos.</p>
+<ul>
+<li><strong>Tu marca</strong>, no la de un tercero.</li>
+<li><strong>Los datos de tus pacientes quedan con vos.</strong></li>
+<li>Con tu <strong>ficha de Google Maps</strong>, es lo que hace que te encuentren por tu nombre o por tu especialidad y zona.</li>
+<li>Requiere que alguien la arme y la mantenga, y no trae visitas sola: necesita la ficha de Google y que la compartas.</li>
+</ul>
+
+<h2 id="comparacion">3. Comparación rápida</h2>
+<div class="tabla"><table>
+<tr><th></th><th>Directorio</th><th>Web propia</th></tr>
+<tr><td>Quién te encuentra</td><td>Quien busca en la plataforma</td><td>Quien busca en Google o recibe tu link</td></tr>
+<tr><td>Junto a quién aparecés</td><td>Otros profesionales de la zona</td><td>Solo vos</td></tr>
+<tr><td>Quién pone las reglas</td><td>La plataforma</td><td>Vos</td></tr>
+<tr><td>Turnos online</td><td>Sí, en la plataforma</td><td>Sí, en tu web</td></tr>
+<tr><td>Si dejás de pagar</td><td>Depende del plan</td><td>Te llevás todo</td></tr>
+</table></div>
+
+<h2 id="combinar">4. Cómo combinarlos</h2>
+<p>Para muchos profesionales, lo mejor es <strong>tener los dos</strong>:</p>
+<ul>
+<li>El directorio, para que te encuentren quienes buscan ahí.</li>
+<li>La web propia y la ficha de Google, para que quien te busca por tu nombre, o quien te recomendó un colega, llegue directo a vos.</li>
+<li>En tus tarjetas, en Instagram y en tu firma de WhatsApp, compartí el link de tu web.</li>
+</ul>
+<div class="nota">Cuidado con un detalle: si usás dos agendas (la del directorio y la de tu web), tienen que estar sincronizadas para que no se dé el mismo horario dos veces. Si no se pueden conectar, conviene elegir una sola como agenda principal.</div>
+""",
+    },
 ]
