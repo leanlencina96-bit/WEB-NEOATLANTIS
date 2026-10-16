@@ -222,7 +222,7 @@ def pagina_especialidad(p):
   <div class="eyebrow">{e(p['eyebrow'])}</div>
   <h1>{p['h1']}</h1>
   <p class="sub">{e(p['sub'])}</p>
-  <div class="ctas"><a class="btn btn-claro" href="/#captacion">Quiero mi diagnóstico gratis</a><a class="btn btn-wa" href="{WA}{wa}" target="_blank" rel="noopener">Escribinos por WhatsApp</a></div>
+  <div class="ctas"><a class="btn btn-claro" href="/diagnostico/">Quiero mi diagnóstico gratis</a><a class="btn btn-wa" href="{WA}{wa}" target="_blank" rel="noopener">Escribinos por WhatsApp</a></div>
 </div></section>
 
 <section class="sec claro"><div class="wrap">
