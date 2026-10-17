@@ -381,6 +381,11 @@ def pagina_como_funciona():
   <div class="ctas"><a class="btn btn-claro" href="/diagnostico/">Hacer el autodiagnóstico gratis</a><a class="btn btn-wa" href="{WA}Hola%20NeoAtlantis,%20vi%20c%C3%B3mo%20funcionan%20los%20turnos%20y%20quiero%20consultar." target="_blank" rel="noopener">Escribinos por WhatsApp</a></div>
 </div></section>
 
+<section class="sec" style="background:var(--void);padding-bottom:0"><div class="wrap">
+  <h2 style="margin-bottom:20px">Miralo funcionando</h2>
+  <div style="position:relative;aspect-ratio:16/9;max-width:900px;border-radius:16px;overflow:hidden;border:1px solid var(--line-dark)"><iframe src="https://www.youtube-nocookie.com/embed/jyVTBxzpffE?rel=0" title="Video: demo de turnos online funcionando en un consultorio" loading="lazy" allow="encrypted-media; picture-in-picture" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:0"></iframe></div>
+</div></section>
+
 <section class="sec oscuro"><div class="wrap">{bloques}</div></section>
 
 <section class="sec claro"><div class="wrap">
