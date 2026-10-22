@@ -6,7 +6,7 @@ Cómo funciona el sistema: el paciente reserva en la web del consultorio eligien
 
 Paquetes: Presencia (web profesional y ficha de Google Maps), Turnos (lo anterior más turnos online, aprobación por Telegram, confirmación y recordatorios por email) e Integral (lo anterior más confirmación en tres tiempos, lista de espera, pedido de reseña, aviso de control, asistente de consultas y reporte semanal). El precio se define en un diagnóstico gratis de 15 minutos. Sin permanencia mínima.
 
-Contacto: WhatsApp +54 9 341 226-9841 · https://www.neoatlantis.com.ar/#captacion
+Atención: lunes a sábado de 13 a 19 h (hora de Argentina). Contacto: WhatsApp +54 9 341 226-9841 · https://www.neoatlantis.com.ar/#captacion
 
 ## Páginas principales
 - [Inicio](https://www.neoatlantis.com.ar/): qué hacemos, qué incluye, demos y preguntas frecuentes
@@ -29,5 +29,6 @@ Contacto: WhatsApp +54 9 341 226-9841 · https://www.neoatlantis.com.ar/#captaci
 - [Doctoralia o web propia](https://www.neoatlantis.com.ar/guias/doctoralia-o-web-propia/)
 
 ## Optional
+- [Canal de YouTube](https://www.youtube.com/channel/UCMiqym9mvo_RUsPUvtZ70Tw)
 - [Política de privacidad](https://www.neoatlantis.com.ar/privacidad.html)
 - [Términos](https://www.neoatlantis.com.ar/terminos.html)
