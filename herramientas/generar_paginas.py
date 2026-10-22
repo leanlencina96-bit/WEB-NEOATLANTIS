@@ -148,6 +148,7 @@ def cabeza(titulo, desc, ruta, schema, og_tipo="website"):
 <meta property="og:url" content="{url}">
 <meta property="og:image" content="{SITIO}/assets/og-image.jpg">
 <meta property="og:locale" content="es_AR">
+<meta property="og:site_name" content="NeoAtlantis">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">

@@ -1,0 +1,33 @@
+# NeoAtlantis
+
+> NeoAtlantis arma la web, los turnos online y las automatizaciones de consultorios de salud (odontólogos, psicólogos, médicos, kinesiólogos y nutricionistas) en Villa Gobernador Gálvez, Rosario y Gran Rosario, Argentina. Lo atiende directamente Leandro Lencina, su fundador.
+
+Cómo funciona el sistema: el paciente reserva en la web del consultorio eligiendo un horario libre; el profesional recibe cada turno nuevo por Telegram y lo confirma o rechaza con un toque (o desde su panel); el paciente recibe la confirmación por email y recordatorios automáticos 24 y 2 horas antes, con un botón para cancelar que libera el horario. Solo se guardan los datos del turno (nombre, contacto, día y hora), nunca información clínica. Los recordatorios por WhatsApp no están incluidos: requieren la API oficial de WhatsApp Business y se cotizan aparte.
+
+Paquetes: Presencia (web profesional y ficha de Google Maps), Turnos (lo anterior más turnos online, aprobación por Telegram, confirmación y recordatorios por email) e Integral (lo anterior más confirmación en tres tiempos, lista de espera, pedido de reseña, aviso de control, asistente de consultas y reporte semanal). El precio se define en un diagnóstico gratis de 15 minutos. Sin permanencia mínima.
+
+Contacto: WhatsApp +54 9 341 226-9841 · https://www.neoatlantis.com.ar/#captacion
+
+## Páginas principales
+- [Inicio](https://www.neoatlantis.com.ar/): qué hacemos, qué incluye, demos y preguntas frecuentes
+- [Cómo funciona](https://www.neoatlantis.com.ar/como-funciona/): el recorrido paso a paso con capturas reales
+- [Autodiagnóstico gratis](https://www.neoatlantis.com.ar/diagnostico/): 9 preguntas que estiman cuánto pierde un consultorio por turnos vacíos
+
+## Por especialidad
+- [Odontólogos](https://www.neoatlantis.com.ar/odontologos/)
+- [Psicólogos](https://www.neoatlantis.com.ar/psicologos/)
+- [Médicos y especialistas](https://www.neoatlantis.com.ar/medicos/)
+- [Kinesiólogos y nutricionistas](https://www.neoatlantis.com.ar/kinesiologos-nutricionistas/)
+
+## Guías
+- [Turnos por WhatsApp o turnos online](https://www.neoatlantis.com.ar/guias/turnos-whatsapp-vs-turnos-online/)
+- [Cómo reducir el ausentismo de pacientes](https://www.neoatlantis.com.ar/guias/reducir-ausentismo-pacientes/)
+- [Cómo aparecer en Google Maps siendo profesional de la salud en Rosario](https://www.neoatlantis.com.ar/guias/aparecer-en-google-maps-consultorio/)
+- [Recordatorios automáticos de turnos](https://www.neoatlantis.com.ar/guias/recordatorios-automaticos-de-turnos/)
+- [¿Necesita web un psicólogo si ya tiene Instagram?](https://www.neoatlantis.com.ar/guias/psicologo-web-o-instagram/)
+- [Lista de espera para turnos cancelados](https://www.neoatlantis.com.ar/guias/lista-de-espera-turnos-cancelados/)
+- [Doctoralia o web propia](https://www.neoatlantis.com.ar/guias/doctoralia-o-web-propia/)
+
+## Optional
+- [Política de privacidad](https://www.neoatlantis.com.ar/privacidad.html)
+- [Términos](https://www.neoatlantis.com.ar/terminos.html)
