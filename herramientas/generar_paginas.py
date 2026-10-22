@@ -323,6 +323,7 @@ CSS_CF = """<style>
 .mail .de{font-size:.75rem;color:#6B7280;margin-bottom:6px}
 .mail b{color:#05070A}
 .mail .bt{display:inline-block;margin-top:10px;border:1px solid #D1D5DB;border-radius:8px;padding:6px 12px;font-size:.8rem;color:#374151}
+.cel-foto{padding:10px;overflow:hidden}.cel-foto img{width:100%;height:auto;border-radius:20px}
 .ilus{font-size:.75rem;color:rgba(255,255,255,.4);text-align:center;margin-top:10px}
 .paquetes{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 @media(max-width:900px){.paquetes{grid-template-columns:1fr}}
@@ -339,6 +340,9 @@ CSS_CF = """<style>
 def cel(app, cuerpo):
     return f'<div><div class="cel" aria-hidden="true"><div class="barra"><span>10:02</span><span>●●●</span></div><div class="app">{app}</div>{cuerpo}</div><p class="ilus">Ilustración</p></div>'
 
+def foto(archivo, alt, w, h):
+    return f'<div><div class="cel cel-foto"><img src="/assets/img/como-funciona/{archivo}" alt="{e(alt)}" width="{w}" height="{h}" loading="lazy"></div><p class="ilus">Captura real de la demo</p></div>'
+
 def pagina_como_funciona():
     ruta = "/como-funciona/"
     titulo = "Cómo funcionan los turnos online para tu consultorio | NeoAtlantis"
@@ -353,17 +357,17 @@ def pagina_como_funciona():
     schema = [{"@context": "https://schema.org", "@type": "WebPage", "name": "Cómo funcionan los turnos online", "description": desc, "url": SITIO + ruta, "inLanguage": "es-AR"},
               schema_faq(faq), schema_migas([("Cómo funciona", ruta)])]
     h = cabeza(titulo, desc, ruta, schema).replace("</head>", CSS_CF + "</head>", 1)
-    p1 = cel("tuconsultorio.com.ar · Reservar turno", '<div class="burbuja"><b>Jueves 17</b> · Elegí un horario</div><div class="horarios"><span class="no">9:00</span><span>9:45</span><span class="on">10:30</span><span>11:15</span><span class="no">12:00</span><span>16:00</span></div>')
-    p2 = cel("Telegram · NeoAtlantis Turnos", '<div class="burbuja">📅 <b>Nuevo turno</b><br>Laura G.<br>Jueves 17 · 10:30<br>Primera consulta</div><div class="botones"><span>✅ Confirmar</span><span>❌ Rechazar</span></div>')
-    p3 = cel("Email del paciente", '<div class="mail"><div class="de">Consultorio Lic. Pérez</div><b>Tu turno está confirmado</b><br>Jueves 17 a las 10:30<br>Córdoba 1234, Rosario</div>')
+    p1 = foto("1-reserva.webp", "Captura: horarios disponibles en la web de un consultorio de ejemplo", 560, 747)
+    p2 = foto("2-telegram.webp", "Captura: aviso de turno nuevo en Telegram con botones Confirmar y Rechazar", 560, 445)
+    p3 = foto("3-confirmacion.webp", "Captura: email al paciente con el turno confirmado", 560, 603)
     p4 = cel("Email del paciente · 24 h antes", '<div class="mail"><div class="de">Consultorio Lic. Pérez</div><b>Te esperamos mañana a las 10:30</b><br>Si no podés venir, avisanos para que otro paciente use el horario.<br><span class="bt">Cancelar turno</span></div>')
-    p5 = cel("Agenda", '<div class="burbuja">↩️ <b>Laura G. canceló</b><br>Jueves 17 · 10:30 vuelve a estar libre</div><div class="horarios"><span class="no">9:00</span><span>9:45</span><span class="on">10:30</span></div>')
+    p5 = foto("5-panel.webp", "Captura: agenda de la semana en el panel del consultorio", 560, 457)
     pasos = [
         ("01", "El paciente reserva en tu web", "Entra a tu web, ve solo los horarios libres y elige el que le queda bien, a cualquier hora y sin escribirte. No hay doble reserva: un horario tomado deja de aparecer.", "Lo hace el paciente", p1),
-        ("02", "Te llega al celular y aprobás con un toque", "Cada turno nuevo te llega por Telegram con dos botones: Confirmar o Rechazar. Lo aprobás entre paciente y paciente, sin ida y vuelta de mensajes.", "Lo hacés vos: un toque", p2),
-        ("03", "El paciente recibe la confirmación", "Cuando confirmás (o rechazás), al paciente le llega el aviso por email, con el día, la hora y la dirección. Vos no escribís nada.", "Automático", p3),
+        ("02", "Te llega al celular y aprobás con un toque", "Cada turno nuevo te llega por Telegram con dos botones: Confirmar o Rechazar. También podés aprobarlo desde tu panel. Lo hacés entre paciente y paciente, sin ida y vuelta de mensajes.", "Lo hacés vos: un toque", p2),
+        ("03", "El paciente recibe la confirmación", "Cuando confirmás (o rechazás), al paciente le llega el aviso por email, con el día, la hora y el tratamiento. Vos no escribís nada.", "Automático", p3),
         ("04", "Los recordatorios salen solos", "24 horas antes y 2 horas antes, el paciente recibe un recordatorio. El de 24 horas trae un botón para cancelar con un clic, así te enterás a tiempo.", "Automático", p4),
-        ("05", "Si cancela, el horario se libera", "El horario vuelve a aparecer libre en tu web para otro paciente. En el paquete Integral, además, se avisa a la lista de espera para llenarlo.", "Automático", p5),
+        ("05", "Todo queda en tu panel", "Ves la agenda de la semana, quién vino y quién no, la lista de espera y tus ajustes. Si un paciente cancela, el horario vuelve a aparecer libre en tu web para otro. En el paquete Integral, además, se avisa a la lista de espera para llenarlo.", "Desde tu celular", p5),
     ]
     bloques = "".join(f'<div class="cf-paso"><div><div class="cf-num">{n}</div><h2>{e(t)}</h2><p>{e(d)}</p><span class="quien">{e(q)}</span></div>{m}</div>' for n, t, d, q, m in pasos)
     paquetes = [
