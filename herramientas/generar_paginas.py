@@ -170,7 +170,7 @@ def cabeza(titulo, desc, ruta, schema, og_tipo="website"):
 <body>
 <header><div class="wrap"><nav>
   <a class="brand" href="/"><img src="/assets/isotipo.png" alt="" width="128" height="128">NEOATLANTIS</a>
-  <div class="navlinks"><a href="/como-funciona/">Cómo funciona</a><a href="/#incluye">Qué incluye</a><a href="/#casos">Demos</a><a href="/guias/">Guías</a><a href="/#preguntas">Preguntas</a><a href="/#captacion">Contacto</a></div>
+  <div class="navlinks"><a href="/como-funciona/">Cómo funciona</a><a href="/consultorios/#incluye">Qué incluye</a><a href="/consultorios/#casos">Demos</a><a href="/guias/">Guías</a><a href="/consultorios/#preguntas">Preguntas</a><a href="/#captacion">Contacto</a></div>
   <a class="navcta" href="/diagnostico/">Diagnóstico gratis</a>
 </nav></div></header>
 """
@@ -184,7 +184,7 @@ def pie(texto_wa):
     <div><a class="brand" href="/"><img src="/assets/isotipo.png" alt="" width="128" height="128">NEOATLANTIS</a><p>Web, turnos online y automatizaciones para profesionales de la salud.</p></div>
     <div class="pie-links">
       <div>{especialidades_pie()}</div>
-      <div><a href="/como-funciona/">Cómo funciona</a><a href="/guias/">Guías</a><a href="/#casos">Demos</a><a href="/#captacion">Contacto</a><a href="https://www.instagram.com/neoatlantis.digital" target="_blank" rel="noopener">Instagram</a><a href="/privacidad.html">Privacidad</a><a href="/terminos.html">Términos</a></div>
+      <div><a href="/como-funciona/">Cómo funciona</a><a href="/guias/">Guías</a><a href="/consultorios/#casos">Demos</a><a href="/#captacion">Contacto</a><a href="https://www.instagram.com/neoatlantis.digital" target="_blank" rel="noopener">Instagram</a><a href="/privacidad.html">Privacidad</a><a href="/terminos.html">Términos</a></div>
     </div>
   </div>
   <div class="pie-fin"><span>© {2026} NeoAtlantis</span><span>Villa Gobernador Gálvez · Rosario, Argentina</span></div>
