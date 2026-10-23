@@ -4,7 +4,7 @@
 
 Cómo funciona el sistema: el paciente reserva en la web del consultorio eligiendo un horario libre; el profesional recibe cada turno nuevo por Telegram y lo confirma o rechaza con un toque (o desde su panel); el paciente recibe la confirmación por email y recordatorios automáticos 24 y 2 horas antes, con un botón para cancelar que libera el horario. Solo se guardan los datos del turno (nombre, contacto, día y hora), nunca información clínica. Los recordatorios por WhatsApp no están incluidos: requieren la API oficial de WhatsApp Business y se cotizan aparte.
 
-Paquetes: Presencia (web profesional y ficha de Google Maps), Turnos (lo anterior más turnos online, aprobación por Telegram, confirmación y recordatorios por email) e Integral (lo anterior más confirmación en tres tiempos, lista de espera, pedido de reseña, aviso de control, asistente de consultas y reporte semanal). El precio se define en un diagnóstico gratis de 15 minutos. Sin permanencia mínima.
+Paquetes: Presencia (web profesional y ficha de Google Maps), Turnos (lo anterior más turnos online, aprobación por Telegram, confirmación y recordatorios por email) e Integral (lo anterior más confirmación en tres tiempos, lista de espera, pedido de reseña, aviso de control, asistente de consultas y reporte semanal). La implementación no tiene cargo: se paga un abono mensual (desde USD 25; con turnos online, USD 50), en pesos al dólar oficial, con un mínimo de 12 meses. El detalle se ve en un diagnóstico gratis de 15 minutos.
 
 Atención: lunes a sábado de 13 a 19 h (hora de Argentina). Contacto: WhatsApp +54 9 341 226-9841 · https://www.neoatlantis.com.ar/#captacion
 

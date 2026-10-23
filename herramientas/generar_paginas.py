@@ -249,7 +249,7 @@ def pagina_especialidad(p):
   <div class="pasos">
     <div class="paso"><h3>Diagnóstico gratis</h3><p>Una charla de 15 minutos para entender cómo das los turnos hoy y qué te conviene resolver primero.</p></div>
     <div class="paso"><h3>Propuesta por escrito</h3><p>Qué incluye, cuánto cuesta y en cuánto tiempo, sin letra chica.</p></div>
-    <div class="paso"><h3>Funcionando en 7 a 15 días hábiles</h3><p>Desde que tenemos el anticipo y tu material. Te muestro cómo usarlo y te acompaño 30 días.</p></div>
+    <div class="paso"><h3>Funcionando en 7 a 15 días hábiles</h3><p>Desde que firmamos y tenemos tu material. No pagás nada para empezar. Te muestro cómo usarlo y te acompaño 30 días.</p></div>
   </div>
 </div></section>
 
