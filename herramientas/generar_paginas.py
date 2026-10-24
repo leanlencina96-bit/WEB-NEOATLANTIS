@@ -5,6 +5,7 @@
 import html, json, os, re, sys
 sys.path.insert(0, os.path.dirname(__file__))
 from contenido_paginas import ESPECIALIDADES, GUIAS
+from contenido_recursos import RECURSOS
 
 RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITIO = "https://www.neoatlantis.com.ar"
@@ -184,7 +185,7 @@ def pie(texto_wa):
     <div><a class="brand" href="/"><img src="/assets/isotipo.png" alt="" width="128" height="128">NEOATLANTIS</a><p>Web, turnos online y automatizaciones para profesionales de la salud.</p></div>
     <div class="pie-links">
       <div>{especialidades_pie()}</div>
-      <div><a href="/como-funciona/">Cómo funciona</a><a href="/guias/">Guías</a><a href="/consultorios/#casos">Demos</a><a href="/#captacion">Contacto</a><a href="https://www.instagram.com/neoatlantis.digital" target="_blank" rel="noopener">Instagram</a><a href="/privacidad.html">Privacidad</a><a href="/terminos.html">Términos</a></div>
+      <div><a href="/como-funciona/">Cómo funciona</a><a href="/guias/">Guías</a><a href="/recursos/">Recursos gratis</a><a href="/consultorios/#casos">Demos</a><a href="/#captacion">Contacto</a><a href="https://www.instagram.com/neoatlantis.digital" target="_blank" rel="noopener">Instagram</a><a href="/privacidad.html">Privacidad</a><a href="/terminos.html">Términos</a></div>
     </div>
   </div>
   <div class="pie-fin"><span>© {2026} NeoAtlantis</span><span>Villa Gobernador Gálvez · Rosario, Argentina</span></div>
@@ -431,6 +432,93 @@ def pagina_como_funciona():
     return ruta, h
 
 
+
+# ---------- Recursos gratis (marca personal)
+CSS_REC = """<style>
+.rec-bloque{margin:34px 0 0}
+.rec-prompt{position:relative;background:#fff;border:1px solid var(--line-light);border-radius:14px;padding:18px 18px 18px;font-family:ui-monospace,Consolas,monospace;
+  font-size:.92rem;line-height:1.6;white-space:pre-wrap;overflow-wrap:anywhere;color:#1F2937}
+.rec-copiar{position:absolute;top:10px;right:10px;font:600 .8rem Inter,system-ui,sans-serif;padding:7px 12px;border-radius:10px;border:0;cursor:pointer;color:#fff;
+  background:linear-gradient(120deg,var(--electric),var(--violet))}
+.rec-herr{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.rec-herr a{font-size:.9rem;padding:8px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.25);text-decoration:none;color:#fff}
+.rec-herr a:hover{background:#fff;color:var(--void)}
+.rec-lista{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.rec-lista li{display:grid;grid-template-columns:26px 1fr;gap:8px;font-size:1.04rem}
+.rec-lista li::before{content:"✓";font-weight:700;color:var(--electric-ink)}
+.rec-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px}
+.rec-card{display:block;background:#fff;border:1px solid var(--line-light);border-radius:16px;padding:24px;text-decoration:none;color:#0D1424}
+.rec-card:hover{border-color:var(--electric-ink)}
+.rec-card .pal{display:inline-block;font:700 .75rem Inter,system-ui,sans-serif;letter-spacing:.1em;padding:4px 10px;border-radius:999px;color:#fff;
+  background:linear-gradient(120deg,var(--electric),var(--violet));margin-bottom:12px}
+.rec-card h2{font-size:1.25rem;margin:0 0 6px}
+.rec-card p{color:var(--slate);margin:0}
+</style>
+<script>
+document.addEventListener('click',async(e)=>{const b=e.target.closest('.rec-copiar');if(!b)return;const caja=document.getElementById(b.dataset.id);
+const t=caja.dataset.texto;try{await navigator.clipboard.writeText(t);b.textContent='¡Copiado!';}catch(err){const r=document.createRange();r.selectNodeContents(caja);
+const s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Seleccionado';}setTimeout(()=>b.textContent='Copiar',1800);});
+</script>
+"""
+
+def pagina_recurso(r):
+    ruta = f"/recursos/{r['slug']}/"
+    titulo = f"{r['titulo']} | Leandro Lencina"
+    schema = [{"@context": "https://schema.org", "@type": "WebPage", "name": r["titulo"], "description": r["descripcion"], "url": SITIO + ruta,
+               "inLanguage": "es-AR", "author": {"@type": "Person", "name": "Leandro Lencina"}}, schema_migas([("Recursos", "/recursos/"), (r["corto"], ruta)])]
+    h = cabeza(titulo, r["descripcion"], ruta, schema).replace("</head>", CSS_REC + "</head>", 1)
+    herr = "".join(f'<a href="{u}" target="_blank" rel="noopener">{e(n)} ↗</a>' for n, u in r["herramientas"])
+    cuerpo = ""
+    for i, b in enumerate(r["bloques"]):
+        cuerpo += f'<div class="rec-bloque"><h2>{e(b["titulo"])}</h2>'
+        if b["tipo"] == "prompt":
+            cuerpo += (f'<div class="rec-prompt" id="p{i}" data-texto="{e(b["texto"])}"><button class="rec-copiar" data-id="p{i}" type="button">Copiar</button>'
+                       f'{e(b["texto"])}</div>')
+        elif b["tipo"] == "lista":
+            cuerpo += '<ul class="rec-lista">' + "".join(f"<li>{e(x)}</li>" for x in b["items"]) + "</ul>"
+        else:
+            cuerpo += f'<p>{e(b["texto"])}</p>'
+        cuerpo += "</div>"
+    h += f"""<main>
+<section class="hero" style="padding-bottom:60px"><div class="wrap">
+  {migas([('Recursos', '/recursos/'), (r['corto'], None)])}
+  <div class="eyebrow">Recurso gratis · palabra «{e(r['palabra'])}»</div>
+  <h1>{e(r['titulo'])}</h1>
+  <p class="sub">{e(r['bajada'])}</p>
+  <div class="rec-herr">{herr}</div>
+</div></section>
+<article class="articulo"><div class="cuerpo">
+{cuerpo}
+<div class="caja-cta"><h2>¿Te sirvió?</h2><p>Todas las semanas pruebo una herramienta de IA nueva y te muestro cómo usarla, paso a paso.</p>
+<div class="ctas"><a class="btn btn-claro" href="https://www.youtube.com/channel/UCMiqym9mvo_RUsPUvtZ70Tw" target="_blank" rel="noopener">Ver el canal de YouTube</a><a class="btn btn-wa" href="/recursos/">Más recursos gratis</a></div></div>
+</div></article>
+</main>
+"""
+    h += pie("Hola%20Leandro,%20vi%20tus%20recursos%20de%20IA.")
+    return ruta, h
+
+def indice_recursos(recursos):
+    ruta = "/recursos/"
+    desc = "Prompts, plantillas y guías gratis de los videos de Leandro Lencina, consultor de IA: copialos y usalos con ChatGPT, Claude, Gemini y otras herramientas."
+    schema = [{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Recursos gratis de IA", "description": desc, "url": SITIO + ruta, "inLanguage": "es-AR"},
+              schema_migas([("Recursos", ruta)])]
+    h = cabeza("Recursos gratis de IA | Leandro Lencina", desc, ruta, schema).replace("</head>", CSS_REC + "</head>", 1)
+    tarjetas = "".join(f'<a class="rec-card" href="/recursos/{r["slug"]}/"><span class="pal">{e(r["palabra"])}</span><h2>{e(r["titulo"])}</h2><p>{e(r["descripcion"])}</p></a>'
+                       for r in recursos)
+    h += f"""<main>
+<section class="hero" style="padding-bottom:60px"><div class="wrap">
+  {migas([('Recursos', None)])}
+  <div class="eyebrow">Gratis · de los videos del canal</div>
+  <h1>Recursos de IA para copiar y usar</h1>
+  <p class="sub">Los prompts, plantillas y guías que uso en mis videos. Si comentaste una palabra en un video, acá está tu recurso.</p>
+</div></section>
+<section class="sec claro"><div class="wrap"><div class="rec-grid">{tarjetas}</div></div></section>
+</main>
+"""
+    h += pie("Hola%20Leandro,%20vi%20tus%20recursos%20de%20IA.")
+    return ruta, h
+
+
 def indice_guias():
     ruta = "/guias/"
     desc = "Guías prácticas para consultorios de salud: turnos, ausentismo, Google Maps y organización. Por NeoAtlantis, Villa Gobernador Gálvez y Rosario."
@@ -465,3 +553,6 @@ if __name__ == "__main__":
         if not solo or g["slug"] in solo: escribir(*pagina_guia(g))
     escribir(*indice_guias())
     escribir(*pagina_como_funciona())
+    listos = [r for r in RECURSOS if r.get('listo')]
+    for r in listos: escribir(*pagina_recurso(r))
+    escribir(*indice_recursos(listos))
