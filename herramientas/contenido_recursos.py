@@ -1,4 +1,4 @@
-# Recursos gratis de la marca personal (Leandro Lencina · Consultor IA). Uno por video: lo que la gente pide con «Comentá PALABRA».
+﻿# Recursos gratis de la marca personal (Leandro Lencina · Consultor IA). Uno por video: lo que la gente pide con «Comentá PALABRA».
 # Regla: se regala lo que usa la gente (prompts, plantillas, checklists, guías). Nunca lo interno (scripts de la Fábrica, n8n,
 # Hermes, claves). Cada recurso tiene que funcionar solo, sin que Leandro esté.
 # Para sumar uno: agregar un dict a RECURSOS y correr generar_paginas.py. "listo": False lo oculta hasta que el video salga.
@@ -64,6 +64,62 @@ RECURSOS = [
         "titulo": "Las 3 pruebas para comparar IA", "corto": "Comparar IA",
         "descripcion": "Las 3 pruebas y la planilla de puntaje para comparar ChatGPT, Claude y Gemini con tus propias tareas.",
         "bajada": "Lo que uso en el video «Probé ChatGPT, Claude y Gemini para lo mismo».",
-        "herramientas": [("ChatGPT", "https://chatgpt.com"), ("Claude", "https://claude.ai"), ("Gemini", "https://gemini.google.com")], "bloques": [],
+        "herramientas": [("ChatGPT", "https://chatgpt.com"), ("Claude", "https://claude.ai"), ("Gemini", "https://gemini.google.com")],
+        "bloques": [
+            {"tipo": "texto", "titulo": "Cómo hacer la prueba justa",
+             "texto": "Mismo prompt, copiado igual, en las 3. Cada una en un chat nuevo y con la versión gratis (o las 3 pagas, pero no mezcles). Anotá el puntaje apenas leés cada respuesta, antes de ver la siguiente."},
+            {"tipo": "prompt", "titulo": "Prueba 1 · Escribir (un mensaje real)",
+             "texto": "Escribí un mensaje de WhatsApp para un cliente que me pidió un presupuesto hace una semana y no respondió. Que sea amable, corto (máximo 4 líneas), sin sonar desesperado, y que termine con una pregunta fácil de contestar."},
+            {"tipo": "prompt", "titulo": "Prueba 2 · Pensar (un problema con números)",
+             "texto": "Tengo un negocio que vende 120 productos por mes a $8.000 cada uno. Mis costos fijos son $450.000 y cada producto me cuesta $4.500. Si subo el precio un 15 % y pierdo un 10 % de las ventas, ¿gano más o menos? Explicámelo paso a paso y con una tabla."},
+            {"tipo": "prompt", "titulo": "Prueba 3 · Leer (un documento o una foto)",
+             "texto": "Te paso esta foto / este PDF. Resumilo en 5 puntos, decime qué dato importante falta y armá 3 preguntas que yo debería hacer antes de decidir.\n\n[adjuntá una factura, un contrato, un menú o una captura]"},
+            {"tipo": "lista", "titulo": "Checklist de puntaje (de 1 a 5 cada punto, por IA)",
+             "items": ["¿Hizo exactamente lo que le pedí (largo, formato, tono)?", "¿Los datos y las cuentas están bien? (verificá al menos uno)",
+                       "¿Lo puedo usar tal cual o tengo que corregirlo mucho?", "¿Se entiende a la primera, sin palabras raras?",
+                       "¿Suena a persona de acá o a traducción?", "¿Inventó algo? (si inventó, 1 punto, aunque lo demás esté bien)",
+                       "¿Cuánto tardó y si me pidió pagar o iniciar sesión para seguir?"]},
+            {"tipo": "texto", "titulo": "Planilla para anotar",
+             "texto": "Armá una tabla con 4 columnas: Prueba · ChatGPT · Claude · Gemini. Una fila por cada prueba con la suma de los 7 puntos (máximo 35). Sumá las 3 filas: la que más puntos tiene es la mejor PARA LO QUE VOS USÁS, que puede no ser la misma que para otra persona."},
+        ],
+    },
+    {
+        "slug": "presentacion", "palabra": "PRESENTACIÓN", "listo": False,  # L02 sale el 4/11
+        "titulo": "El pedido para hacer una presentación con IA (gratis)", "corto": "Presentación con IA",
+        "descripcion": "El pedido exacto que usé para comparar Gamma, Claude + Canva y NotebookLM, y qué revisar antes de mandar la presentación.",
+        "bajada": "Lo que uso en el video «Le pedí la misma presentación a 3 IA gratis: esta ganó». Copialo y cambiá los datos por los de tu negocio.",
+        "herramientas": [("Gamma", "https://gamma.app"), ("Claude", "https://claude.ai"), ("Canva", "https://www.canva.com"), ("NotebookLM", "https://notebooklm.google.com")],
+        "bloques": [
+            {"tipo": "prompt", "titulo": "El pedido (igual para las tres)",
+             "texto": "Armá una presentación de 7 diapositivas para presentar [tu negocio o emprendimiento] a [a quién se la vas a mostrar]: quiénes somos, productos, precios, cómo hacemos los pedidos, por qué elegirnos y contacto. Estilo [cálido / serio / moderno] y simple. No inventes datos, precios ni productos: si falta algo, dejalo entre corchetes para que lo complete yo."},
+            {"tipo": "texto", "titulo": "Cuál usar",
+             "texto": "Para salir del paso en 2 minutos: Gamma (en el plan gratis deja el sello «Hecho con Gamma»). Si ya usás Canva y la querés retocar a mano: Claude conectado a Canva. Si la querés armar desde tus apuntes o documentos: NotebookLM (ojo: el PowerPoint sale con las diapositivas como imágenes, no se edita)."},
+            {"tipo": "lista", "titulo": "Antes de mandarla",
+             "items": ["Leela entera: la IA puede inventar productos, precios o frases que nunca le diste.", "Completá lo que quedó entre corchetes.",
+                       "Cambiá las imágenes de ejemplo por fotos reales de tu negocio.", "Revisá que el contacto (WhatsApp, Instagram) esté bien.",
+                       "Si es para un cliente, bajala en PDF para que se vea igual en cualquier celular."]},
+        ],
+    },
+    {
+        "slug": "google", "palabra": "MAPS", "listo": False,  # L03 sale el 7/11: el video y el comentario fijado dicen «comentá MAPS»
+        "titulo": "Checklist para aparecer en Google Maps con tu negocio", "corto": "Ficha de Google",
+        "descripcion": "Los pasos para crear tu Perfil de Empresa en Google y la lista de control para que la ficha quede completa.",
+        "bajada": "Lo que uso en el video «Cómo aparecer en Google Maps con tu negocio (paso a paso)».",
+        "herramientas": [("Perfil de Empresa de Google", "https://www.google.com/business/")],
+        "bloques": [
+            {"tipo": "lista", "titulo": "Los pasos",
+             "items": ["Entrá a google.com/business con la cuenta de Google del negocio (gratis).", "Nombre: tal cual está en la puerta, sin agregar palabras de más.",
+                       "Categoría: la más específica que exista (después podés sumar secundarias).", "Ubicación: revisá que el pin quede en la puerta. Si vas a domicilio, marcá zona y ocultá la dirección.",
+                       "Teléfono que alguien conteste y la web o el Instagram.", "Verificación: video, código o llamada. Sin verificar no se muestra completa.",
+                       "Horarios reales, y los especiales en feriados y vacaciones.", "Descripción corta: qué hacés, para quién y dónde.", "Fotos reales: la fachada, adentro, los productos y vos."]},
+            {"tipo": "lista", "titulo": "Antes de darla por terminada",
+             "items": ["Te buscás en Maps desde otro celular y aparecés.", "El horario de hoy es el correcto.", "Tiene al menos 5 fotos.",
+                       "Le pediste reseña a 3 clientes de confianza.", "Nadie te cobró por «aparecer primero»: Google no vende ese lugar."]},
+            {"tipo": "texto", "titulo": "El error que traba la verificación",
+             "texto": "Mientras esperás el código o la revisión del video, no cambies el nombre, la dirección ni la categoría: el código deja de funcionar. El código vence a los 30 días. Una verificación por video puede tardar varios días (a nosotros nos tardó 4 o 5)."},
+            {"tipo": "lista", "titulo": "Reseñas, sin trampas",
+             "items": ["Sacá el link para pedir reseñas desde tu perfil y mandáselo a tus clientes.", "Pedila después de un buen trabajo, no antes.",
+                       "No regales nada a cambio: Google no lo permite.", "No te reseñes a vos mismo.", "Respondé todas, las buenas y las malas."]},
+        ],
     },
 ]
