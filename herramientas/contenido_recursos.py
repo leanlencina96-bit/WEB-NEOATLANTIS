@@ -122,4 +122,24 @@ RECURSOS = [
                        "No regales nada a cambio: Google no lo permite.", "No te reseñes a vos mismo.", "Respondé todas, las buenas y las malas."]},
         ],
     },
+    {
+        "slug": "menu", "palabra": "MENÚ", "listo": False,  # L05 (sale el 14/11): el video y el comentario fijado dicen «comentá MENÚ»
+        "titulo": "Los 3 pedidos para armar el menú de la semana con IA (gratis)", "corto": "Menú con IA",
+        "descripcion": "Los pedidos exactos para que ChatGPT o Gemini te armen el menú de lunes a viernes y la lista del súper por sección.",
+        "bajada": "Lo que uso en el video «Armé el menú de la semana y la lista del súper con IA». Usalos en el mismo chat, en orden.",
+        "herramientas": [("ChatGPT", "https://chatgpt.com"), ("Gemini", "https://gemini.google.com")],
+        "bloques": [
+            {"tipo": "prompt", "titulo": "1. Lo que tenés",
+             "texto": "Tengo esto en la heladera y la alacena: [lo que tenés].\nSomos [cuántas] personas y quiero gastar como máximo $[tu presupuesto] en la semana.\nTodavía no me armes nada: decime si entendiste y qué más necesitás saber."},
+            {"tipo": "prompt", "titulo": "2. El menú",
+             "texto": "Armame el menú de lunes a viernes, almuerzo y cena.\nRecetas simples, de menos de 30 minutos, con ingredientes que se consiguen en cualquier súper de Argentina.\nUsá primero lo que ya tengo, así no se me echa a perder nada.\nPonelo en una tabla: día, almuerzo, cena."},
+            {"tipo": "prompt", "titulo": "3. La lista del súper",
+             "texto": "Ahora haceme la lista de compras de todo lo que me falta para ese menú, con las cantidades, ordenada por sección del súper: verdulería, carnicería, lácteos, almacén y limpieza.\nNo me pongas precios."},
+            {"tipo": "prompt", "titulo": "Si algo no te gusta",
+             "texto": "Cambiame la cena del miércoles: [lo que no te gusta]. Mantené el resto igual."},
+            {"tipo": "lista", "titulo": "Antes de salir a comprar",
+             "items": ["Los precios que te dé la IA no son los de tu súper: usalos como idea, no como dato.", "Si tenés alergias o una dieta especial, decíselo en el primer pedido.",
+                       "Revisá que las cantidades te cierren para la cantidad de personas.", "Fijate qué ya tenés antes de comprar lo de la lista."]},
+        ],
+    },
 ]
