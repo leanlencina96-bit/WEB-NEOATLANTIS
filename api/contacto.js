@@ -21,6 +21,9 @@ function dentroDelLimite(ip, max = 3, ventanaMs = 60 * 1000) {
 const NECESIDADES = [
   'Una web para mi consultorio', 'Turnos online y recordatorios', 'Mejorar mi web actual',
   'Aparecer en Google Maps', 'Quiero un diagnóstico gratis',
+  // portada «Asesor IA & Automation Builder» (3/11/2026)
+  'Ordenar y responder consultas', 'Automatizar tareas o procesos', 'Producir contenido con IA',
+  'Aprender a usar la IA en mi negocio', 'Una web o aparecer en Google', 'Otra cosa',
 ];
 
 export default async function handler(req, res) {
