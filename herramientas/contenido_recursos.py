@@ -84,7 +84,7 @@ RECURSOS = [
         ],
     },
     {
-        "slug": "presentacion", "palabra": "PRESENTACIÓN", "listo": False,  # L02 sale el 4/11
+        "slug": "presentacion", "palabra": "PRESENTACIÓN", "listo": True,  # L02 salió el 4/11 (activado el 6/11)
         "titulo": "El pedido para hacer una presentación con IA (gratis)", "corto": "Presentación con IA",
         "descripcion": "El pedido exacto que usé para comparar Gamma, Claude + Canva y NotebookLM, y qué revisar antes de mandar la presentación.",
         "bajada": "Lo que uso en el video «Le pedí la misma presentación a 3 IA gratis: esta ganó». Copialo y cambiá los datos por los de tu negocio.",
@@ -101,7 +101,7 @@ RECURSOS = [
         ],
     },
     {
-        "slug": "google", "palabra": "MAPS", "listo": False,  # L03 sale el 7/11: el video y el comentario fijado dicen «comentá MAPS»
+        "slug": "google", "palabra": "MAPS", "listo": True,  # activado el 6/11 (L03 sale el 7/11)  # L03 sale el 7/11: el video y el comentario fijado dicen «comentá MAPS»
         "titulo": "Checklist para aparecer en Google Maps con tu negocio", "corto": "Ficha de Google",
         "descripcion": "Los pasos para crear tu Perfil de Empresa en Google y la lista de control para que la ficha quede completa.",
         "bajada": "Lo que uso en el video «Cómo aparecer en Google Maps con tu negocio (paso a paso)».",
@@ -140,6 +140,23 @@ RECURSOS = [
             {"tipo": "lista", "titulo": "Antes de salir a comprar",
              "items": ["Los precios que te dé la IA no son los de tu súper: usalos como idea, no como dato.", "Si tenés alergias o una dieta especial, decíselo en el primer pedido.",
                        "Revisá que las cantidades te cierren para la cantidad de personas.", "Fijate qué ya tenés antes de comprar lo de la lista."]},
+        ],
+    },
+    {
+        "slug": "resena", "palabra": "RESEÑA", "listo": False,  # L06 (reels desde el 23/11): «comentá RESEÑA»
+        "titulo": "Los 3 pedidos para responder reseñas de Google con IA (gratis)", "corto": "Reseñas con IA",
+        "descripcion": "Los pedidos exactos para que ChatGPT o Gemini te ayuden a responder reseñas buenas y malas, y a pedir más reseñas sin regalar nada.",
+        "bajada": "Lo que uso en el video «Cómo responder reseñas de Google con IA». Pegá la reseña, completá los corchetes y leé siempre la respuesta antes de publicarla.",
+        "herramientas": [("ChatGPT", "https://chatgpt.com"), ("Gemini", "https://gemini.google.com")],
+        "bloques": [
+            {"tipo": "prompt", "titulo": "1. Responder una reseña buena",
+             "texto": "Tengo un negocio: [qué hacés] en [zona]. Hablo de vos, cercano y sin palabras raras.\nRespondé esta reseña de Google en 2 o 3 oraciones: agradecé, nombrá algo concreto que dijo y cerrá invitándolo a volver.\nReseña: [pegá la reseña]"},
+            {"tipo": "prompt", "titulo": "2. Responder la de 1 estrella",
+             "texto": "Respondé esta reseña negativa de Google. No te defiendas ni discutas: agradecé que la haya dejado, pedí disculpas por lo que no salió bien y ofrecé hablar por privado (WhatsApp del negocio).\nCorta, en 3 o 4 oraciones, y sin datos personales del cliente.\nReseña: [pegá la reseña]"},
+            {"tipo": "prompt", "titulo": "3. Pedir más reseñas",
+             "texto": "Escribime un mensaje corto de WhatsApp para mandarle a un cliente después de un buen trabajo, pidiéndole que deje una reseña en Google con este link: [tu link].\nSin ofrecer nada a cambio. Cercano, de vos, máximo 3 líneas."},
+            {"tipo": "lista", "titulo": "Antes de publicar",
+             "items": ["Leé siempre la respuesta: la firmás vos.", "Nunca pongas datos del cliente ni detalles privados.", "No regales nada a cambio de una reseña: Google no lo permite.", "Respondé todas, las buenas y las malas."]},
         ],
     },
 ]
