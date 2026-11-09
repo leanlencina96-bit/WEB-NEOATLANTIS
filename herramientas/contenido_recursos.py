@@ -203,4 +203,38 @@ RECURSOS = [
                        "No pongas logos ni marcas de otros."]},
         ],
     },
+    {
+        "slug": "precios", "palabra": "PRECIOS", "listo": True,  # reel motion graphics «Cómo subir tus precios» (11/2026)
+        "titulo": "El pedido para avisar que subís los precios sin perder clientes (gratis)", "corto": "Subir precios",
+        "descripcion": "El pedido exacto para que ChatGPT te escriba el mensaje de aumento: con tiempo, con el motivo en una frase y con algo para tus clientes de siempre.",
+        "bajada": "Lo que muestro en el video «Cómo subir tus precios». Completá los corchetes con tus datos reales y leé el mensaje antes de mandarlo.",
+        "herramientas": [("ChatGPT", "https://chatgpt.com"), ("Gemini", "https://gemini.google.com")],
+        "bloques": [
+            {"tipo": "prompt", "titulo": "1. El mensaje del aumento",
+             "texto": "Tengo un negocio de [qué hacés]. Hablo de vos, cercano y sin palabras raras.\nEscribime un mensaje de WhatsApp para avisarles a mis clientes que subo los precios, con estas 3 condiciones:\n1. Que avise con tiempo: el aumento es desde el [fecha].\n2. Que explique el motivo en una sola frase: [por qué subís].\n3. Que le dé algo al cliente de siempre: [por ejemplo, mantenerle el precio de hoy hasta fin de mes].\nCorto (máximo 5 líneas), honesto y que no suene a disculpa. Sin emojis de más."},
+            {"tipo": "prompt", "titulo": "2. Si alguien se queja",
+             "texto": "Un cliente me respondió esto al aviso de aumento: [pegá el mensaje].\nAyudame a contestarle con respeto, sin discutir y sin bajar el precio. Máximo 3 líneas."},
+            {"tipo": "lista", "titulo": "Antes de mandarlo",
+             "items": ["La fecha, el motivo y lo que ofrecés los decidís vos: la IA no los sabe.", "No prometas algo que después no vas a cumplir.",
+                       "Mandalo a cada cliente por separado o por lista de difusión, no en un grupo.", "Actualizá también el catálogo y las respuestas rápidas."]},
+        ],
+    },
+    {
+        "slug": "presupuesto", "palabra": "PRESUPUESTO", "listo": True,  # reel motion graphics «¿Cuál te cobra de más?» (11/2026)
+        "titulo": "El pedido para comparar presupuestos con ChatGPT (gratis)", "corto": "Comparar presupuestos",
+        "descripcion": "Cómo pasarle fotos de varios presupuestos a ChatGPT y que te los ponga en una tabla, ítem por ítem, con lo que incluye cada uno.",
+        "bajada": "Lo que muestro en el video «¿Cuál te cobra de más?». Sirve para una obra, un service, un viaje o cualquier trabajo con varias opciones.",
+        "herramientas": [("ChatGPT", "https://chatgpt.com"), ("Gemini", "https://gemini.google.com")],
+        "bloques": [
+            {"tipo": "lista", "titulo": "Antes de empezar",
+             "items": ["Sacale una foto clara a cada presupuesto, entero y derecho.", "Tapá los datos personales (teléfonos, direcciones, DNI) antes de subirlas."]},
+            {"tipo": "prompt", "titulo": "1. La tabla",
+             "texto": "Te paso [cantidad] presupuestos para el mismo trabajo: [qué trabajo].\nPonelos en una tabla, ítem por ítem: una fila por cada cosa que se cobra y una columna por presupuesto.\nMarcá con ✓ lo que incluye cada uno y con ✗ lo que no. Al final, el total de cada uno."},
+            {"tipo": "prompt", "titulo": "2. Lo que no se ve",
+             "texto": "Ahora decime qué le falta a cada presupuesto para que sean comparables (materiales, garantía, plazos, traslados) y cuánto cambiaría el total si lo sumo.\nSi algo no está claro en la foto, preguntame en vez de suponer."},
+            {"tipo": "lista", "titulo": "Antes de decidir",
+             "items": ["Revisá los números de la tabla contra las fotos: la IA puede leer mal un número.", "Preguntale a cada proveedor lo que no está escrito.",
+                       "El más barato no siempre es el mejor, y el más caro tampoco. La decisión es tuya."]},
+        ],
+    },
 ]
