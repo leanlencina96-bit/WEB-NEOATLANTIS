@@ -264,4 +264,28 @@ RECURSOS = [
              "texto": "Con Node.js instalado, en una terminal:\n\nnpx n8n\n\nDespués abrí http://localhost:5678 en el navegador y creá tu usuario. Para empezar, armá un flujo chico: un disparador manual que te mande un mensaje de prueba."},
         ],
     },
+    {
+        "slug": "claude", "palabra": "CLAUDE", "listo": True, "candado": True,  # reels vidrio «Claude en VS Code» (22/11/2026)
+        "titulo": "Cómo conectar Claude a VS Code paso a paso (guía para principiantes)", "corto": "Claude en VS Code",
+        "descripcion": "Cómo instalar Claude Code en Visual Studio Code en 3 pasos, cuánto cuesta, 3 cuidados antes de usarlo y los primeros pedidos para copiar, sin saber programar.",
+        "bajada": "Lo que muestro en los reels de Claude Code. Los pasos están abiertos; los pedidos para copiar te los paso con tu nombre y email.",
+        "herramientas": [("Visual Studio Code", "https://code.visualstudio.com"), ("Claude Code", "https://claude.com/claude-code"), ("Planes de Claude", "https://claude.com/pricing")],
+        "bloques": [
+            {"tipo": "lista", "titulo": "Los 3 pasos",
+             "items": ["Bajá Visual Studio Code (gratis) desde code.visualstudio.com e instalalo.",
+                       "Abrí Extensiones (Ctrl + Shift + X), buscá «Claude Code», fijate que el autor sea Anthropic y tocá Instalar. Si no aparece, cerrá y abrí VS Code.",
+                       "Abrí el panel de Claude e iniciá sesión con tu cuenta de Claude."]},
+            {"tipo": "texto", "titulo": "Cuánto cuesta",
+             "texto": "Claude Code no está en el plan gratis de Claude. Necesitás el plan Pro (unos 20 dólares por mes) o uno más alto. Mirá el precio actual en la página de planes de Claude antes de pagar: puede cambiar."},
+            {"tipo": "lista", "titulo": "3 cuidados antes de usarlo",
+             "items": ["Trabajá en una carpeta de prueba, no en tus documentos importantes.", "Leé lo que te pide antes de aceptar: Claude pregunta antes de ejecutar comandos.",
+                       "Nunca le pegues contraseñas ni claves en el chat."]},
+            {"tipo": "prompt", "candado": True, "titulo": "1. Tu primer pedido: una web simple",
+             "texto": "Armame una página web simple para mi negocio: [qué hacés], con lo que hacemos, los horarios ([tus horarios]) y un botón de WhatsApp ([tu número]). En un solo archivo index.html, prolija y que se vea bien en el celular. Después abrila en el navegador."},
+            {"tipo": "prompt", "candado": True, "titulo": "2. Instalar un repositorio de GitHub",
+             "texto": "Quiero probar este repositorio: [link de GitHub]. Estamos en una carpeta de prueba.\n1. Leé el README y explicame en 5 líneas qué hace y qué necesita.\n2. Instalalo paso a paso.\n3. Avisame antes de ejecutar cualquier comando y decime para qué sirve cada uno."},
+            {"tipo": "prompt", "candado": True, "titulo": "3. Que te explique antes de tocar",
+             "texto": "Antes de cambiar nada, explicame en español simple qué vas a hacer y qué archivos vas a tocar. Esperá mi «dale» para empezar."},
+        ],
+    },
 ]
