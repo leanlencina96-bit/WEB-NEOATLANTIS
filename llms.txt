@@ -29,6 +29,9 @@ Contacto: WhatsApp +54 9 341 226-9841 · https://www.neoatlantis.com.ar/#captaci
 - [Lista de espera para turnos cancelados](https://www.neoatlantis.com.ar/guias/lista-de-espera-turnos-cancelados/)
 - [Doctoralia o web propia](https://www.neoatlantis.com.ar/guias/doctoralia-o-web-propia/)
 
+## Recursos gratis
+- [5 repositorios gratis de GitHub para usar con IA](https://www.neoatlantis.com.ar/recursos/repos/): REA (ingeniería inversa con Claude Code), OpenCode, Open Carrusel, Diagram Design y n8n, con qué hace cada uno y el pedido exacto.
+
 ## Optional
 - [Canal de YouTube](https://www.youtube.com/channel/UCMiqym9mvo_RUsPUvtZ70Tw)
 - [Política de privacidad](https://www.neoatlantis.com.ar/privacidad.html)

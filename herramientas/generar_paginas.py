@@ -453,6 +453,12 @@ CSS_REC = """<style>
   background:linear-gradient(120deg,var(--electric),var(--violet));margin-bottom:12px}
 .rec-card h2{font-size:1.25rem;margin:0 0 6px}
 .rec-card p{color:var(--slate);margin:0}
+.rec-form{margin:40px 0 0;background:#fff;border:2px solid var(--electric-ink);border-radius:18px;padding:26px}
+.rec-form h2{margin:0 0 6px}.rec-form>p{margin:0 0 16px;color:var(--slate)}
+.rec-form form{display:grid;gap:12px;position:relative}
+.rec-form input:not([type=checkbox]),.rec-form select{font:1rem Inter,system-ui,sans-serif;padding:13px 14px;border-radius:12px;border:1px solid var(--line-light);width:100%;box-sizing:border-box;background:#fff;color:#0D1424}
+.rec-ok{display:flex;gap:8px;align-items:center;font-size:.92rem;color:var(--slate)}
+.rec-msj{margin:0;font-size:.95rem;color:#B42318}.rec-legal{margin:0;font-size:.8rem;color:var(--slate)}
 </style>
 <script>
 document.addEventListener('click',async(e)=>{const b=e.target.closest('.rec-copiar');if(!b)return;const caja=document.getElementById(b.dataset.id);
@@ -460,6 +466,21 @@ const t=caja.dataset.texto;try{await navigator.clipboard.writeText(t);b.textCont
 const s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Seleccionado';}setTimeout(()=>b.textContent='Copiar',1800);});
 </script>
 """
+
+FORM_JS = """<script>
+(function(){const K='rec-__SLUG__',f=document.getElementById('rec-f'),c=document.getElementById('rec-cerrado'),m=document.getElementById('rec-msj'),t0=Date.now();
+const abrir=()=>{c.hidden=false;document.getElementById('rec-form').hidden=true;};
+try{if(localStorage.getItem(K))abrir();}catch(e){}
+f.addEventListener('submit',async(ev)=>{ev.preventDefault();m.textContent='';const d=Object.fromEntries(new FormData(f));
+if((d.nombre||'').trim().length<2){m.textContent='Escribí tu nombre.';return;}
+if(!/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test((d.email||'').trim())){m.textContent='Revisá el email.';return;}
+const b=f.querySelector('button');b.disabled=true;b.textContent='Abriendo…';
+const u=new URLSearchParams(location.search);
+try{const r=await fetch('/api/recurso',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({...d,novedades:!!f.novedades.checked,recurso:'__SLUG__',origen:u.get('utm_source')||u.get('de')||document.referrer||'directo',t0})});
+const j=await r.json().catch(()=>({}));if(r.status===400||r.status===429)throw new Error(j.error||'Revisá los datos.');
+try{localStorage.setItem(K,'1');}catch(e){}abrir();if(window.va)window.va('event',{name:'recurso-desbloqueado',recurso:'__SLUG__'});}
+catch(err){m.textContent=err.message+' Probá de nuevo en un minuto.';b.disabled=false;b.textContent='Ver los pedidos';}});})();
+</script>"""
 
 def pagina_recurso(r):
     ruta = f"/recursos/{r['slug']}/"
@@ -469,7 +490,23 @@ def pagina_recurso(r):
     h = cabeza(titulo, r["descripcion"], ruta, schema).replace("</head>", CSS_REC + "</head>", 1)
     herr = "".join(f'<a href="{u}" target="_blank" rel="noopener">{e(n)} ↗</a>' for n, u in r["herramientas"])
     cuerpo = ""
+    abierto = False
     for i, b in enumerate(r["bloques"]):
+        if b.get("candado") and not abierto:  # formulario simple: nombre, email y a qué se dedica (va a Baserow por /api/recurso)
+            abierto = True
+            cuerpo += f"""<div class="rec-form" id="rec-form"><h2>Te paso los pedidos exactos</h2>
+<p>Dejame tu nombre y tu email y se abren acá abajo. No te lleno la casilla: te escribo solo cuando hay un recurso nuevo.</p>
+<form id="rec-f" novalidate>
+<input name="nombre" autocomplete="given-name" placeholder="Tu nombre" required maxlength="80">
+<input name="email" type="email" autocomplete="email" placeholder="Tu email" required maxlength="120">
+<select name="dedica"><option value="">¿A qué te dedicás? (opcional)</option><option>Tengo un negocio</option><option>Trabajo en relación de dependencia</option><option>Soy creador de contenido</option><option>Estudio</option><option>Otro</option></select>
+<input name="empresa" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
+<label class="rec-ok"><input type="checkbox" name="novedades" checked> Quiero recibir recursos nuevos por email</label>
+<button class="btn btn-wa" type="submit">Ver los pedidos</button>
+<p class="rec-msj" id="rec-msj" role="status"></p>
+<p class="rec-legal">Uso tus datos solo para mandarte recursos. Podés pedir que los borre cuando quieras. <a href="/privacidad.html">Privacidad</a>.</p>
+</form></div>
+<div id="rec-cerrado" hidden>"""
         cuerpo += f'<div class="rec-bloque"><h2>{e(b["titulo"])}</h2>'
         if b["tipo"] == "prompt":
             cuerpo += (f'<div class="rec-prompt" id="p{i}" data-texto="{e(b["texto"])}"><button class="rec-copiar" data-id="p{i}" type="button">Copiar</button>'
@@ -479,6 +516,8 @@ def pagina_recurso(r):
         else:
             cuerpo += f'<p>{e(b["texto"])}</p>'
         cuerpo += "</div>"
+    if abierto:
+        cuerpo += "</div>" + FORM_JS.replace("__SLUG__", r["slug"])
     h += f"""<main>
 <section class="hero" style="padding-bottom:60px"><div class="wrap">
   {migas([('Recursos', '/recursos/'), (r['corto'], None)])}
