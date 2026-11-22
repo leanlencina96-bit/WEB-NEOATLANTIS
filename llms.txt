@@ -31,6 +31,7 @@ Contacto: WhatsApp +54 9 341 226-9841 · https://www.neoatlantis.com.ar/#captaci
 
 ## Recursos gratis
 - [5 repositorios gratis de GitHub para usar con IA](https://www.neoatlantis.com.ar/recursos/repos/): REA (ingeniería inversa con Claude Code), OpenCode, Open Carrusel, Diagram Design y n8n, con qué hace cada uno y el pedido exacto.
+- [Cómo responder reseñas de Google con IA](https://www.neoatlantis.com.ar/recursos/resenas/): 3 pedidos para ChatGPT o Gemini (reseña buena, de 1 estrella y pedir reseñas por WhatsApp).
 
 ## Optional
 - [Canal de YouTube](https://www.youtube.com/channel/UCMiqym9mvo_RUsPUvtZ70Tw)

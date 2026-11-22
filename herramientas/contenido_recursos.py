@@ -264,4 +264,24 @@ RECURSOS = [
              "texto": "Con Node.js instalado, en una terminal:\n\nnpx n8n\n\nDespués abrí http://localhost:5678 en el navegador y creá tu usuario. Para empezar, armá un flujo chico: un disparador manual que te mande un mensaje de prueba."},
         ],
     },
+    {
+        "slug": "resenas", "palabra": "RESEÑA", "listo": True, "candado": True,  # video L06 y reels de reseñas (22/11/2026)
+        "titulo": "Cómo responder reseñas de Google con IA: 3 pedidos gratis", "corto": "Responder reseñas con IA",
+        "descripcion": "Los 3 pedidos para responder una reseña buena, una de 1 estrella y pedir reseñas por WhatsApp con ChatGPT o Gemini, gratis y sin sonar a robot.",
+        "bajada": "Lo que muestro en el video de reseñas. Funcionan en ChatGPT y en Gemini, los dos gratis. Te paso los pedidos con tu nombre y email.",
+        "herramientas": [("ChatGPT", "https://chatgpt.com"), ("Gemini", "https://gemini.google.com"), ("Perfil de Empresa de Google", "https://business.google.com")],
+        "bloques": [
+            {"tipo": "texto", "titulo": "Por qué responder todas",
+             "texto": "Una reseña sin responder la lee el próximo cliente que te busca. Responder las buenas y las malas muestra que hay alguien atrás del negocio, y con IA gratis lo hacés en un minuto. En una mala, el truco es no defenderte: agradecer, pedir disculpas y ofrecer hablar por privado."},
+            {"tipo": "lista", "titulo": "Antes de publicar",
+             "items": ["Leé siempre lo que te da la IA: vos firmás esa respuesta.", "Nunca pongas datos del cliente ni detalles privados.",
+                       "Para pedir reseñas no regales nada a cambio: Google no lo permite."]},
+            {"tipo": "prompt", "candado": True, "titulo": "1. Responder una reseña buena",
+             "texto": "Sos el dueño de [nombre de tu negocio] en [tu zona]. Respondé esta reseña de Google en 2 o 3 frases, cálido y natural, como hablamos en Argentina (vos). Agradecé algo concreto que haya dicho. Sin emojis de más y sin vender nada.\n\nReseña: [pegá la reseña]"},
+            {"tipo": "prompt", "candado": True, "titulo": "2. Responder una reseña de 1 estrella",
+             "texto": "Ahora esta reseña negativa. Respondé en 3 o 4 frases: agradecé que lo haya contado, pedí disculpas por lo que le pasó sin echarle la culpa, no discutas ni des explicaciones largas, y ofrecé hablar por privado ([tu WhatsApp o email del negocio]). No pongas datos personales del cliente.\n\nReseña: [pegá la reseña]"},
+            {"tipo": "prompt", "candado": True, "titulo": "3. Pedir reseñas por WhatsApp",
+             "texto": "Escribime un mensaje corto para mandar por WhatsApp a un cliente después de un buen trabajo, pidiéndole que deje una reseña en Google. Que suene natural, como hablamos en Argentina (vos), que incluya este link: [link de tu ficha para dejar reseñas]. Sin ofrecer nada a cambio."},
+        ],
+    },
 ]
