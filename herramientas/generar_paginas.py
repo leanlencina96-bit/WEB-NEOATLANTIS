@@ -470,7 +470,7 @@ const s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Seleccio
 FORM_JS = """<script>
 (function(){const K='rec-__SLUG__',f=document.getElementById('rec-f'),c=document.getElementById('rec-cerrado'),m=document.getElementById('rec-msj'),t0=Date.now();
 const abrir=()=>{c.hidden=false;document.getElementById('rec-form').hidden=true;};
-try{if(localStorage.getItem(K))abrir();}catch(e){}
+try{if(localStorage.getItem(K)||localStorage.getItem('rec-todo'))abrir();}catch(e){}
 f.addEventListener('submit',async(ev)=>{ev.preventDefault();m.textContent='';const d=Object.fromEntries(new FormData(f));
 if((d.nombre||'').trim().length<2){m.textContent='Escribí tu nombre.';return;}
 if(!/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test((d.email||'').trim())){m.textContent='Revisá el email.';return;}
@@ -478,7 +478,7 @@ const b=f.querySelector('button');b.disabled=true;b.textContent='Abriendo…';
 const u=new URLSearchParams(location.search);
 try{const r=await fetch('/api/recurso',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({...d,novedades:!!f.novedades.checked,recurso:'__SLUG__',origen:u.get('utm_source')||u.get('de')||document.referrer||'directo',t0})});
 const j=await r.json().catch(()=>({}));if(r.status===400||r.status===429)throw new Error(j.error||'Revisá los datos.');
-try{localStorage.setItem(K,'1');}catch(e){}abrir();if(window.va)window.va('event',{name:'recurso-desbloqueado',recurso:'__SLUG__'});}
+try{localStorage.setItem(K,'1');localStorage.setItem('rec-todo','1');}catch(e){}abrir();if(window.va)window.va('event',{name:'recurso-desbloqueado',recurso:'__SLUG__'});}
 catch(err){m.textContent=err.message+' Probá de nuevo en un minuto.';b.disabled=false;b.textContent='Ver los pedidos';}});})();
 </script>"""
 
@@ -499,6 +499,7 @@ def pagina_recurso(r):
 <form id="rec-f" novalidate>
 <input name="nombre" autocomplete="given-name" placeholder="Tu nombre" required maxlength="80">
 <input name="email" type="email" autocomplete="email" placeholder="Tu email" required maxlength="120">
+<input name="whatsapp" type="tel" autocomplete="tel" placeholder="WhatsApp (opcional)" maxlength="30">
 <select name="dedica"><option value="">¿A qué te dedicás? (opcional)</option><option>Tengo un negocio</option><option>Trabajo en relación de dependencia</option><option>Soy creador de contenido</option><option>Estudio</option><option>Otro</option></select>
 <input name="empresa" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
 <label class="rec-ok"><input type="checkbox" name="novedades" checked> Quiero recibir recursos nuevos por email</label>
@@ -529,32 +530,99 @@ def pagina_recurso(r):
 <article class="articulo"><div class="cuerpo">
 {cuerpo}
 <div class="caja-cta"><h2>¿Te sirvió?</h2><p>Todas las semanas pruebo una herramienta de IA nueva y te muestro cómo usarla, paso a paso.</p>
-<div class="ctas"><a class="btn btn-claro" href="https://www.youtube.com/channel/UCMiqym9mvo_RUsPUvtZ70Tw" target="_blank" rel="noopener">Ver el canal de YouTube</a><a class="btn btn-wa" href="/recursos/">Más recursos gratis</a></div></div>
+<div class="ctas"><a class="btn btn-claro" href="https://www.youtube.com/channel/UCMiqym9mvo_RUsPUvtZ70Tw" target="_blank" rel="noopener">Ver el canal de YouTube</a><a class="btn btn-wa" href="/recursos/">Ver toda la biblioteca</a></div></div>
 </div></article>
 </main>
 """
     h += pie("Hola%20Leandro,%20vi%20tus%20recursos%20de%20IA.")
     return ruta, h
 
+CATEGORIAS = [("Tu negocio en Google", "Que te encuentren y te elijan.", ["google", "resena"]),
+    ("Vender y cobrar mejor", "Precios, presupuestos y respuestas que ahorran horas.", ["precios", "presupuesto", "flujo", "foto"]),
+    ("IA para el día a día", "Lo que más se usa, explicado simple.", ["cv", "audio", "presentacion"]),
+    ("Herramientas y automatización", "Claude, repos gratis y n8n.", ["claude", "repos", "automatico"])]
+
+CSS_BIB = """<style>
+.bib-hero{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}
+.bib-chips{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:18px;color:#C9D1E3;font-size:.95rem}
+.bib-hero .rec-form{margin:0;color:#0D1424}
+.bib-cuenta{display:flex;gap:40px;flex-wrap:wrap;margin:0 0 34px}
+.bib-cuenta b{display:block;font:700 2.2rem 'Space Grotesk',Inter,sans-serif;color:var(--electric-ink)}.bib-cuenta span{color:var(--slate)}
+.bib-cats{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.bib-cat{background:#fff;border:1px solid var(--line-light);border-radius:18px;padding:26px}
+.bib-cat .n{font-weight:700;color:var(--electric-ink)}.bib-cat h2{font-size:1.35rem;margin:4px 0 2px}.bib-cat>p{color:var(--slate);margin:0 0 14px}
+.bib-cat ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.bib-cat a{display:flex;justify-content:space-between;gap:12px;padding:12px 14px;border:1px solid var(--line-light);border-radius:12px;text-decoration:none;color:#0D1424}
+.bib-cat a:hover{border-color:var(--electric-ink)}.bib-cat em{font-style:normal;font-size:.78rem;color:var(--slate);white-space:nowrap}
+.bib-lock{margin-top:12px;font-size:.88rem;color:#8A5A00}.bib-abierta .bib-lock{display:none}
+.bib-listo{display:none;margin:0;font-weight:600;color:#067647}.bib-abierta .bib-listo{display:block}.bib-abierta #bib-f{display:none}
+.bib-quien{display:grid;grid-template-columns:160px 1fr;gap:28px;align-items:center;margin-top:40px;background:#fff;border:1px solid var(--line-light);border-radius:18px;padding:26px}
+.bib-quien img{width:160px;height:160px;border-radius:14px;object-fit:cover}.bib-quien h2{margin:0 0 6px}.bib-quien p{margin:0;color:var(--slate)}
+@media(max-width:820px){.bib-hero,.bib-cats,.bib-quien{grid-template-columns:1fr}.bib-cuenta{gap:22px}}
+</style>"""
+
+BIB_JS = """<script>
+(function(){const f=document.getElementById('bib-f'),m=document.getElementById('rec-msj'),t0=Date.now();
+const abrir=()=>document.body.classList.add('bib-abierta');
+try{if(localStorage.getItem('rec-todo'))abrir();}catch(e){}
+f.addEventListener('submit',async(ev)=>{ev.preventDefault();m.textContent='';const d=Object.fromEntries(new FormData(f));
+if((d.nombre||'').trim().length<2){m.textContent='Escribí tu nombre.';return;}
+if(!/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test((d.email||'').trim())){m.textContent='Revisá el email.';return;}
+const b=f.querySelector('button');b.disabled=true;b.textContent='Abriendo…';const u=new URLSearchParams(location.search);
+try{const r=await fetch('/api/recurso',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({...d,novedades:!!f.novedades.checked,recurso:'biblioteca',origen:u.get('utm_source')||u.get('de')||document.referrer||'directo',t0})});
+const j=await r.json().catch(()=>({}));if(r.status===400||r.status===429)throw new Error(j.error||'Revisá los datos.');
+try{localStorage.setItem('rec-todo','1');}catch(e){}abrir();if(window.va)window.va('event',{name:'biblioteca-desbloqueada'});}
+catch(err){m.textContent=err.message+' Probá de nuevo en un minuto.';b.disabled=false;b.textContent='Desbloquear la biblioteca';}});})();
+</script>"""
+
 def indice_recursos(recursos):
     ruta = "/recursos/"
-    desc = "Prompts, plantillas y guías gratis de los videos de Leandro Lencina, consultor de IA: copialos y usalos con ChatGPT, Claude, Gemini y otras herramientas."
-    schema = [{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Recursos gratis de IA", "description": desc, "url": SITIO + ruta, "inLanguage": "es-AR"},
+    desc = "Biblioteca gratis de guías de IA de Leandro Lencina: prompts, plantillas y pasos para tu negocio y tu día a día, con ChatGPT, Claude, Gemini y n8n."
+    schema = [{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Biblioteca gratis de IA", "description": desc, "url": SITIO + ruta, "inLanguage": "es-AR"},
               schema_migas([("Recursos", ruta)])]
-    h = cabeza("Recursos gratis de IA | Leandro Lencina", desc, ruta, schema).replace("</head>", CSS_REC + "</head>", 1)
-    tarjetas = "".join(f'<a class="rec-card" href="/recursos/{r["slug"]}/"><span class="pal">{e(r["palabra"])}</span><h2>{e(r["titulo"])}</h2><p>{e(r["descripcion"])}</p></a>'
-                       for r in recursos)
+    h = cabeza("Biblioteca gratis de IA | Leandro Lencina", desc, ruta, schema).replace("</head>", CSS_REC + CSS_BIB + "</head>", 1)
+    por = {r["slug"]: r for r in recursos}
+    cats = [(t, d, [por[s] for s in sl if s in por]) for t, d, sl in CATEGORIAS]
+    usados = {r["slug"] for _, _, l in cats for r in l}
+    resto = [r for r in recursos if r["slug"] not in usados]
+    if resto: cats.append(("Más guías", "Las últimas que sumé.", resto))
+    cats = [c for c in cats if c[2]]
+    total = sum(len(c[2]) for c in cats)
+    tarjetas = ""
+    for n, (t, d, l) in enumerate(cats, 1):
+        items = "".join(f'<li><a href="/recursos/{r["slug"]}/"><span>{e(r["corto"])}</span><em>palabra {e(r["palabra"])}</em></a></li>' for r in l)
+        tarjetas += f'<article class="bib-cat"><div class="n">{n:02d}</div><h2>{e(t)}</h2><p>{e(d)}</p><ul>{items}</ul><div class="bib-lock">🔒 {len(l)} guías · se abren con tu email</div></article>'
+    form = """<div class="rec-form" id="rec-form"><h2>Desbloqueá la biblioteca</h2><p>Dejás tu email una vez y se abren todas las guías.</p>
+<form id="bib-f" novalidate>
+<input name="nombre" autocomplete="given-name" placeholder="Tu nombre" required maxlength="80">
+<input name="email" type="email" autocomplete="email" placeholder="Tu email" required maxlength="120">
+<input name="whatsapp" type="tel" autocomplete="tel" placeholder="WhatsApp (opcional)" maxlength="30">
+<select name="dedica"><option value="">¿A qué te dedicás? (opcional)</option><option>Tengo un negocio</option><option>Trabajo en relación de dependencia</option><option>Soy creador de contenido</option><option>Estudio</option><option>Otro</option></select>
+<input name="empresa" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
+<label class="rec-ok"><input type="checkbox" name="novedades" checked> Quiero recibir guías nuevas por email</label>
+<button class="btn btn-wa" type="submit">Desbloquear la biblioteca</button>
+<p class="rec-msj" id="rec-msj" role="status"></p>
+<p class="rec-legal">Uso tus datos solo para mandarte recursos. Podés pedir que los borre cuando quieras. <a href="/privacidad.html">Privacidad</a>.</p>
+</form><p class="bib-listo">✅ Listo: tenés toda la biblioteca abierta. Elegí una guía acá abajo.</p></div>"""
     h += f"""<main>
 <section class="hero" style="padding-bottom:60px"><div class="wrap">
   {migas([('Recursos', None)])}
-  <div class="eyebrow">Gratis · de los videos del canal</div>
-  <h1>Recursos de IA para copiar y usar</h1>
-  <p class="sub">Los prompts, plantillas y guías que uso en mis videos. Si comentaste una palabra en un video, acá está tu recurso.</p>
+  <div class="bib-hero"><div>
+  <div class="eyebrow">Biblioteca gratis</div>
+  <h1>Todas mis guías de IA, en un solo lugar</h1>
+  <p class="sub">Los pedidos exactos, los pasos y las herramientas que muestro en mis videos. Para tu negocio y tu día a día, explicado simple.</p>
+  <div class="bib-chips"><span>✓ Acceso inmediato</span><span>✓ 100 % gratis</span><span>✓ Se suman guías nuevas</span></div>
+  </div>{form}</div>
 </div></section>
-<section class="sec claro"><div class="wrap"><div class="rec-grid">{tarjetas}</div></div></section>
+<section class="sec claro"><div class="wrap">
+<div class="bib-cuenta"><div><b>{total}</b><span>guías completas</span></div><div><b>{len(cats)}</b><span>temas</span></div><div><b>0 $</b><span>siempre gratis</span></div></div>
+<div class="bib-cats">{tarjetas}</div>
+<div class="bib-quien"><img src="/assets/img/leandro.webp" alt="Leandro Lencina" width="160" height="160" loading="lazy"><div><h2>Quién soy</h2>
+<p>Soy Leandro Lencina, consultor de inteligencia artificial. Pruebo herramientas de IA y te muestro en videos cortos cómo usarlas, sin vueltas ni tecnicismos. Todo lo que ves acá lo probé yo: si algo cambia, lo actualizo.</p></div></div>
+</div></section>
 </main>
-"""
-    h += pie("Hola%20Leandro,%20vi%20tus%20recursos%20de%20IA.")
+""" + BIB_JS
+    h += pie("Hola%20Leandro,%20vi%20tu%20biblioteca%20de%20IA.")
     return ruta, h
 
 

@@ -242,6 +242,7 @@ const s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Seleccio
 <form id="rec-f" novalidate>
 <input name="nombre" autocomplete="given-name" placeholder="Tu nombre" required maxlength="80">
 <input name="email" type="email" autocomplete="email" placeholder="Tu email" required maxlength="120">
+<input name="whatsapp" type="tel" autocomplete="tel" placeholder="WhatsApp (opcional)" maxlength="30">
 <select name="dedica"><option value="">¿A qué te dedicás? (opcional)</option><option>Tengo un negocio</option><option>Trabajo en relación de dependencia</option><option>Soy creador de contenido</option><option>Estudio</option><option>Otro</option></select>
 <input name="empresa" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
 <label class="rec-ok"><input type="checkbox" name="novedades" checked> Quiero recibir recursos nuevos por email</label>
@@ -264,7 +265,7 @@ npx n8n
 Después abrí http://localhost:5678 en el navegador y creá tu usuario. Para empezar, armá un flujo chico: un disparador manual que te mande un mensaje de prueba.</div></div></div><script>
 (function(){const K='rec-repos',f=document.getElementById('rec-f'),c=document.getElementById('rec-cerrado'),m=document.getElementById('rec-msj'),t0=Date.now();
 const abrir=()=>{c.hidden=false;document.getElementById('rec-form').hidden=true;};
-try{if(localStorage.getItem(K))abrir();}catch(e){}
+try{if(localStorage.getItem(K)||localStorage.getItem('rec-todo'))abrir();}catch(e){}
 f.addEventListener('submit',async(ev)=>{ev.preventDefault();m.textContent='';const d=Object.fromEntries(new FormData(f));
 if((d.nombre||'').trim().length<2){m.textContent='Escribí tu nombre.';return;}
 if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test((d.email||'').trim())){m.textContent='Revisá el email.';return;}
@@ -272,11 +273,11 @@ const b=f.querySelector('button');b.disabled=true;b.textContent='Abriendo…';
 const u=new URLSearchParams(location.search);
 try{const r=await fetch('/api/recurso',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({...d,novedades:!!f.novedades.checked,recurso:'repos',origen:u.get('utm_source')||u.get('de')||document.referrer||'directo',t0})});
 const j=await r.json().catch(()=>({}));if(r.status===400||r.status===429)throw new Error(j.error||'Revisá los datos.');
-try{localStorage.setItem(K,'1');}catch(e){}abrir();if(window.va)window.va('event',{name:'recurso-desbloqueado',recurso:'repos'});}
+try{localStorage.setItem(K,'1');localStorage.setItem('rec-todo','1');}catch(e){}abrir();if(window.va)window.va('event',{name:'recurso-desbloqueado',recurso:'repos'});}
 catch(err){m.textContent=err.message+' Probá de nuevo en un minuto.';b.disabled=false;b.textContent='Ver los pedidos';}});})();
 </script>
 <div class="caja-cta"><h2>¿Te sirvió?</h2><p>Todas las semanas pruebo una herramienta de IA nueva y te muestro cómo usarla, paso a paso.</p>
-<div class="ctas"><a class="btn btn-claro" href="https://www.youtube.com/channel/UCMiqym9mvo_RUsPUvtZ70Tw" target="_blank" rel="noopener">Ver el canal de YouTube</a><a class="btn btn-wa" href="/recursos/">Más recursos gratis</a></div></div>
+<div class="ctas"><a class="btn btn-claro" href="https://www.youtube.com/channel/UCMiqym9mvo_RUsPUvtZ70Tw" target="_blank" rel="noopener">Ver el canal de YouTube</a><a class="btn btn-wa" href="/recursos/">Ver toda la biblioteca</a></div></div>
 </div></article>
 </main>
 <footer><div class="wrap">

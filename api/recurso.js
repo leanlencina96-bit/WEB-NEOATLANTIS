@@ -1,5 +1,5 @@
 // api/recurso.js
-// Función serverless (Vercel). Recibe el formulario de las páginas /recursos/* (nombre, email, a qué se dedica)
+// Función serverless (Vercel). Recibe el formulario de las páginas /recursos/* (nombre, email, WhatsApp opcional, a qué se dedica)
 // y lo guarda en Baserow, tabla «Suscriptores recursos» (Marketing NeoAtlantis).
 // El token solo puede CREAR filas en esa tabla (no lee ni borra nada). Vive en las variables de entorno de Vercel:
 //   BASEROW_URL · BASEROW_RECURSOS_TABLA · BASEROW_RECURSOS_TOKEN
@@ -24,7 +24,7 @@ export default async function handler(req, res) {
   if (req.method !== 'POST') return res.status(405).json({ error: 'Método no permitido' });
   if (!dentroDelLimite(ipDe(req))) return res.status(429).json({ error: 'Muchos intentos seguidos.' });
 
-  const { nombre, email, dedica, recurso, origen, novedades, empresa, t0 } = req.body || {};
+  const { nombre, email, whatsapp, dedica, recurso, origen, novedades, empresa, t0 } = req.body || {};
   // trampa para robots: campo oculto o envío en menos de 2 segundos → "ok" sin guardar
   if (empresa || (Number(t0) && Date.now() - Number(t0) < 2000)) return res.status(200).json({ ok: true });
 
@@ -33,6 +33,7 @@ export default async function handler(req, res) {
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e) || e.length > 120) return res.status(400).json({ error: 'Revisá el email.' });
   const rec = String(recurso || '').replace(/[^a-z0-9-]/gi, '').slice(0, 40);
   const ori = String(origen || '').slice(0, 200);
+  const wa = String(whatsapp || '').replace(/[^\d+\s()-]/g, '').trim().slice(0, 30);
 
   const base = (process.env.BASEROW_URL || '').replace(/\/$/, ''), tabla = process.env.BASEROW_RECURSOS_TABLA, token = process.env.BASEROW_RECURSOS_TOKEN;
   if (!base || !tabla || !token) {
@@ -40,6 +41,7 @@ export default async function handler(req, res) {
     return res.status(500).json({ error: 'No se pudo guardar.' });
   }
   const fila = { 'Nombre': n, 'Email': e, 'Recurso': rec, 'Origen': ori, 'Acepta novedades': !!novedades, 'Estado': 'Nuevo' };
+  if (wa.replace(/\D/g, '').length >= 6) fila['WhatsApp'] = wa;
   if (DEDICA.includes(dedica)) fila['A qué se dedica'] = dedica;
   try {
     const r = await fetch(`${base}/api/database/rows/table/${tabla}/?user_field_names=true`, {
