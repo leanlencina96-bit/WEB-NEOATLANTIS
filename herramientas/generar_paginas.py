@@ -541,7 +541,7 @@ def pagina_recurso(r):
 
 CATEGORIAS = [("Tu negocio en Google", "Que te encuentren y te elijan.", ["google", "resena"]),
     ("Vender y cobrar mejor", "Precios, presupuestos y respuestas que ahorran horas.", ["precios", "presupuesto", "flujo", "foto"]),
-    ("IA para el día a día", "Lo que más se usa, explicado simple.", ["cv", "audio", "presentacion"]),
+    ("IA para el día a día", "Lo que más se usa, explicado simple.", ["prompts", "cv", "audio", "presentacion"]),
     ("Herramientas y automatización", "Claude, repos gratis y n8n.", ["claude", "repos", "automatico"])]
 
 CSS_BIB = """<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Inter:wght@900&display=swap" rel="stylesheet"><style>

@@ -321,3 +321,29 @@ RECURSOS = [
         ],
     },
 ]
+
+# «100 prompts para tu día a día» (ebook gratis). El contenido está en contenido_100prompts.py.
+# Capítulo 1 abierto; del 2 en adelante y el PDF, con nombre y email. Oculto hasta que Leandro lo apruebe.
+from contenido_100prompts import CAPITULOS as _CAPS, SUBTITULO as _SUB
+_bloques = [{"tipo": "lista", "titulo": "Cómo usarlos", "items": [
+    "Copiá el prompt con el botón y pegalo en ChatGPT, Claude o Gemini (la versión gratis alcanza).",
+    "Reemplazá lo que está entre [corchetes] con tus datos. Cuanto más concreto, mejor la respuesta.",
+    "Si la respuesta no te convence, pedile «más corto», «más simple» o «dame otra opción».",
+    "No pegues contraseñas, números de tarjeta ni datos de otras personas.",
+    "Revisá siempre lo que te da: la IA se equivoca, sobre todo con fechas, precios y trámites."]}]
+_n = 0
+for _i, _c in enumerate(_CAPS, 1):
+    _bloques.append({"tipo": "texto", "titulo": f"Capítulo {_i} · {_c['nombre']}", "texto": _c["intro"], **({"candado": True} if _i == 2 else {})})
+    for _t, _txt in _c["prompts"]:
+        _n += 1
+        _bloques.append({"tipo": "prompt", "titulo": f"{_n}. {_t}", "texto": _txt})
+_bloques.append({"tipo": "descarga", "titulo": "Llevátelo en PDF", "texto": "Los 100 prompts en un ebook para tener en el celular o imprimir.",
+                 "archivo": "/descargas/100-prompts-dia-a-dia.pdf", "boton": "Descargar el ebook (PDF)"})
+RECURSOS.append({
+    "slug": "prompts", "palabra": "PROMPTS", "listo": False,
+    "titulo": "100 prompts para tu día a día (ebook gratis)", "corto": "100 prompts",
+    "descripcion": "100 prompts listos para copiar en ChatGPT, Claude o Gemini: mensajes, trabajo, plata, comida, salud, estudio, viajes, trámites, emprendimiento y organización.",
+    "bajada": _SUB + " El primer capítulo está abierto; el resto y el PDF te los paso con tu nombre y email.",
+    "herramientas": [("ChatGPT", "https://chatgpt.com"), ("Claude", "https://claude.ai"), ("Gemini", "https://gemini.google.com")],
+    "bloques": _bloques,
+})

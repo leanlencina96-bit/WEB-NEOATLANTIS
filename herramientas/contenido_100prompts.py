@@ -1,0 +1,173 @@
+# «100 prompts para tu día a día»: el contenido vive acá y lo usan dos cosas:
+#   1) la página /recursos/prompts/ (contenido_recursos.py la arma con bloques)
+#   2) el ebook en PDF (herramientas/generar_ebook_prompts.py)
+# Reglas: español rioplatense, corchetes = lo que completa la persona, nada de promesas de resultados.
+# Salud, plata y trámites: la IA ayuda a ordenar y preparar; no reemplaza a un profesional (se dice en el capítulo).
+
+TITULO = "100 prompts para tu día a día"
+SUBTITULO = "Copiá, pegá y completá los corchetes. Funcionan en ChatGPT, Claude o Gemini, en su versión gratis."
+
+CAPITULOS = [
+    {
+        "nombre": "Escribir mensajes que no te cuestan",
+        "intro": "Para ese mensaje que tenés que mandar y venís pateando.",
+        "prompts": [
+            ("Decir que no sin quedar mal", "Ayudame a decir que no a esto sin sonar cortante: [qué te pidieron y quién]. Dame 3 versiones: una amable, una corta y una firme. Tuteo, español rioplatense."),
+            ("Reclamar algo con calma", "Quiero reclamar esto: [qué pasó, con qué empresa o persona, desde cuándo]. Escribime un mensaje claro y educado que diga qué pasó, qué necesito y para cuándo. Sin amenazas y sin vueltas."),
+            ("Pedir un favor", "Necesito pedirle a [persona] que [favor]. Escribime un mensaje corto y natural, que no suene a compromiso y que le deje fácil decirme que no."),
+            ("Responder a alguien enojado", "Me llegó este mensaje: [pegalo]. Ayudame a responder sin pelear: que reconozca lo que tenga razón, explique lo mío y proponga una solución. Máximo 5 líneas."),
+            ("Un mail formal desde cero", "Escribime un mail formal para [destinatario] sobre [tema]. Lo que necesito que pase: [objetivo]. Que tenga asunto, saludo, 3 párrafos cortos y cierre."),
+            ("Acortar un mensaje largo", "Este mensaje es demasiado largo: [pegalo]. Dejalo en la mitad sin perder lo importante y decime qué sacaste."),
+            ("Cambiarle el tono", "Reescribí este texto en un tono más [cálido / profesional / directo / gracioso]: [pegá el texto]."),
+            ("Saludo de cumpleaños que no sea genérico", "Escribime un saludo de cumpleaños para [persona y relación]. Datos para personalizarlo: [algo que compartieron, algo que le gusta]. Que no suene a tarjeta."),
+            ("Pedir disculpas", "Me mandé esta: [qué pasó]. Ayudame a pedir disculpas de verdad: que reconozca el error, sin excusas, y diga qué voy a hacer distinto. Corto."),
+            ("Mensaje para el grupo", "Tengo que avisar esto en el grupo de [familia / amigos / trabajo / colegio]: [qué]. Escribilo claro, en pocas líneas, con la fecha y lo que cada uno tiene que hacer bien visible."),
+        ],
+    },
+    {
+        "nombre": "Trabajo y oficina",
+        "intro": "Menos tiempo en lo repetitivo, más en lo que importa.",
+        "prompts": [
+            ("Resumir una reunión", "Estas son mis notas de la reunión, desordenadas: [pegalas]. Armame un resumen con: lo que se decidió, las tareas (quién y para cuándo) y lo que quedó pendiente."),
+            ("Preparar una reunión", "Tengo una reunión con [quién] sobre [tema] y quiero lograr [objetivo]. Armame un orden del día de 5 puntos y 3 preguntas que conviene hacer."),
+            ("Explicar algo técnico simple", "Explicame [tema o texto técnico] como si yo no supiera nada del tema. Usá un ejemplo de la vida diaria y terminá con un resumen de 2 líneas."),
+            ("Ordenar mis tareas", "Esta es mi lista de pendientes: [pegala]. Ordenala por urgencia e importancia y decime cuáles hago hoy, cuáles delego y cuáles puedo dejar para después."),
+            ("Pedir un aumento", "Quiero pedir un aumento. Llevo [tiempo] en [puesto] y estos son mis logros: [lista]. Ayudame a armar qué decir en la charla, en orden, y qué responder si me dicen que no hay presupuesto."),
+            ("Mail de seguimiento", "Mandé esto hace [días] y no me respondieron: [resumen]. Escribime un mail de seguimiento corto y amable, que no suene a reproche."),
+            ("Fórmula de Excel o Sheets", "En Google Sheets tengo [qué datos hay en cada columna]. Quiero [qué querés calcular]. Dame la fórmula exacta y explicame en una línea cómo funciona."),
+            ("Armar una presentación", "Tengo que presentar [tema] a [público] en [minutos] minutos. Armame la estructura: título de cada diapositiva y 3 ideas por diapositiva, como mucho 8 diapositivas."),
+            ("Prepararme para una entrevista", "Tengo una entrevista para [puesto] en [empresa o rubro]. Haceme las 8 preguntas que más probablemente me hagan, de a una, y después de cada respuesta mía decime cómo mejorarla."),
+            ("Escribir un informe corto", "Con estos datos: [pegalos], escribime un informe de una página para [jefe / cliente] con: qué pasó, qué significa y qué propongo hacer."),
+        ],
+    },
+    {
+        "nombre": "Plata y compras",
+        "intro": "Ordenar los números de casa. La IA ayuda a pensar; las decisiones de plata las tomás vos.",
+        "prompts": [
+            ("Presupuesto del mes", "Cobro [monto] por mes. Mis gastos fijos son: [lista con montos]. Armame un presupuesto simple en una tabla, con cuánto me queda y dónde podría recortar."),
+            ("Dónde se me va la plata", "Estos son mis gastos del último mes: [pegalos, aunque sea desordenados]. Agrupalos por categoría, sumá cada una y decime las 3 que más pesan."),
+            ("Comparar dos opciones", "Estoy entre [opción A] y [opción B]. Lo que me importa es [precio / calidad / duración / garantía]. Haceme una tabla comparativa y decime qué preguntas le haría al vendedor antes de decidir."),
+            ("¿Cuotas o contado?", "Algo cuesta [monto] de contado o [cuotas] cuotas de [monto]. Explicame cómo pensar si me conviene, qué dato me falta (por ejemplo, cuánto sube todo por mes) y hacé la cuenta con el dato que te paso: [dato]."),
+            ("Plan de ahorro", "Quiero juntar [monto] para [objetivo] en [meses] meses. Cobro [monto] y gasto [monto]. Armame un plan mes por mes y 5 ideas concretas para llegar."),
+            ("Revisar un resumen de tarjeta", "Este es mi resumen de tarjeta (sin números de tarjeta ni datos personales): [pegá los consumos]. Marcame los gastos repetidos, las suscripciones y lo que no reconozco."),
+            ("Lista de compras con tope", "Tengo [monto] para el súper esta semana y somos [cantidad] personas. Armame una lista de compras ordenada por góndola, priorizando lo básico."),
+            ("Cancelar suscripciones", "Pago estas suscripciones: [lista con precios]. Ayudame a decidir cuáles dar de baja: preguntame cuánto uso cada una y después recomendame."),
+            ("Preparar una negociación", "Quiero negociar [el precio de algo / un descuento / un plan de pago] con [quién]. Dame qué decir, qué ofrecer a cambio y cuál es mi límite para levantarme."),
+            ("Entender un término", "Explicame qué es [plazo fijo / FCI / CFT / interés compuesto / otro término] con un ejemplo con números simples. Sin recomendarme en qué invertir."),
+        ],
+    },
+    {
+        "nombre": "Comida y casa",
+        "intro": "Menos «¿qué cocinamos hoy?» y una casa más fácil de llevar.",
+        "prompts": [
+            ("Menú de la semana", "Armame el menú de lunes a viernes (almuerzo y cena) para [cantidad] personas, con presupuesto ajustado y cosas fáciles. Al final, la lista de compras agrupada."),
+            ("Cocinar con lo que hay", "En la heladera tengo: [lista]. Dame 3 recetas que pueda hacer con eso (puedo sumar sal, aceite y condimentos básicos), con tiempo y pasos cortos."),
+            ("Adaptar una receta", "Tengo esta receta: [pegala]. Adaptala para [cantidad de personas / sin TACC / sin horno / vegetariana] y decime qué cambiaste."),
+            ("Cocinar el domingo para toda la semana", "Quiero cocinar el domingo en 2 horas para tener comida hasta el miércoles. Armame un plan paso a paso: qué preparar primero, qué freezar y cómo guardarlo."),
+            ("Viandas para el trabajo", "Dame 10 ideas de viandas que aguanten sin heladera hasta el mediodía, baratas y que no sean siempre lo mismo."),
+            ("Plan de limpieza", "Vivimos [cantidad] personas en [tipo de casa]. Armame un plan de limpieza semanal repartido por día, de 20 minutos como mucho, y cómo repartirlo entre todos."),
+            ("Sacar una mancha", "Tengo una mancha de [qué] en [tela o superficie]. Decime cómo sacarla con cosas que haya en casa, empezando por lo más suave, y qué NO hacer."),
+            ("Ordenar un espacio", "Tengo que ordenar [placard / cocina / escritorio], que está así: [describilo]. Dame un plan en pasos de 15 minutos, empezando por lo que más se nota."),
+            ("Arreglo simple", "Se me rompió [qué] y pasa esto: [describilo]. Decime si es algo que puedo arreglar yo, qué necesito y los pasos. Si es peligroso (gas, electricidad), decime que llame a alguien."),
+            ("Organizar un cumpleaños", "Organizo un cumpleaños para [cantidad] personas, de [edad o tipo de festejo], con [presupuesto]. Armame la lista de comida, compras y un cronograma desde una semana antes."),
+        ],
+    },
+    {
+        "nombre": "Salud y movimiento",
+        "intro": "Para ordenarte y llegar mejor preparado a la consulta. La IA no diagnostica: ante cualquier síntoma, consultá a un profesional.",
+        "prompts": [
+            ("Preparar una consulta médica", "Voy al médico por [motivo]. Ayudame a ordenar lo que tengo que contarle (desde cuándo, cómo, qué empeora o mejora) y armame 5 preguntas para hacerle. No me des un diagnóstico."),
+            ("Entender lo que me dijeron", "El médico me dijo esto: [pegá lo que te dijeron o lo que dice el informe]. Explicámelo en palabras simples y decime qué preguntas le haría en el próximo control."),
+            ("Rutina corta en casa", "Quiero moverme 20 minutos por día en casa, sin equipo. Mi nivel: [sedentario / algo activo]. Armame una rutina de 3 días por semana, con ejercicios suaves y cómo hacerlos bien."),
+            ("Pausas en el trabajo", "Paso [horas] sentado frente a la computadora. Dame 5 pausas de 2 minutos para estirar cuello, espalda y muñecas, con cuándo hacerlas."),
+            ("Rutina para dormir mejor", "Me cuesta dormirme. Mi día es así: [horarios, pantallas, café]. Proponeme una rutina de la noche, simple, para probar 2 semanas."),
+            ("Tomar más agua", "Me olvido de tomar agua. Dame un plan simple con recordatorios atados a cosas que ya hago en el día."),
+            ("Ordenar los medicamentos", "Tomo esto: [medicamentos y horarios que te indicó el médico]. Armame una tabla por horario para pegar en la heladera. No cambies dosis ni horarios."),
+            ("Comer un poco mejor", "Como así un día normal: [describilo]. Proponeme 5 cambios chicos y baratos para comer un poco mejor, sin dietas raras."),
+            ("Caminar más", "Quiero empezar a caminar. Puedo [días y minutos]. Armame un plan de 4 semanas que vaya de menos a más."),
+            ("Bajar un cambio", "Estoy con mucho estrés por [motivo]. Dame 3 cosas para hacer hoy en menos de 10 minutos y decime cuándo conviene hablarlo con un profesional."),
+        ],
+    },
+    {
+        "nombre": "Estudiar y aprender",
+        "intro": "Para estudiantes y para cualquiera que quiera aprender algo nuevo.",
+        "prompts": [
+            ("Que me lo expliquen fácil", "Explicame [tema] en 3 niveles: como para un chico de 10 años, como para un estudiante y como para alguien que ya sabe. Empezá por el primero."),
+            ("Resumen para estudiar", "Resumí este texto en puntos clave para estudiar: [pegalo]. Al final, las 5 ideas que seguro me toman."),
+            ("Que me tome examen", "Tomame examen de [tema] con 10 preguntas, de a una. Esperá mi respuesta, corregime y explicame lo que tuve mal antes de pasar a la siguiente."),
+            ("Plan de estudio", "Tengo examen de [materia] el [fecha] y puedo estudiar [horas] por día. Los temas son: [lista]. Armame un plan día por día, con repasos."),
+            ("Tarjetas de memoria", "Con este tema: [pegalo], haceme 15 tarjetas pregunta-respuesta, cortas, para repasar."),
+            ("Corregir un texto", "Corregí la ortografía y la redacción de este texto sin cambiarle el sentido: [pegalo]. Después listame los errores que más repito."),
+            ("Practicar otro idioma", "Quiero practicar [idioma], nivel [básico / intermedio]. Charlemos sobre [tema]: vos me escribís, yo te respondo y me corregís al final de cada respuesta."),
+            ("Aprender algo en 30 días", "Quiero aprender [habilidad] desde cero en 30 días con [minutos] por día. Armame el plan por semana y qué recursos gratis usar."),
+            ("Ideas para un trabajo práctico", "Tengo que hacer un trabajo sobre [tema] para [materia]. Dame 5 enfoques posibles y una estructura para el que elija. No me lo escribas: ayudame a pensarlo."),
+            ("Ayudar con la tarea", "Mi hijo/a de [edad] no entiende [tema]. Explicámelo para que yo se lo pueda explicar a él/ella, con un juego o un ejemplo de la casa."),
+        ],
+    },
+    {
+        "nombre": "Viajes y salidas",
+        "intro": "Planear sin perder una tarde entera en el celular.",
+        "prompts": [
+            ("Itinerario de viaje", "Viajo a [destino] [días] días, con [presupuesto] y me gusta [naturaleza / ciudad / comida / descanso]. Armame un itinerario día por día. Avisame qué datos conviene revisar en fuentes oficiales (horarios, precios)."),
+            ("Lista para la valija", "Viajo a [destino] en [mes], [días] días, para [tipo de viaje]. Armame la lista de qué llevar, por categoría, sin cosas de más."),
+            ("Escapada de fin de semana", "Estoy en [ciudad]. Dame 5 ideas de escapada de fin de semana a menos de [horas] horas, con qué hacer en cada una y para quién conviene."),
+            ("Salida con chicos", "Tengo un sábado libre con chicos de [edades] en [ciudad], con [presupuesto]. Dame 5 planes, adentro y afuera por si llueve."),
+            ("Presupuesto del viaje", "Ayudame a armar el presupuesto de un viaje a [destino] para [cantidad] personas, [días] días: transporte, alojamiento, comida y extras. Dejá los montos en blanco para que yo los complete y sumá un 10 % de imprevistos."),
+            ("Frases para viajar", "Viajo a [país]. Dame las 20 frases más útiles en [idioma], con cómo se pronuncian, para restaurante, transporte y emergencias."),
+            ("Cita o salida distinta", "Quiero una salida distinta con [persona] en [ciudad], con [presupuesto]. Dame 5 ideas que no sean ir a comer."),
+            ("Viajar con una restricción", "Viajo con [mascota / alguien con movilidad reducida / bebé]. Haceme una lista de qué tengo que prever y qué preguntarle al alojamiento antes de reservar."),
+            ("Elegir alojamiento", "Estoy entre estos alojamientos: [pegá descripciones y precios]. Comparalos en una tabla y decime qué le preguntaría a cada uno antes de pagar."),
+            ("Plan para un día de lluvia", "Estoy de viaje en [lugar] y llueve todo el día. Dame un plan de mañana, tarde y noche bajo techo."),
+        ],
+    },
+    {
+        "nombre": "Trámites y papeles",
+        "intro": "Entender qué te piden y armar borradores. Para algo legal o importante, revisalo con un profesional.",
+        "prompts": [
+            ("Entender un contrato", "Explicame este contrato en palabras simples: [pegá las cláusulas, sin datos personales]. Marcame lo que me obliga, lo que puede costarme plata y lo que conviene preguntar antes de firmar."),
+            ("Ordenar un trámite", "Tengo que hacer este trámite: [cuál]. Armame una lista de pasos y de papeles que suelen pedir, y decime en qué sitio oficial confirmarlo."),
+            ("Reclamo a una empresa", "Compré [qué] a [empresa] el [fecha] y pasó esto: [problema]. Escribime un reclamo formal con los hechos en orden, lo que pido y el plazo para responder."),
+            ("Carta al consorcio o al dueño", "Tengo que avisarle a [administración / dueño] que [problema]. Escribime una nota formal, con fecha y pedido concreto, para mandar por mail."),
+            ("Entender una factura", "No entiendo esta factura de [servicio]: [pegá los conceptos y montos]. Explicame cada cargo y qué preguntar si algo no cierra."),
+            ("Preparar una llamada", "Tengo que llamar a [empresa] por [motivo]. Armame qué decir, en orden, qué datos tener a mano y qué pedir si no me lo solucionan."),
+            ("Armar un poder o autorización", "Necesito autorizar a [persona] para [trámite]. Escribime un borrador simple de autorización y decime si este tipo de trámite suele pedir firma certificada."),
+            ("Organizar mis papeles", "Tengo papeles desordenados de [casa / trabajo / salud / auto]. Proponeme cómo ordenarlos en carpetas (en papel y en el celular) y cuánto tiempo guardar cada cosa."),
+            ("Formulario difícil", "Este formulario me pide: [pegá las preguntas]. Explicame qué significa cada campo y cómo completarlo. No completes datos por mí."),
+            ("Agenda de vencimientos", "Estos son mis vencimientos del año: [lista: impuestos, seguros, VTV, licencia, etc.]. Armame un calendario por mes con recordatorios una semana antes."),
+        ],
+    },
+    {
+        "nombre": "Tu emprendimiento",
+        "intro": "Para quien vende algo, por chico que sea. Sin inventar clientes ni resultados.",
+        "prompts": [
+            ("Descripción de un producto", "Vendo [producto]. Es para [quién] y su ventaja es [qué lo hace distinto]. Escribime una descripción para Instagram o Mercado Libre de 5 líneas, clara y sin exagerar."),
+            ("Responder consultas frecuentes", "Estas son las preguntas que más me hacen: [lista]. Escribime respuestas cortas y amables para guardar como respuestas rápidas en WhatsApp Business."),
+            ("Ideas de publicaciones", "Tengo un emprendimiento de [rubro] y mis clientes son [quiénes]. Dame 15 ideas de publicaciones para un mes, que no sean solo «comprá»."),
+            ("Calcular un precio", "Para hacer [producto] gasto: [materiales y costos]. Tardo [horas]. Ayudame a calcular el precio mínimo y uno recomendado, explicando la cuenta paso a paso."),
+            ("Responder una mala reseña", "Me dejaron esta reseña: [pegala]. Escribime una respuesta pública, tranquila y profesional, que muestre que me importa y ofrezca una solución."),
+            ("Mensaje para clientes viejos", "Quiero volver a escribirles a clientes que hace mucho no compran. Escribime un mensaje corto para WhatsApp que no suene a spam, con una razón real para volver: [novedad u oferta]."),
+            ("Nombre para algo nuevo", "Voy a lanzar [producto o servicio] para [quién]. Dame 15 nombres posibles, cortos y fáciles de decir, y marcá los 3 mejores con el porqué."),
+            ("Mi bio de Instagram", "Escribime 5 opciones de biografía para Instagram: [qué hacés, para quién, dónde y cómo te contactan]. Máximo 150 caracteres cada una."),
+            ("Guion para un video corto", "Escribime un guion de 30 segundos para un reel sobre [tema o producto]: un gancho en los primeros 3 segundos, 3 ideas y un cierre que invite a escribirme."),
+            ("Encontrar mi diferencia", "Hacé de cliente exigente de [rubro]. Preguntame de a una qué ofrezco, a qué precio y cómo atiendo, y al final decime qué me diferencia y qué me falta."),
+        ],
+    },
+    {
+        "nombre": "Organizarte y pensar mejor",
+        "intro": "Para la semana, las decisiones y la cabeza.",
+        "prompts": [
+            ("Planificar la semana", "Esta semana tengo: [compromisos fijos] y quiero hacer: [pendientes]. Armame un plan día por día, realista, con espacios libres."),
+            ("Tomar una decisión", "Tengo que decidir entre [opción A] y [opción B]. Haceme preguntas de a una para entender qué me importa y después ayudame a ver pros, contras y qué haría en mi lugar alguien prudente."),
+            ("Empezar algo que vengo pateando", "Vengo postergando [tarea]. Dividila en pasos de 10 minutos y decime cuál hago ahora mismo."),
+            ("Armar un hábito", "Quiero empezar a [hábito]. Armame un plan de 21 días que empiece muy fácil, con una forma simple de anotar si lo hice."),
+            ("Ordenar ideas sueltas", "Tengo estas ideas sueltas en la cabeza: [volcalas como salgan]. Ordenalas por tema y decime cuáles son tareas, cuáles proyectos y cuáles solo ideas."),
+            ("Mi rutina de la mañana", "Me levanto a las [hora] y tengo que salir a las [hora]. Armame una rutina de la mañana que me deje 15 minutos para mí."),
+            ("Pensar al revés", "Quiero lograr [objetivo]. Decime las 10 cosas que harían que fracase seguro y después cómo evitar cada una."),
+            ("Revisión del mes", "Hacé conmigo la revisión de este mes: preguntame de a una qué salió bien, qué no y qué aprendí. Al final dame 3 cambios para el mes que viene."),
+            ("Metas del año, aterrizadas", "Mis metas para este año son: [lista]. Convertí cada una en un paso concreto por trimestre y una acción para esta semana."),
+            ("El prompt que mejora tus prompts", "Quiero pedirte esto: [tu pedido]. Antes de responder, haceme las preguntas que necesites para hacerlo bien y después reescribí mi pedido para que quede más claro."),
+        ],
+    },
+]
+
+assert len(CAPITULOS) == 10 and all(len(c["prompts"]) == 10 for c in CAPITULOS), "Tienen que ser 10 capítulos de 10 prompts"
